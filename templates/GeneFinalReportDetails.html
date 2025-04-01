@@ -21,7 +21,6 @@
             let newData = document.getElementById(`${type}_input`).value;
             document.getElementById(`${type}_data`).innerText = newData;
         }
-<<<<<<< HEAD
 		// 格式化 JSON 數據的函數
 function formatJsonData(json1) {
     let textarea = document.querySelector('textarea[name="short_variants"]');
@@ -59,8 +58,6 @@ function updateData(type) {
     console.log('Edit 更新數據:', newData);
 }
 
-=======
->>>>>>> 2916b712b0e0868615403f28a9f58faab481b33e
     </script>		
 </head>
 <body id="page-top">
@@ -255,7 +252,7 @@ function updateData(type) {
 					{% if Generight.0.short_variants %}
 					<div class="card shadow mb-4">
                         <div class="card-header py-3">
-							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme5">short_variants</button>    <input type="text" id="short_variant_input" value="{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.gene }}">    <button class="btn btn-primary" onclick="updateData('short_variant')">Edit</button>
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme5">short_variants</button>
                         </div>						
                         <div class="card-body">
                             <div class="table-responsive table-striped">
@@ -328,7 +325,7 @@ function updateData(type) {
 					{% if Generight.0.copy_number_alterations %}					
 					<div class="card shadow mb-4">
                         <div class="card-header py-3">
-							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme4">copy_number_alterations</button>    <input type="text" id="copy_number_alteration_input" value="{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.gene }}">    <button class="btn btn-primary" onclick="updateData('copy_number_alteration')">Edit</button>
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme4">copy_number_alterations</button>
                         </div>						
                         <div class="card-body">
                             <div class="table-responsive table-striped">
@@ -393,7 +390,7 @@ function updateData(type) {
 					{% if Generight.0.rearrangements %}
 					<div class="card shadow mb-4">
                         <div class="card-header py-3">
-							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme6">rearrangements</button>    <textarea id="rearrangement_input" name="rearrangement_input" rows="1" cols="50">{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.description }}</textarea><input type="text" id="rearrangement_input" value="{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.description }}">     <button class="btn btn-primary" onclick="updateData('rearrangement')">Edit</button>
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme6">rearrangements</button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
