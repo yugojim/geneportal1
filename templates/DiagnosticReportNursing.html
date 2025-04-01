@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>DiagnosticReport Nurse Progress note</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>護理記錄 <span class="badge badge-secondary">DiagnosticReport Nurse Progress note {{ FuncResult }}</span></h3>
+						<a href="https://www.hl7.org/fhir/diagnosticreport.html" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i>DiagnosticReport Release 4B</a>
+					</div>
+					
+					<form method="post" action="{% url 'DiagnosticReportNursing' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <select name="method" class="form-control">
+								<option value="GET" selected>查詢</option>
+								<option value="POST" >新增</option>
+								<option value="PUT" >修改</option>
+								<option value="DELETE" >刪除</option>
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+								<label>ID</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="id" name="id">
+							</div>
+							<div class="form-group col-md-1">
+								<label>Patient ID (S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<label >basedOn CarePlan ID (S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="basedOn" name="basedOn">
+							</div>
+							<div class="form-group col-md-1">
+								<label >Encounter ID (S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="encounter" name="encounter">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label >performer</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="performer" name="performer">
+							</div>
+							<div class="form-group col-md-1">
+								<label >result</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="result" name="result">
+							</div>
+							<div class="form-group col-md-1">
+								<label >issued</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="datetime-local" class="form-control" id="issued" name="issued">
+							</div>
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>				  
+					</div>
+					</form>
+					{{data.diagnostics}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DiagnosticReport Nursing procedure</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>ID</th>
+                                            <th>Patient</th>
+											<th>basedOn</th>
+                                            <th>encounter</th>
+											<th>performer</th>
+											<th>result</th>
+                                            <th>issued</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>ID</th>
+                                            <th>Patient</th>
+											<th>basedOn</th>
+                                            <th>encounter</th>
+											<th>performer</th>
+											<th>result</th>
+                                            <th>issued</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for entry in data.entry %}
+										<tr>
+											<td>{{ entry.resource.id }}</td>
+											<td>{{ entry.resource.subject.reference }}</td>
+											<td>
+											{% for basedOn in entry.resource.basedOn %}
+												{{ basedOn.reference }}
+											{% endfor %}
+											</td>
+											<td>{{ entry.resource.encounter.reference }}</td>
+											<td>
+											{% for performer in entry.resource.performer %}
+												{{ performer.reference }}
+											{% endfor %}
+											</td>
+											<td>
+											{% for result in entry.resource.result %}
+												{{ result.reference }}<br>
+											{% endfor %}
+											</td>
+											<td>{{ entry.resource.issued }}</td>
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}
+</body>
+
+</html>

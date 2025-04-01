@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Blood Examination</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>血液檢驗 <span class="badge badge-secondary">Blood Examination {{ FuncResult }}</span></h3>
+						<a href="https://emr.mohw.gov.tw/myemr/fhir.html" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i>衛福部電子病歷推動專區</a>
+					</div>
+					
+					<form method="post" action="{% url 'DischargeSummary' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-2">
+							  <select name="fhirip" class="form-control">
+								{% for fhir in fhirip %}
+								<option value="{{fhir.ip}}"
+									{% if fhir.ip == fhiripSelect %}
+										selected
+									{% endif %} 
+									>{{ fhir.location }}</option>
+								{% endfor %}
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+							  <select name="method" class="form-control">
+								<option value="GET" selected>查詢</option>
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+								<label><h4>病人姓名</h4></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="name" name="id">
+							</div>
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>					  
+					</div>
+					</form>
+					{{data.diagnostics}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Discharge Summary</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>單張編號</th>
+                                            <th>姓名</th>
+                                            <th>就醫紀錄</th>
+                                            <th>編輯日期時間</th>
+											<th>作者</th>
+											<th>標題</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>單張編號</th>
+                                            <th>姓名</th>
+                                            <th>就醫紀錄</th>
+                                            <th>編輯日期時間</th>
+											<th>作者</th>
+											<th>標題</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for entry in data.entry %}
+										<tr>
+											<td><a href="/DischargeSummaryDetails?fhir={{fhiripSelect}}&id={{ entry.resource.id }}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">{{ entry.resource.id }}</a></td>
+											<td>{{ entry.resource.subject.display }}</td>
+											<td>{{ entry.resource.encounter.display }}</td>
+											<td>{{ entry.resource.date }}</td>											
+											<td>
+												{% for author in entry.resource.author %}
+													{{ author.display }}
+												{% endfor %}	
+											</td>
+											<td>{{ entry.resource.title }}</td><!--
+											<td>
+												{% for section in entry.resource.section %}
+													{{ section.title }}<br>
+														
+													{{ section.code.coding.0.display }}<br>	
+													{{ section.text.div }}<br>
+													{% for entry in section.entry %}
+														{{ entry.display }}<br>
+													{% endfor %}	
+													<br>												
+												{% endfor %}												
+											</td>-->	
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}    
+</body>
+
+</html>

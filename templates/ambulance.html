@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Encounter</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>消防機關救護紀錄表 <span class="badge badge-secondary">{{ FuncResult }}</span></h3>
+						<a href="https://www.hl7.org/fhir/encounter.html" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i></a>
+					</div>
+					
+					<form method="post" action="{% url 'Encounter' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<center><label>派遣資料</label></center>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label>消防局、隊</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="Encounter" name="Encounter">
+							</div>
+							<div class="form-group col-md-1">
+								<label>派遣資料</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="date" class="form-control" id="end" name="end">
+							</div>
+							<div class="form-group col-md-1">
+								<label>出勤單位</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<label >收案單位</label>
+							</div>
+							<div class="form-group col-md-2">
+							<select class="form-select" aria-label="Default select example">
+							  <option value="救災救護指揮中心">救災救護指揮中心</option>
+							  <option value="分隊自行受理">分隊自行受理</option>
+							</select>
+							</div>
+							<div class="form-group col-md-1">
+								<label >出勤時間</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="datetime-local" class="form-control" id="start" name="start">
+							</div>
+							<div class="form-group col-md-1">
+								<label >到達現場時間</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="datetime-local" class="form-control" id="end" name="end">
+							</div>
+							<div class="form-group col-md-1">
+								<label >離開現場時間</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="datetime-local" class="form-control" id="end" name="end">
+							</div>
+							<div class="form-group col-md-1">
+								<label >送達醫院時間</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="datetime-local" class="form-control" id="end" name="end">
+							</div>
+							<div class="form-group col-md-1">
+								<label >離開醫院時間</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="datetime-local" class="form-control" id="end" name="end">
+							</div>
+							<div class="form-group col-md-1">
+								<label >返隊待命時間</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="datetime-local" class="form-control" id="end" name="end">
+							</div>
+							<div class="form-group col-md-1">
+								<label>發生地點</label>
+							</div>
+							<div class="form-group col-md-3">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<label>協同處理單位</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label>送往醫院或地點</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-2">
+							<select class="form-select" aria-label="Default select example">
+								<option value="指揮中心">指揮中心</option>
+								<option value="就近適當">就近適當</option>								
+							    <option value="傷病患或家屬要求">傷病患或家屬要求</option>							  
+							</select>
+							</div>
+
+							<div class="form-group col-md-1">
+								<label>未送醫原因</label>
+							</div>
+							<div class="form-group col-md-2">
+							<select class="form-select" aria-label="Default select example">
+								<option value="未發現">未發現</option>
+								<option value="誤報">誤報</option>								
+							    <option value="中途取消">中途取消</option>
+								<option value="出勤待命">出勤待命</option>
+								<option value="現場死亡">現場死亡</option>								
+							    <option value="不需要">不需要</option>
+								<option value="拒送 ">拒送 </option>								
+							    <option value="警察處理">警察處理</option>									
+							</select>
+							</div>
+
+						</div>
+						<div class="form-row">
+							<center><label>傷病患資料</label></center>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label>傷病患姓名</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<label>國民身分證統一編號</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<label>性別</label>
+							</div>
+							<div class="form-group col-md-1">
+							<select class="form-select" aria-label="Default select example">
+								<option value="男">男</option>
+								<option value="女">女</option>								
+							</select>
+							</div>
+							<div class="form-group col-md-1">
+								<label>年齡</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label>傷病患財物明細：</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+							<select class="form-select" aria-label="Default select example">
+								<option value="未經手">未經手</option>
+								<option value="有">有</option>								
+							</select>
+							</div>
+							<div class="form-group col-md-1">
+								<label>保管人：</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<label>傷病患住址：</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<input type="checkbox" class="form-check-input" id="exampleCheck1">
+								<label class="form-check-label" for="exampleCheck1">同發生地點</label>
+							</div>
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+					</form>
+					{{data.diagnostics}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Encounter</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>ID</th>
+                                            <th>Patient</th>
+                                            <th>location display</th>
+											<th>period start</th>
+                                            <th>period end</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>ID</th>
+                                            <th>Patient</th>
+                                            <th>location display</th>
+											<th>period start</th>
+                                            <th>period end</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for entry in data.entry %}
+										<tr>
+											<td>{{ entry.resource.id }}</td>
+											<td>{{ entry.resource.subject.reference }}</td>
+											<td>{{ entry.resource.location.0.location.display }}</td>
+											<td>{{ entry.resource.location.0.period.start }}</td>
+											<td>{{ entry.resource.location.0.period.end}}</td>
+
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}
+</body>
+
+</html>

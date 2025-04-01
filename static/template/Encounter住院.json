@@ -1,0 +1,19 @@
+{
+  "resourceType": "Encounter",
+  "id": "",
+  "status": "planned",
+  "subject": {
+    "reference": ""
+  },
+  "location": [ {
+    "location": {
+	  "reference": "",
+      "display": ""
+    },
+    "status": "planned",
+    "period": {
+      "start": "",
+      "end": ""
+    }
+  } ]
+}

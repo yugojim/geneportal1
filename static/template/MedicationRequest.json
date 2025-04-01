@@ -1,0 +1,82 @@
+{
+    "resourceType": "MedicationRequest",
+    "status": "active",
+    "intent": "order",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+                    "code": ""
+                }
+            ]
+        }
+    ],
+    "medicationReference": {
+        "reference": ""
+    },
+	"medicationCodeableConcept" : { 
+		    "coding": [
+                {
+                    "system": "https://www.nhi.gov.tw/QueryN_New/QueryN/Query1",
+                    "code": "",
+					"display": ""
+                }
+            ],
+		"text": ""
+	},
+    "subject": {
+        "reference": ""
+    },
+    "authoredOn": "",
+    "dosageInstruction": [
+        {
+            "sequence": 1,
+            "timing": {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/ValueSet/timing-abbreviation",
+                            "code": ""
+                        }
+                    ]
+                }
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg013218/ch08/type3/gov70/num32/Eg.htm",
+                        "code": ""
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg013218/ch08/type3/gov70/num32/Eg.htm",
+                        "code": ""
+                    }
+                ]
+            }
+        }
+    ],
+    "dispenseRequest": {
+        "validityPeriod": {
+            "start": "",
+            "end": ""
+        },
+        "numberOfRepeatsAllowed": 1,
+        "quantity": {
+            "value": 0,
+            "unit": "TAB",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "TAB"
+        },
+        "expectedSupplyDuration": {
+            "value": 0,
+            "unit": "days",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
+    }
+}

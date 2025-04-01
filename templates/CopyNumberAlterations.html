@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Gene Report</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+		{% if user.is_authenticated %}
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+				
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3><span class="badge badge-secondary">Copy number alterations Count</span><span class="badge badge-Success">{{ FuncResult }}</span></h3>
+						{% if FuncResult  > 0 %}
+								<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="downloadBtn" onclick="downloadJSONAsCSV(this)"><i
+								class="fas fa-download fa-sm text-white-50"></i>Export Table</button>
+						{% endif %}	
+					</div>
+					
+					<form method="post" action="{% url 'CopyNumberAlterations' %}">
+					{% csrf_token %}
+					<div class="form-group">
+					<!--
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label><h5>報告號碼</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="ReportNo" name="ReportNo" value="{{search.ReportNo}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>分生號碼</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="MPNo" name="MPNo" value="{{search.MPNo}}">
+							</div>							
+							<div class="form-group col-md-1">
+								<label><h5>病歷號</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="MRN" name="MRN" value="{{search.MRN}}">
+							</div>
+						</div>-->
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label><h5>gene</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="gene" name="gene" value="{{search.gene}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>type</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="type" name="type" value="{{search.type}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>copy_number</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="copy_number" name="copy_number" value="{{search.copy_number}}">
+							</div>							
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>				  
+					</div>
+					</form>
+					{{data.diagnostics}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">GeneReport</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="Table" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>報告號碼</th>
+											<th>分生號碼</th>
+											<th>病歷號</th>
+											<th>gene</th>
+											<th>type</th>
+											<th>copy_number</th>
+											<th>Report PDF</th>																	
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>報告號碼</th>
+											<th>分生號碼</th>
+											<th>病歷號</th>
+											<th>gene</th>
+											<th>type</th>
+											<th>copy_number</th>
+											<th>Report PDF</th>		
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for row in rows %}
+										<tr>											
+											<td>{{row.2}}</td>
+											<td>{{row.3}}</td>
+											<td>{{row.1.ResultsReport.ResultsPayload.FinalReport.PMI.MRN}}</td>
+											<td>{% for copy_number_alteration in row.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration %}{% if copy_number_alteration.gene == search.gene or copy_number_alteration.type == search.type or copy_number_alteration.copy_number == search.copy_number %}<a href="https://www.oncokb.org/gene/{{copy_number_alteration.gene}}" target="_blank">{{copy_number_alteration.gene}}</a>    {% endif %}{% endfor %}</td>
+											<td>{% for copy_number_alteration in row.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration %}{% if copy_number_alteration.gene == search.gene or copy_number_alteration.type == search.type or copy_number_alteration.copy_number == search.copy_number %}{{copy_number_alteration.type}}    {% endif %}{% endfor %}</td>
+											<td>{% for copy_number_alteration in row.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration %}{% if copy_number_alteration.gene == search.gene or copy_number_alteration.type == search.type or copy_number_alteration.copy_number == search.copy_number %}{{copy_number_alteration.copy_number}}    {% endif %}{% endfor %}</td>
+											<td><a href="/static/doc/gene/{{row.2.split|join:"_"}}_({{row.3.split|join:"_"}}).pdf" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">{{row.3}}</a></td>
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+		</div>
+		{% endif %}
+	</div>
+{% include 'utilities-js.html' %}    
+</body>
+	<script>
+		function downloadJSONAsCSV(){
+		// 取得表格
+		var table = document.getElementById('Table');
+		// 獲取header
+		var headers = [];
+		for (var i = 0; i < table.rows[0].cells.length; i++) {
+			headers[i] = table.rows[0].cells[i].textContent.toLowerCase();
+		}
+		// 取得表格data
+		var data = [];
+		for (var i = 1; i < table.rows.length; i++) {
+			var rowData = {};
+			for (var j = 0; j < table.rows[i].cells.length; j++) {
+				rowData[headers[j]] = table.rows[i].cells[j].textContent;
+			}
+			data.push(rowData);
+		}
+		// data轉Json
+		var jsonData = JSON.stringify(data, null, 2);
+		//console.log(jsonData);
+		//console.log(data);	
+		//const json = '[{"name": "John Doe", "age": 30, "email": "johndoe@example.com"}, {"name": "Jane Smith", "age": 25, "email": "janesmith@example.com"}]';
+		const csv = convertToCSV(jsonData);
+		//console.log(csv);
+		//下載
+		var link = window.document.createElement("a");
+		link.setAttribute("href", "data:text/csv;charset=utf-8,%EF%BB%BF" + encodeURI(csv));
+		link.setAttribute("download", "searchCopy_number_alteration.csv");
+		link.click();
+		}
+		
+		function convertToCSV(json) {
+		  const items = JSON.parse(json);
+		  // Get column headers from first item in JSON array
+		  const headers = Object.keys(items[0]);
+		  // Build CSV header row
+		  const csvHeader = headers.join(",");
+		  // Build CSV body rows
+		  const csvBody = items.map(item => {
+			return headers.map(header => {
+			  return item[header];
+			}).join(",");
+		  }).join("\n");
+		  // Combine header and body into single CSV string
+		  const csv = `${csvHeader}\n${csvBody}`;
+		  return csv;
+		}
+	</script>
+</html>

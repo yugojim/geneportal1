@@ -1,0 +1,775 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Gene Report</title>	
+	{% include 'utilities-css.html' %}
+	<style type="text/css">
+		.tbl-scroll td div {
+			max-height: 200px;
+			overflow-y: auto;
+		}
+	</style>
+    <script>
+        function updateData(type) {
+            let newData = document.getElementById(`${type}_input`).value;
+            document.getElementById(`${type}_data`).innerText = newData;
+        }
+<<<<<<< HEAD
+		// 格式化 JSON 數據的函數
+function formatJsonData(json1) {
+    let textarea = document.querySelector('textarea[name="short_variants"]');
+    let jsonString = textarea.value.trim();
+    console.log(jsonString,json1);
+    // 預處理 Python 風格的字符串
+    jsonString = jsonString
+        .replace(/None/g, 'null')    // 將 None 轉為 null
+        .replace(/'/g, '"')          // 將單引號轉為雙引號
+        .replace(/True/g, 'true')    // 將 True 轉為 true
+        .replace(/False/g, 'false'); // 將 False 轉為 false
+
+    try {
+        // 解析並格式化 JSON
+        let jsonObj = JSON.parse(jsonString);
+        let formattedJson = JSON.stringify(jsonObj, null, 4);
+        
+        // 更新 textarea 內容
+        textarea.value = formattedJson;
+        
+        // 調整 textarea 高度以適應內容
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
+    } catch (e) {
+        console.error('JSON 格式化錯誤:', e);
+        alert('無法格式化 JSON: ' + e.message);
+    }
+}
+
+
+// Edit 按鈕的原有功能（根據您的需求保留或調整）
+function updateData(type) {
+    let newData = document.querySelector(`textarea[name="short_variants"]`).value;
+    // 如果您有其他更新邏輯，可以在這裡添加
+    console.log('Edit 更新數據:', newData);
+}
+
+=======
+>>>>>>> 2916b712b0e0868615403f28a9f58faab481b33e
+    </script>		
+</head>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	<!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content {{ FuncResult}} -->
+            <div id="content">
+				
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="card-header py-3">
+                        <center>							
+							<div class="form-row">
+								<div class="form-group col-md-1">
+									<div class="h5 font-weight-bold text-primary">報告號碼</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="h5 font-weight-bold">{{ data.2}}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="h5 font-weight-bold text-primary">分生號碼</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="h5 font-weight-bold">{{ data.3}}</div>
+								</div>
+							</div>
+						</center>
+                    </div>
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<div class="form-row">
+								<div class="form-group col-md-1">
+									<div class="h5 font-weight-bold text-primary">PMI</div>
+								</div>
+							</div>
+                        </div>
+						{% if Generight.0.pmi %}
+                        <div class="card-body">
+							<div class="form-row">
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">病患姓名</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.FullName}}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">Diagnosis</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.SubmittedDiagnosis}}</div>
+								</div>
+								<div class="font-weight-bold form-group col-md-1">
+									<div class="font-weight-bold text-success">Tumor type</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.TumorType}}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">報告日期</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.ReceivedDate}}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">SpecSite</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.SpecSite}}</div>
+								</div>
+							</div>
+							<div class="form-row">							
+								<div class="font-weight-bold form-group col-md-1">
+									<div class="font-weight-bold text-success">DATE OF BIRTH</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.DOB}}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">SEX</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.Gender}}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">病歷號</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.MRN }}</div>
+								</div>
+
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">臨床主治醫師</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.OrderingMD}}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">病理醫師</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.PMI.Pathologist }}</div>
+								</div>
+							</div>
+                        </div>
+						{% endif %}
+                    </div>
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<div class="form-row">
+								<div class="form-group col-md-1">
+									<div class="h5 font-weight-bold text-primary">SPECIMEN</div>
+								</div>
+							</div>
+                        </div>
+						{% if Generight.0.specimen %}
+                        <div class="card-body">
+                            <div class="form-row">
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">檢測項目</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.Sample.TestType}}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">蠟塊號</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.Sample.BlockId}}</div>
+								</div>
+								<div class="font-weight-bold form-group col-md-1">
+									<div class="font-weight-bold text-success">檢體類別</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.Sample.SpecFormat}}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">Tumor purity %</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.Sample.TumorPurity }}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">標本組織部位來源</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.FinalReport.Sample.SpecimenLocation}}</div>
+								</div>
+							</div>
+                        </div>
+						{% endif %}
+					</div>
+					
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<div class="h5 font-weight-bold text-primary">Biomarker Findings</div>
+                        </div>
+						{% if Generight.0.biomarker %}
+                        <div class="card-body">
+                            <div class="form-row">
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">Microsatellite status</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.variant_report.biomarkers.microsatellite_instability.status }}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">Tumor Mutational Burden</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="">{{ data.1.ResultsReport.ResultsPayload.variant_report.biomarkers.tumor_mutation_burden.score }}</div>
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">Status</div>
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.biomarkers.tumor_mutation_burden.status }}
+								</div>
+								<div class="form-group col-md-1">
+									<div class="font-weight-bold text-success">Unit</div>									
+								</div>
+								<div class="form-group col-md-2">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.biomarkers.tumor_mutation_burden.unit }}
+								</div>
+							</div>
+							
+                        </div>
+						{% endif %}
+					</div>
+
+					{% if Generight.0.short_variants %}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme5">short_variants</button>    <input type="text" id="short_variant_input" value="{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.gene }}">    <button class="btn btn-primary" onclick="updateData('short_variant')">Edit</button>
+                        </div>						
+                        <div class="card-body">
+                            <div class="table-responsive table-striped">
+                                <table class="table table-bordered collapse" id="collapseme5" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th class="col-sm-1">gene</th>
+											<th class="col-sm-1">protein_effect</th>
+                                            <th class="col-sm-1">cds_effect</th>
+											<th class="col-sm-1">position</th>
+											<th class="col-sm-1">allele_fraction</th>
+											<th class="col-sm-1">depth</th>
+											<th class="col-sm-1">functional_effect</th>
+											<th class="col-sm-1">transcript</th>
+											<th class="col-sm-1">status</th>
+											<th class="col-sm-1">equivocal</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th class="col-sm-1">gene</th>
+											<th class="col-sm-1">protein_effect</th>
+                                            <th class="col-sm-1">cds_effect</th>
+											<th class="col-sm-1">position</th>
+											<th class="col-sm-1">allele_fraction</th>
+											<th class="col-sm-1">depth</th>
+											<th class="col-sm-1">functional_effect</th>
+											<th class="col-sm-1">transcript</th>
+											<th class="col-sm-1">status</th>
+											<th class="col-sm-1">equivocal</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+									{% if data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.gene %}
+										<tr>
+											<td><div class="collapse out" id="collapseme5"><a href="https://www.oncokb.org/gene/{{ short_variant.gene }}" target="_blank">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.gene }}</a></div></td>
+											<td><div class="collapse out" id="collapseme5">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.protein_effect }}</div></td>											
+											<td><div class="collapse out" id="collapseme5">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.cds_effect }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.position }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.allele_fraction }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.depth }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.functional_effect }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.transcript }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.status }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant.equivocal }}</div></td>
+										</tr>
+									{% else %}
+										{% for short_variant in data.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant %}
+										<tr>
+											<td><div class="collapse out" id="collapseme5"><a href="https://www.oncokb.org/gene/{{ short_variant.gene }}" target="_blank">{{ short_variant.gene }}</a></div></td>
+											<td><div class="collapse out" id="collapseme5">{{ short_variant.protein_effect }}</div></td>											
+											<td><div class="collapse out" id="collapseme5">{{ short_variant.cds_effect }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ short_variant.position }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ short_variant.allele_fraction }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ short_variant.depth }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ short_variant.functional_effect }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ short_variant.transcript }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ short_variant.status }}</div></td>
+											<td><div class="collapse out" id="collapseme5">{{ short_variant.equivocal }}</div></td>
+										</tr>
+										{% endfor %}
+									{% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>						
+					</div>
+					{% endif %}
+
+					{% if Generight.0.copy_number_alterations %}					
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme4">copy_number_alterations</button>    <input type="text" id="copy_number_alteration_input" value="{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.gene }}">    <button class="btn btn-primary" onclick="updateData('copy_number_alteration')">Edit</button>
+                        </div>						
+                        <div class="card-body">
+                            <div class="table-responsive table-striped">
+                                <table class="table table-bordered collapse" id="collapseme4" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th class="col-sm-1">gene</th>
+											<th class="col-sm-1">type</th>
+											<th class="col-sm-1">copy_number</th>
+											<th class="col-sm-1">ratio</th>
+											<th class="col-sm-1">number_of_exons</th>
+											<th class="col-sm-1">position</th>
+											<th class="col-sm-1">status</th>
+											<th class="col-sm-1">equivocal</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th class="col-sm-1">gene</th>
+											<th class="col-sm-1">type</th>
+											<th class="col-sm-1">copy_number</th>
+											<th class="col-sm-1">ratio</th>
+											<th class="col-sm-1">number_of_exons</th>
+											<th class="col-sm-1">position</th>
+											<th class="col-sm-1">status</th>
+											<th class="col-sm-1">equivocal</th>
+                                        </tr>
+                                    </tfoot>									
+                                    <tbody>
+									{% if data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.gene %}
+										<tr>
+											<td><div class="collapse out" id="collapseme4"><a href="https://www.oncokb.org/gene/{{ copy_number_alteration.gene }}" target="_blank">{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.gene }}</a></div></td>				
+											<td><div class="collapse out" id="collapseme4">{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.type }}</div></td>												
+											<td><div class="collapse out" id="collapseme4">{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.copy_number }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.ratio }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.number_of_exons }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.position }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.status }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration.equivocal }}</div></td>
+										</tr>
+									{% else %}
+										{% for copy_number_alteration in data.1.ResultsReport.ResultsPayload.variant_report.copy_number_alterations.copy_number_alteration %}
+										<tr>
+											<td><div class="collapse out" id="collapseme4"><a href="https://www.oncokb.org/gene/{{ copy_number_alteration.gene }}" target="_blank">{{ copy_number_alteration.gene }}</a></div></td>				
+											<td><div class="collapse out" id="collapseme4">{{ copy_number_alteration.type }}</div></td>												
+											<td><div class="collapse out" id="collapseme4">{{ copy_number_alteration.copy_number }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ copy_number_alteration.ratio }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ copy_number_alteration.number_of_exons }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ copy_number_alteration.position }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ copy_number_alteration.status }}</div></td>
+											<td><div class="collapse out" id="collapseme4">{{ copy_number_alteration.equivocal }}</div></td>
+										</tr>
+										{% endfor %}
+									{% endif %}										
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>						
+					</div>
+					
+					{% endif %}	
+					{% if Generight.0.rearrangements %}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme6">rearrangements</button>    <textarea id="rearrangement_input" name="rearrangement_input" rows="1" cols="50">{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.description }}</textarea><input type="text" id="rearrangement_input" value="{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.description }}">     <button class="btn btn-primary" onclick="updateData('rearrangement')">Edit</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped collapse" id="collapseme6" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th class="col-sm-1">description</th>
+											<th class="col-sm-1">type</th>
+											<th class="col-sm-1">targeted_gene</th>
+    										<th class="col-sm-1">other_gene</th>
+											<th class="col-sm-1">pos1</th>
+											<th class="col-sm-1">pos2</th>
+											<th class="col-sm-1">in_frame</th>
+											<th class="col-sm-1">supporting_read_pairs</th>
+											<th class="col-sm-1">status</th>
+											<th class="col-sm-1">equivocal</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th class="col-sm-1">description</th>
+											<th class="col-sm-1">type</th>
+											<th class="col-sm-1">targeted_gene</th>
+											<th class="col-sm-1">other_gene</th>
+											<th class="col-sm-1">pos1</th>
+											<th class="col-sm-1">pos2</th>
+											<th class="col-sm-1">in_frame</th>
+											<th class="col-sm-1">supporting_read_pairs</th>
+											<th class="col-sm-1">status</th>
+											<th class="col-sm-1">equivocal</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% if "description" not in data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.description %}
+											<tr>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.description }}</td>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.type }}</td>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.targeted_gene }}</td>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.other_gene }}</td>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.pos1 }}</td>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.pos2 }}</td>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.in_frame }}</td>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.supporting_read_pairs }}</td>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.status }}</td>
+												<td>{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.equivocal }}</td>
+											</tr>	
+										{% else %}
+											{% for rearrangement in  data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement%}
+											<tr>
+												<td>{{ rearrangement.description }}</td>
+												<td>{{ rearrangement.type }}</td>
+												<td>{{ rearrangement.targeted_gene }}</td>
+												<td>{{ rearrangement.other_gene }}</td>
+												<td>{{ rearrangement.pos1 }}</td>
+												<td>{{ rearrangement.pos2 }}</td>
+												<td>{{ rearrangement.in_frame }}</td>
+												<td>{{ rearrangement.supporting_read_pairs }}</td>
+												<td>{{ rearrangement.status }}</td>
+												<td>{{ rearrangement.equivocal }}</td>
+											</tr>
+											{% endfor %}										
+										{% endif %}										
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+					</div>
+					{% endif %}					
+					{% if user.is_superuser %}
+					<form method="post" action="{% url 'GeneFinalReportDetails' %}{% if FuncResult %}?id={{FuncResult}}{% endif %}">
+					{% csrf_token %}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme1">variant_report_fix</button>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped collapse tbl-scroll" id="collapseme1" width="100%" cellspacing="0">
+										<div>
+											<button class="btn btn-success" type="button" id="formatJsonBtn" onclick="formatJsonData('short_variant')">Step1. Format</button>
+											<button class="btn btn-primary" onclick="updateData('short_variant')">Step2. Save</button>
+										</div>
+										<div>
+										<textarea name="short_variants" rows="4" cols="100">{{ data.1.ResultsReport.ResultsPayload.variant_report}}</textarea>   
+										</div>
+								
+
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+					</form>
+					{% endif %}
+					
+					<!--
+					{% if Generight.0.GenomicFindings %}					
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme1">Genomic Findings</button>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped collapse tbl-scroll" id="collapseme1" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th class="col-sm-1">GeneName</th>
+											<th class="col-sm-1">Alteration</th>
+											<th class="col-sm-1">Therapies</th>
+											<th class="col-sm-2">ClinicalTrialNote</th>
+											<th class="col-sm-1">ClinicalTrialLinks</th>
+											<th class="col-sm-6">Interpretation</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th class="col-sm-1">GeneName</th>
+											<th class="col-sm-1">Alteration</th>
+											<th class="col-sm-1">Therapies</th>
+											<th class="col-sm-2">ClinicalTrialNote</th>
+											<th class="col-sm-1">ClinicalTrialLinks</th>
+											<th class="col-sm-6">Interpretation</th>
+                                        </tr>
+                                    </tfoot>									
+                                    <tbody>
+										{% for Gene in data.1.ResultsReport.ResultsPayload.FinalReport.Genes.Gene %}
+										<tr>
+											<td><div class="collapse out" id="collapseme1"><a href="https://www.oncokb.org/gene/{{ Gene.Name }}" target="_blank">{{ Gene.Name }}</a></div></td>
+												{% if "Name" not in Gene.Alterations.Alteration %}
+													<td><div class="collapse out" id="collapseme1">
+													{% for Alteration in Gene.Alterations.Alteration %}
+														{{ Alteration.Name }}</p>
+													{% endfor %}
+													</div></td>
+												{% else %}
+													<td><div class="collapse out" id="collapseme1">{{ Gene.Alterations.Alteration.Name }}</div></td>
+												{% endif %}
+												
+												{% if "GenericName" not in Gene.Alterations.Alteration.Therapies.Therapy %}
+													<td><div class="collapse out" id="collapseme1">
+													{% for Therapy in Gene.Alterations.Alteration.Therapies.Therapy %}
+														<a href="https://en.wikipedia.org/wiki/{{ Therapy.GenericName }}" target="_blank">{{ Therapy.GenericName }}</a>
+													{% endfor %}
+													</div></td>
+												{% else %}												
+													<td><div class="collapse out" id="collapseme1">
+														{% if Gene.Alterations.Alteration.Therapies == None %}
+															{{ Gene.Alterations.Alteration.Therapies }}
+														{% endif %}
+														{% for Alteration in Gene.Alterations.Alteration %}
+															{% for Therapy in Alteration.Therapies.Therapy %}
+																<a href="https://en.wikipedia.org/wiki/{{ Therapy.GenericName }}" target="_blank">{{ Therapy.GenericName }}</a>
+															{% endfor %}
+															</p>
+														{% endfor %}
+
+													</div></td>
+												{% endif %}											
+											<td><div class="collapse out" id="collapseme1">
+												{% if "ClinicalTrialNote" in Gene.Alterations.Alteration %}
+													{{ Gene.Alterations.Alteration.ClinicalTrialNote }}
+												{% else %}
+													{% for Alteration in Gene.Alterations.Alteration %}
+														{{ Alteration.ClinicalTrialNote }}</p>
+													{% endfor %}
+												{% endif %}
+											</div></td>
+											<td><div class="collapse out" id="collapseme1">
+												{% if "ClinicalTrialLink" in Gene.Alterations.Alteration.ClinicalTrialLinks %}
+													{% for ClinicalTrialLink in Gene.Alterations.Alteration.ClinicalTrialLinks.ClinicalTrialLink %}
+														<a href="https://classic.clinicaltrials.gov/ct2/show/{{ ClinicalTrialLink.nctId }}" target="_blank" >
+														{{ ClinicalTrialLink.nctId }}</a>
+													{% endfor %}
+												{% else %}
+													{% for Alteration in Gene.Alterations.Alteration %}
+														{% for ClinicalTrialLink in Alteration.ClinicalTrialLinks.ClinicalTrialLink %}
+															<a href="https://classic.clinicaltrials.gov/ct2/show/{{ ClinicalTrialLink.nctId }}" target="_blank" >
+															{{ ClinicalTrialLink.nctId }}</a>
+														{% endfor %}</p>
+													{% endfor %}
+												{% endif %}
+											</div></td>
+											<td><div class="collapse out" id="collapseme1">
+												{% if "Interpretation" in Gene.Alterations.Alteration %}
+													{{ Gene.Alterations.Alteration.Interpretation }}
+												{% else %}
+													{% for Alteration in Gene.Alterations.Alteration %}
+														{{ Alteration.Interpretation }}</p>
+													{% endfor %}
+												{% endif %}
+											</div></td>
+										</tr>
+										{% endfor %}	
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+					{% endif %}
+					
+					{% if Generight.0.VariantProperties %}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme">VariantProperties</button>
+                        </div>						
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped collapse" id="collapseme" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>GeneName</th>
+                                            <th>isVUS</th>
+											<th>variantName</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>GeneName</th>
+                                            <th>isVUS</th>
+											<th>variantName</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for VariantProperty in data.1.ResultsReport.ResultsPayload.FinalReport.VariantProperties.VariantProperty %}
+										<tr>
+											<td><div class="collapse out" id="collapseme"><a href="https://www.oncokb.org/gene/{{ VariantProperty.geneName }}" target="_blank">{{ VariantProperty.geneName }}</a></div></td>
+											<td><div class="collapse out" id="collapseme">{{ VariantProperty.isVUS }}</div></td>
+											<td><div class="collapse out" id="collapseme">{{ VariantProperty.variantName }}</div></td>										
+										</tr>
+										{% endfor %}	
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>						
+                    </div>
+					{% endif %}
+					
+					{% if Generight.0.Trials %}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme2">Trials</button>
+                        </div>						
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped collapse" id="collapseme2" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th class="col-sm-1">Gene</th>
+                                            <th class="col-sm-1">Alteration</th>
+											<th class="col-sm-1">Title</th>
+											<th class="col-sm-1">StudyPhase</th>
+											<th class="col-sm-1">Target</th>
+											<th class="col-sm-2">Locations</th>
+                                            <th class="col-sm-1">NCTID</th>
+											<th class="col-sm-3">Note</th>
+											<th class="col-sm-1">Include</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th class="col-sm-1">Gene</th>
+                                            <th class="col-sm-1">Alteration</th>
+											<th class="col-sm-1">Title</th>
+											<th class="col-sm-1">StudyPhase</th>
+											<th class="col-sm-1">Target</th>
+											<th class="col-sm-2">Locations</th>
+                                            <th class="col-sm-1">NCTID</th>
+											<th class="col-sm-3">Note</th>
+											<th class="col-sm-1">Include</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for Trial in data.1.ResultsReport.ResultsPayload.FinalReport.Trials.Trial %}
+										<tr>										
+											<td><div class="collapse out" id="collapseme2">{{ Trial.Gene }}</div></td>
+											<td><div class="collapse out" id="collapseme2">{{ Trial.Alteration }}</div></td>
+											<td><div class="collapse out" id="collapseme2">{{ Trial.Title }}</div></td>
+											<td><div class="collapse out" id="collapseme2">{{ Trial.StudyPhase }}</div></td>
+											<td><div class="collapse out" id="collapseme2">{{ Trial.Target }}</div></td>
+											<td><div class="collapse out" id="collapseme2">{{ Trial.Locations }}</div></td>
+											<td><div class="collapse out" id="collapseme2">{{ Trial.NCTID }}</div></td>
+											<td><div class="collapse out" id="collapseme2">{{ Trial.Note }}</div></td>
+											<td><div class="collapse out" id="collapseme2">{{ Trial.Include }}</div></td>
+										</tr>
+										{% endfor %}	
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>						
+					</div>
+					{% endif %}
+					{% if Generight.0.reportProperties %}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme3">reportProperties</button>
+                        </div>						
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped collapse" id="collapseme3" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-sm-1">item</th>
+											<th class="col-sm-1">value</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="col-sm-1">item</th>
+											<th class="col-sm-1">value</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for reportProperty in data.1.ResultsReport.ResultsPayload.FinalReport.reportProperties.reportProperty %}
+										<tr>										
+											<td><div class="collapse out" id="collapseme3">{{ reportProperty.key }}</div></td>
+											<td><div class="collapse out" id="collapseme3">{{ reportProperty.value }}</div></td>
+										</tr>
+										{% endfor %}	
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>						
+					</div>
+					{% endif %}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme6">References</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table-striped">
+                                <table class="table table-bordered collapse" id="collapseme5" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th class="col-sm-1">number</th>
+                                            <th class="col-sm-1">ReferenceId</th>
+											<th class="col-sm-4">FullCitation</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>number</th>
+                                            <th>ReferenceId</th>
+											<th>FullCitation</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for Reference in data.1.ResultsReport.ResultsPayload.FinalReport.References.Reference %}
+										<tr>										
+											<td><div class="collapse out" id="collapseme6">{{ Reference.number }}</td>
+											<td><div class="collapse out" id="collapseme6"><a href="https://pubmed.ncbi.nlm.nih.gov/{{ Reference.ReferenceId }}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">{{ Reference.ReferenceId }}</a></div></td>
+											<td><div class="collapse out" id="collapseme6">{{ Reference.FullCitation }}</div></td>
+										</tr>
+										{% endfor %}	
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>-->
+			<!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->		
+	</div>
+    <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}    
+</body>
+</html>

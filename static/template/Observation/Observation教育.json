@@ -1,0 +1,37 @@
+{
+    "resourceType": "Observation",
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "laboratory",
+                    "display": "Laboratory"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "82589-3",
+                "display": "Highest level of education"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/2028XXXX"
+    },
+    "effectiveDateTime": "2018-03-11T16:07:54+00:00",
+    "valueCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "LA4489-6",
+                "display": "Unknown"
+            }
+        ]
+    }
+}

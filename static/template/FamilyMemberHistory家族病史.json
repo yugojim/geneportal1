@@ -1,0 +1,31 @@
+{
+  "resourceType": "FamilyMemberHistory",
+  "id": "",
+  "status": "completed",
+  "patient": {
+    "reference": ""
+  },
+  "relationship": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+      "code": "FTH",
+      "display": ""
+    } ]
+  },
+  "sex": {
+    "coding": [ {
+      "system": "http://hl7.org/fhir/administrative-gender",
+      "code": "male"
+    } ]
+  },
+  "condition": [ {
+    "code": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "",
+        "display": ""
+      } ],
+      "text": ""
+    }
+  } ]
+}

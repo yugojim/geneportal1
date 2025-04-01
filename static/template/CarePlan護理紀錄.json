@@ -1,0 +1,19 @@
+{
+    "resourceType": "CarePlan",
+    "id": "",
+    "status": "active",
+    "intent": "plan",
+    "description": "入院護理資料",
+    "subject": {
+        "reference": ""
+    },
+    "encounter": {
+        "reference": ""
+    },
+    "created": "",
+    "contributor": [
+        {
+            "reference": ""
+        }
+    ]
+}

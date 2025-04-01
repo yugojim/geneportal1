@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Referral</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>電子轉診單 <span class="badge badge-secondary">Referral {{ FuncResult }}</span></h3>
+						<a href="/static/doc/IPR_ETA_XML.pdf" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-capsules fa-sm text-white-50"></i>電子轉診單 上傳檔案格式(XML)說明</a>
+						<a href="https://www.hl7.org/fhir/encounter.html" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i>Encounter Release 4B</a>
+					</div>
+					<form method="post" action="{% url 'Referral' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <select name="method" class="form-control">
+								<option value="GET" selected>查詢</option>
+								<option value="DELETE" >刪除</option>
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+								<label>ID</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="Encounter" name="Encounter">
+							</div>
+							<div class="form-group col-md-1">
+								<label>Patient ID (S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<label >location</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="location" name="location">
+							</div>
+							<div class="form-group col-md-1">
+								<label >start (S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="datetime-local" class="form-control" id="start" name="start">
+							</div>
+							<div class="form-group col-md-1">
+								<label >end (S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="datetime-local" class="form-control" id="end" name="end">
+							</div>
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>				  
+					</div>
+					</form>
+					{{data.diagnostics}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Encounter</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th scope="col">ID</th>
+                                            <th scope="col">Referral Form</th>
+											<th scope="col">Download</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th scope="col">ID</th>
+                                            <th scope="col">Referral Form</th>
+											<th scope="col">Download</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for entry in data.entry %}
+										<tr>
+											<td scope="col">{{ entry.resource.id }}</td>
+											<td scope="col"><textarea class="form-control" rows="2">
+											<?xml version="1.0" encoding="Big5"?>
+											<etahosp>{% if ohrtj %}
+											  <hospid>{{ ohrtj.id }}</hospid>
+											  <hospaddr>{{ ohrtj.address.line.0 }}</hospaddr>
+											  <hospfax>{{ ohrtj.telecom.0.value }}</hospfax>
+											  <hospemail>{{ ohrtj.telecom.1.value }}</hospemail>{% else %}
+											  <hospid>{{ entry.resource.hospitalization.origin.reference }}</hospid>
+											  <hospaddr>{{ entry.resource.hospitalization.origin.reference }}</hospaddr>
+											  <hospfax>{{ entry.resource.hospitalization.origin.reference }}</hospfax>
+											  <hospemail>{{ entry.resource.hospitalization.origin.reference }}</hospemail>{% endif %}	
+											  <etadata>{% if prtj %}
+												<h1>{{ prtj.identifier.0.value }}</h1>
+												<h2>{{ prtj.name.0.family }}{{ prtj.name.0.given.0 }}</h2>
+												<h3>{{ prtj.gender }}</h3>
+												<h4>{{ prtj.birthDate }}</h4>
+												<h5>{{ prtj.contact.0.name.family }}{{ prtj.contact.0.name.given.0 }}</h5>
+												<h6>{{ prtj.telecom.0.value }}</h6>
+												<h7>{{ prtj.address.0.line.0 }}</h7>{% else %}
+												<h1>{{ entry.resource.subject.reference }}</h1>
+												<h2>{{ entry.resource.subject.reference }}</h2>
+												<h3>{{ entry.resource.subject.reference }}</h3>
+												<h4>{{ entry.resource.subject.reference }}</h4>
+												<h5>{{ entry.resource.subject.reference }}</h5>
+												<h6>{{ entry.resource.subject.reference }}</h6>
+												<h7>{{ entry.resource.subject.reference }}</h7>{% endif %}{% if crtj %}
+												<h8>{{ crtj.category.0.coding.0.display }}</h8>
+												<h9>{{ crtj.code.coding.0.code }}</h9>
+												<h10>{{ crtj.code.coding.1.code }}</h10>
+												<h11>{{ crtj.code.coding.2.code }}</h11>{% else %}
+												<h8>{{ entry.resource.reasonReference.0.display }}</h8>
+												<h9>{{ entry.resource.reasonReference.0.reference }}</h9>
+												<h10>{{ entry.resource.reasonReference.0.reference }}</h10>
+												<h11>{{ entry.resource.reasonReference.0.reference }}</h11>{% endif %}
+												<h12></h12>
+												<h13></h13>
+												<h14></h14>
+												<h15></h15>
+												<h16></h16>
+												<h17>{{ entry.resource.subject.display }}</h17>
+												<h18>{{ entry.resource.identifier.0.value }}</h18>
+												<h19>{{ entry.resource.identifier.1.value }}</h19>{% if odrtj %}
+												<h20>{{ odrtj.identifier.0.value }}</h20>
+												<h21>{{ odrtj.identifier.1.value }}</h21>
+												<h22>{{ odrtj.telecom.0.value }}</h22>{% else %}
+												<h20>{{ entry.identifier.1.individual.display }}</h20>
+												<h21>{{ entry.resource.participant.1.individual.display }}</h21>
+												<h22>{{ entry.resource.participant.1.individual.display }}</h22>{% endif %}
+												<h23>{{ entry.resource.location.0.period.start }}</h23>
+												<h24>{{ entry.resource.location.0.period.start }}</h24>
+												<h25></h25>
+												<h26></h26>
+												<h27></h27>{% if ihrtj %}
+												<h28>{{ ohrtj.name }}</h28>{% else %}
+												<h28>{{ entry.resource.destination.reference }}</h28>{% endif %}{% if idrtj %}
+												<h29>{{ idrtj.identifier.1.value }}</h29>
+												<h30>{{ idrtj.name.0.family }}{{ idrtj.name.0.given.0 }}</h30>{%else%}
+												<h29>{{ entry.resource.participant.0.individual.display }}</h29>
+												<h30>{{ entry.resource.participant.0.individual.display }}</h30>{% endif %}{% if ihrtj %}
+												<h31>{{ ihrtj.telecom.0.value }}</h31>
+												<h32>{{ ihrtj.address.line.0 }}</h32>{% else %}
+												<h31>{{ entry.resource.destination.reference }}</h31>
+												<h32>{{ entry.resource.destination.reference }}</h32>{% endif %}												
+												<h33>{{ entry.resource.hospitalization.destination.display }}</h33>
+												<h34>{{ entry.resource.location.0.period.end }}</h34>
+											  </etadata>
+											</etahosp>
+											</textarea></td>
+											<td><a href="/static/doc/Referral.json" ><i
+							class="fas fa-download fa-sm text-white-50"></i>Download</a></th>
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}
+</body>
+
+</html>

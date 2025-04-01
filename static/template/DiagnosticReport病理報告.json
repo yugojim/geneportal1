@@ -1,0 +1,51 @@
+{
+    "resourceType": "DiagnosticReport",
+    "id": "812121YXXXXX",
+    "identifier": [
+        {
+            "use": "official",
+            "system": "Organization/NCKUHospital",
+            "value": "812121YXXXXX"
+        }
+    ],
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "22637-3",
+                "display": "Pathology report final diagnosis Narrative"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/2028XXXX"
+    },
+    "issued": "2021-10-06T15:31:42",
+    "performer": [
+        {
+            "reference": "Organization/NCKUHospital"
+        }
+    ],
+    "conclusion": "1.Breast, s/p neoadjuvant chemotherapy, left, modified radical mastectomy:\r\n  Invasive ductal carcinoma, residual.\r\n2.Lymph node, axillary, left, s/p neoadjuvant chemotherapy, dissection:\r\n  Free of metastasis (0/9) (axillary: 0/9; level I: 0/0; level II: 0/0).",
+    "conclusionCode": [
+        {
+            "coding": [
+                {
+                    "system": "Organization/NCKUHospital",
+                    "code": "主報告"
+                }
+            ],
+            "text": "Malignancy    \r\n\r\nPATHOLOGICAL DIAGNOSIS:\r\n1.Breast, s/p neoadjuvant chemotherapy, left, modified radical mastectomy:\r\n  Invasive ductal carcinoma, residual.\r\n2.Lymph node, axillary, left, s/p neoadjuvant chemotherapy, dissection:\r\n  Free of metastasis (0/9) (axillary: 0/9; level I: 0/0; level II: 0/0).\r\n\r\nGROSS FINDING:\r\nThe specimen is the left breast, measuring 26 x 24 x 5.5 cm, with an elliptical shaped overlying skin, 16 x 9 cm, and axillary fat. The overlying skin shows focal increasing thickness. \r\nThe breast has been previously cut at the left outer upper quadrant areas, and it shows two nodular area (nodule 1 at retroareolar; nodule 2 at upper outer quadrant, near L/2/4 cm.\r\nThese area are irregular on margin, firm & grayish white with focal yellowish streaks on cut surface. \r\nThe deep margin is free from these lesions.\r\nSome lymph nodes are dissected out from the axillary fat.\r\nAlso submitted are two bottles of tissue, labeled as breast axillary level I, and breast axillary level II. \r\n\r\nRepresentative sections are taken and labeled as follows :\r\n1-4: nodule 1 at retroareolar;\r\n5: nipple;\r\n6,7: overlying skin near nodule 1;\r\n8-13: nodule 2 at upper outer quadrant;\r\n14: overlying skin near nodule 2;\r\n15: deep margin;\r\n16-20, A1-A6: axillary fat and dissected axillary LNs;\r\n21: level I LN;\r\n22: level II LN.\r\n\r\nMICROSCOPIC FINDING:\r\nSections of both nodular lesions show foci of residual invasive ductal carcinoma, composed of tumor cells arranged in cords and files, embedded within a fibrotic background, compatible with treatment effect. Foci of ductal carcinoma in situ are also noted.\r\nThe largest diameter of the residual tumors are 1.1x1.0 cm in nodule 1 (section 1) and 1.1x0.9 cm in nodule 2 (section 8).\r\nThe deep margin, nipple and skin are free from tumors. The skin is fibrotic with irregular dermal collagen, while shows no evidence of tumor emboli.\r\nThe lymph nodes are free from metastasis and are mostly atrophic, while section 20 shows two axillary lymph nodes with necrosis and cholesterol cleft formation, compatible with previous metastasis with complete response.\r\n\r\n\r\nPathologists:黃OO/廖OO醫師 病解專醫字第5XX號"
+        },
+        {
+            "coding": [
+                {
+                    "system": "Organization/NCKUHospital",
+                    "code": "CheckList報告"
+                }
+            ],
+            "text": "NCKU PATHOLOGY DEPARTMENT BREAST CANCER CHECKLIST\r\nPathologic number: 21-C00052; 21026174\r\nunilateral\r\n1. Specimen submitted: Left breast & axillary tissue\r\n    (MRM)(s/p neoadjuvant chemotherapy)\r\n2. Size of invasive carcinoma: 1.1x1.0 cm (microscopic)\r\n3. pTNM pathological classification: \r\n    ypT1cN0 (AJCC cancer staging system, 8th edition)\r\n4. Histologic type: Invasive ductal carcinoma\r\nHistologic Grade (Nottingham modification of the Bloom-Richardson grading system): II \r\n1. Tubule formation: score 3\r\n2. Nuclear pleomorphism: score 2\r\n3. Mitotic rate: score 2\r\nExtensive intraductal component: Absent\r\n \r\n5. Lymphatic tumor emboli: Present\r\n6. Margins of excision: Free\r\n    (closest distance to margin: >5 mm from deep margin )\r\n7. Deep fascia: Not invaded\r\n8. Skin: Free\r\n9. Nipple: Free\r\n10. Lymph node status: \r\n(1) No. examined: 9\r\n     No. macrometastases (>2 mm): 0\r\n     No. micrometastases (0.2~2 mm and/or >200 cells): 0\r\n     No. isolated tumor cells (<=0.2 mm and <=200 cells): 0\r\n(2) Distribution: Level I: 0/0; Level II: 0/0; Level I & II: 0/9\r\n(3) Extranodal extension: Absent\r\n \r\nTreatment effect and response \r\n    (i) In the Breast: \r\n    Probable or definite response to presurgical therapy in the invasive carcinoma\r\n    (ii) In the Lymph nodes: \r\n    No lymph node metastases. Fibrous scarring, possibly related to prior lymph node metastases with pathologic complete response\r\nPathologic complete chemotherapy response: No\r\n \r\nImmunohistochemical stains (Pathology No:  21C00052 biopsy)\r\nER: Positive (90% tumor cells with nuclear staining) (AB:Ventana, clone SP1)\r\nPR: Positive (50% tumor cells with nuclear staining) (AB: Ventana, clone 1E2)\r\nHer-2/Neu: Positive (3+ scored by 2018 CAP guideline) (Ab:Ventana Clone 4B5)\r\nKi-67: ~30% nuclear staining (Ab:DAKO, clone MIB-1)\r\nComment(s): \r\nImmunohistochemical stains (Pathology No:  21026174-1 s/p chemotherapy)\r\nER: Positive (95% tumor cells with nuclear staining) (AB:Ventana, clone SP1)\r\nPR: Positive (50% tumor cells with nuclear staining) (AB: Ventana, clone 1E2)\r\nHer-2/Neu: Positive (3+ scored by 2018 CAP guideline) (Ab:Ventana Clone 4B5)\r\n\r\nPathologists:黃OO/廖OO醫師 病解專醫字第5XX號"
+        }
+    ]
+}

@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Interpretation</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>Interpretation <span class="badge badge-secondary">Interpretation {{ FuncResult }}</span></h3>
+						<a href="https://phenopacket-schema.readthedocs.io/en/latest/_images/phenopacket-schema-v2.svg" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>phenopacket-schema</a>
+					</div>					
+					<form method="post" action="{% url 'Interpretation' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <select name="method" class="form-control">
+								<option value="GET" selected>查詢</option>
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+								<label>id</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="id" name="id">
+							</div>
+							<div class="form-group col-md-1">
+								<label>subject</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="subject" name="subject">
+							</div>
+							<div class="form-group col-md-1">
+								<label >biosamples</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="biosamples" name="biosamples">
+							</div>
+							<div class="form-group col-md-1">
+								<label >phenotypic_features</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="phenotypic_features" name="phenotypic_features">
+							</div>
+							<div class="form-group col-md-1">
+								<label >diseases</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="diseases" name="diseases">
+							</div>
+						</div>
+						<div class="form-row">
+						
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>				  
+					</div>
+					</form>
+					{{ data.interpretations|length }}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Interpretation</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>id</th>
+                                            <th>progress_status</th>
+											<th>Gene</th>
+											<th>vcf_record_id</th>
+											<th>hgvs<br>count</th>
+											<th>clinvar_variant<br>summary_count</th>
+											<th>summary</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                         <tr>
+											<th>id</th>
+                                            <th>progress_status</th>
+											<th>Gene</th>
+											<th>vcf_record_id</th>
+											<th>hgvs<br>count</th>
+											<th>clinvar_variant<br>summary_count</th>
+											<th>summary</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										
+										{% for interpretation in data.interpretations %}										
+											{% for genomic_interpretation in interpretation.diagnosis.genomic_interpretations %}
+											<tr>
+												<td>{{ interpretation.id }}</td>
+												<td>{{ interpretation.progress_status }}</td>
+												<td><a href="https://asia.ensembl.org/Homo_sapiens/Gene/Summary?g=
+												{{ genomic_interpretation.variant_interpretation.variation_descriptor.gene_context.alternate_ids.0 }}" target="_blank">
+												{{ genomic_interpretation.variant_interpretation.variation_descriptor.gene_context.value_id }}</a></td>
+												<td>{{ genomic_interpretation.variant_interpretation.variation_descriptor.label }}</td>
+												<td><a href="javascript:alert('
+												{% for expression in genomic_interpretation.variant_interpretation.variation_descriptor.expressions %}
+												{{expression.version}}\t{{expression.value}}\n\n
+												{% endfor %}
+												');">
+												{{ genomic_interpretation.variant_interpretation.variation_descriptor.expressions|length }}</a></td>
+												<td><a href="{% url 'ClinvarVariant' %}">{{ genomic_interpretation.variant_interpretation.variation_descriptor.extensions|length }}</td>
+												<td>{{ interpretation.summary }}</td>
+											</tr>
+											{% endfor %}									
+										{% endfor %}										
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}
+</body>
+
+</html>

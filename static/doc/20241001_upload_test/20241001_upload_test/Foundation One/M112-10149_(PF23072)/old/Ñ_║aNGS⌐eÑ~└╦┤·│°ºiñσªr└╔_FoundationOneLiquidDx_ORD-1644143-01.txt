@@ -1,0 +1,70 @@
+ORD-1644143-01
+
+PATHOLOGICAL DIAGNOSIS: Lung adenocarcinoma
+Test Name: FoundationOneLiquidDx 
+
+Relevant Biomarkers 
+
+Biomarker Findings
+Blood Tumor Mutational Burden - 0 Muts/Mb
+Microsatellite status - MSS
+Tumor Fraction - Elevated Tumor Fraction Not Detected
+
+Genomic Findings [VAF%]
+For a complete list of the genes assayed, please refer to the Appendix.
+KRAS G12R [0.53%]
+STK11 Y60fs*1 [0.62%]
+CDKN2A/B p16INK4a D156fs*37 [0.47%]
+TP53 P190L [0.63%]
+
+Diagnosis: Lung adenocarcinoma
+MP No.: 49073690
+Sample Type: Blood
+Date of collection: 31 May 2023
+NGS QC parameters: DNA input mass of 30ng for Library Construction.
+
+Analytic Interpretation: Substitutions and insertion and deletion alterations (indels) are reported in 311
+genes, copy number alterations (CNAs) are reported in 310 genes, and gene rearrangements are reported
+in 324 genes. The test also detects the genomic signatures blood tumor mutational burden (bTMB),
+microsatellite instability (MSI), and tumor fraction. FoundationOne Liquid CDx utilizes circulating
+cell-free DNA (cfDNA) isolated from plasma derived from the anti-coagulated peripheral whole blood of
+cancer patients
+
+Analytical sensitivity : The estimated LoD for short variants is 0.40% for the enhanced sensitivity region and 0.82% of the standard sensitivity region. 
+The median LoD is 30.4% tumor fraction for copy number losses.
+
+
+Methodology: NovaSeq 6000 platform
+
+Procedure: The assay employs a single DNA extraction method to obtain cfDNA from plasma from whole blood. Extracted
+cfDNA undergoes whole-genome shotgun library construction and hybridization-based capture of
+324 cancer-related genes including coding exons and select introns of 309 genes, as well as only
+select intronic regions or non-coding regions of 15 genes. Hybrid-capture selected libraries are
+sequenced with deep coverage using the NovaSeq 6000 platform. Sequence data are processed using
+a customized analysis pipeline designed to accurately detect genomic alterations, including
+base substitutions, indels, select copy number variants, and select genomic rearrangements.
+Substitutions and insertion and deletion alterations (indels) are reported in 311 genes, copy number
+alterations (CNAs) are reported in 310 genes, and gene rearrangements are reported in 324 genes.
+
+
+Disclaimer:
+1. The information in this Report must be considered in conjunction with all other relevant information regarding 
+a particular patient, before the patient¡¦s treating physician recommends a course of treatment. Decisions on patient care 
+and treatment must be based on the independent medical judgment of the treating physician, taking into consideration all 
+applicable information concerning the patient¡¦s condition, such as patient and family history, physical examinations, 
+information from other diagnostic tests, and patient preferences, in accordance with the standard of care in a given community. 
+A treating physician's decisions should not be based on a single test, such as this Test, or the information contained in this Report. 
+
+2. Foundation Medicine Inc. only provides PDF report as an official issuance of the test result. Any other 
+transformed format is not an "official / formal solution" and not guarantee the accuracy of this conversion. It is 
+suggested the hospital to verify the outputs and validate the suitability of use. 
+
+About FOUNDATIONONE CDx, FOUNDATIONONE LIQUID CDx & FOUNDATIONONE HEME:
+FOUNDATIONONE CDx, FOUNDATIONONE LIQUID CDx & FOUNDATIONONE HEME were developed and its performance characteristics 
+determined by Foundation Medicine, Inc. (Foundation Medicine). FOUNDATIONONE CDx, FOUNDATIONONE LIQUID CDx & 
+FOUNDATIONONE HEME may be used for clinical purposes and should not be regarded as purely investigational or for research only. 
+Foundation Medicine¡¦s clinical reference laboratories are qualified to perform high complexity clinical testing. 
+
+Reference:
+1. Clark TA, et al. J Mol Diagn 2018
+2. FoundationOne_Liquid_CDx_Label_Technical_Info 20201109

@@ -1,0 +1,41 @@
+{
+    "resourceType": "MedicationAdministration",
+    "status": "completed",
+    "medicationReference": {
+        "reference": ""
+    },
+    "subject": {
+        "reference": ""
+    },
+    "effectivePeriod": {
+        "start": "",
+        "end": ""
+    },
+    "request": {
+        "reference": ""
+    },
+    "dosage": {
+        "route": {
+            "coding": [
+                {
+                    "system": "http://mtrsoftware.com.tw/Page_L/用法表.htm",
+                    "code": ""
+                }
+            ]
+        },
+        "method": {
+            "coding": [
+                {
+                    "system": "http://mtrsoftware.com.tw/Page_L/用法表.htm",
+                    "code": ""
+                }
+            ]
+        },
+        "dose": {
+            "value": 1,
+            "unit": "TAB",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "TAB"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "resourceType": "Observation",
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "https://www.hl7.org/fhir/codesystem-observation-category.html",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "35094-2",
+                "display": "Blood pressure panel"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/2028XXXX"
+    },
+    "effectiveDateTime": "2021-03-26T09:21:00",
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "8480-6",
+                        "display": "Systolic blood pressure"
+                    }
+                ]
+            },
+            "valueQuantity": {
+                "value": 154,
+                "unit": "mmHg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]"
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "8462-4",
+                        "display": "Diastolic blood pressure"
+                    }
+                ]
+            },
+            "valueQuantity": {
+                "value": 91,
+                "unit": "mmHg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]"
+            }
+        }
+    ]
+}

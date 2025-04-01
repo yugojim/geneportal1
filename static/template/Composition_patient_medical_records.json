@@ -1,0 +1,42 @@
+{
+    "resourceType": "Composition",
+    "status": "preliminary",
+    "type": {
+        "coding": [
+            {
+                "system": "2.16.840.1.113883.6.1",
+                "code": "28579-1",
+                "display": "Visit note"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "",
+        "display": ""
+    },
+    "encounter": {
+        "reference": "",
+        "display": ""
+    },
+    "date": "",
+    "author": [
+        {
+            "reference": "",
+            "display": ""
+        }
+    ],
+    "title": "",
+    "confidentiality": "",
+    "attester": [
+        {
+            "mode": "professional",
+            "time": ""
+        }
+    ],
+    "custodian": {
+        "reference": "",
+        "display": ""
+    },
+    "section": [        
+    ]
+}

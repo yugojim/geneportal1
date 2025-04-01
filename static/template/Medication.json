@@ -1,0 +1,19 @@
+{
+    "resourceType": "Medication",
+    "id": "",
+    "code": {
+        "coding": [
+            {
+                "system": "https://www.nhi.gov.tw/QueryN_New/QueryN/Query1",
+                "code": "",
+                "display": ""
+            },
+			{
+                "system": "https://www.whocc.no/atc_ddd_index/",
+                "code": "",
+                "display": ""
+            }
+        ],
+        "text": ""
+    }
+}

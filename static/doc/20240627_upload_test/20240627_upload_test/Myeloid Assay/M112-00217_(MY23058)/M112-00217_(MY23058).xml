@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rr:ResultsReport>
+	<rr:ResultsPayload>
+		<FinalReport>
+			<Sample>
+				<FM_Id></FM_Id>
+				<SampleId></SampleId>
+				<BlockId></BlockId>
+				<TRFNumber></TRFNumber>
+				<TestType>Oncomine Myeloid Assay</TestType>
+				<SpecFormat>Bone Marrow</SpecFormat>
+				<ReceivedDate>2023/08/16</ReceivedDate>
+			</Sample>
+			<PMI>
+				<ReportId>MY23058</ReportId>
+				<MRN>26974732</MRN>
+				<FullName>吳耀盛</FullName>
+				<FirstName></FirstName>
+				<LastName></LastName>
+				<SubmittedDiagnosis>Blast Phase Chronic Myeloid Leukemia</SubmittedDiagnosis>
+				<Gender>Male</Gender>
+				<DOB></DOB>
+				<OrderingMD>何碩容</OrderingMD>
+				<OrderingMDId>DOC8127E</OrderingMDId>
+				<Pathologist></Pathologist>
+				<CopiedPhysician1></CopiedPhysician1>
+				<MedFacilName></MedFacilName>
+				<MedFacilID></MedFacilID>
+				<SpecSite></SpecSite>
+				<CollDate></CollDate>
+				<ReceivedDate></ReceivedDate>
+				<CountryOfOrigin></CountryOfOrigin>
+			</PMI>
+		</FinalReport>
+		<variant-report>
+			<short_variants>
+			</short_variants>
+			<copy_number_alterations>
+			</copy_number_alterations>
+			<rearrangements>
+				<rearrangement>
+					<description></description>
+					<equivocal></equivocal>
+					<in_frame></in_frame>
+					<other_gene>RUNX1-MECOM.R4M2</other_gene>
+					<pos1>chr21:36206707-chr3:169099312</pos1>
+					<pos2></pos2>
+					<status></status>
+					<supporting_read_pairs>6863</supporting_read_pairs>
+					<targeted_gene>RUNX1-MECOM</targeted_gene>
+					<type></type>
+					<dna_evidence>
+						<sample></sample>
+					</dna_evidence>
+				</rearrangement>
+			</rearrangements>
+			<biomarkers>
+				<microsatellite_instability>
+					<status></status>
+				</microsatellite_instability>
+				<tumor_mutation_burden>
+					<score></score>
+				</tumor_mutation_burden>
+			</biomarkers>
+		</variant-report>
+	</rr:ResultsPayload>
+</rr:ResultsReport>

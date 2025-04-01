@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rr:ResultsReport>
+	<rr:ResultsPayload>
+		<FinalReport>
+			<Sample>
+				<FM_Id></FM_Id>
+				<SampleId></SampleId>
+				<BlockId>M113-00004_(F24002)</BlockId>
+				<TRFNumber></TRFNumber>
+				<TestType>Oncomine Focus Assay</TestType>
+				<SpecFormat>FFPE</SpecFormat>
+				<ReceivedDate></ReceivedDate>
+			</Sample>
+			<PMI>
+				<ReportId>2024/1/9</ReportId>
+				<MRN>5991822</MRN>
+				<FullName>翁翠霞</FullName>
+				<FirstName></FirstName>
+				<LastName></LastName>
+				<SubmittedDiagnosis>Non-Small Cell Lung Cancer</SubmittedDiagnosis>
+				<Gender>Female</Gender>
+				<DOB></DOB>
+				<OrderingMD>陳育民</OrderingMD>
+				<OrderingMDId>DOC3064F</OrderingMDId>
+				<Pathologist></Pathologist>
+				<CopiedPhysician1></CopiedPhysician1>
+				<MedFacilName></MedFacilName>
+				<MedFacilID></MedFacilID>
+				<SpecSite></SpecSite>
+				<CollDate></CollDate>
+				<ReceivedDate></ReceivedDate>
+				<CountryOfOrigin></CountryOfOrigin>
+			</PMI>
+		</FinalReport>
+		<variant-report>
+			<short_variants>
+				<short_variant>
+					<cds_effect>c.2573T&gt;G</cds_effect>
+					<depth>1991</depth>
+					<functional_effect>missense</functional_effect>
+					<gene>EGFR</gene>
+					<percent_reads>12.61%</percent_reads>
+					<position>chr7:55259515</position>
+					<protein_effect>p.(L858R)</protein_effect>
+					<transcript>NM_005228.5</transcript>
+				</short_variant>
+			</short_variants>
+			<copy_number_alterations>
+				<copy_number_alteration>
+					<copy_number>5.23</copy_number>
+					<gene>AR</gene>
+					<position>chrX:66776186</position>
+				</copy_number_alteration>
+			</copy_number_alterations>
+			<rearrangements>
+			</rearrangements>
+			<biomarkers>
+				<microsatellite_instability>
+					<status></status>
+				</microsatellite_instability>
+				<tumor_mutation_burden>
+					<score></score>
+				</tumor_mutation_burden>
+			</biomarkers>
+		</variant-report>
+	</rr:ResultsPayload>
+</rr:ResultsReport>

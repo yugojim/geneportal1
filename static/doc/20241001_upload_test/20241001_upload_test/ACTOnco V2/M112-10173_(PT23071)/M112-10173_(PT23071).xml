@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rr:ResultsReport>
+	<rr:ResultsPayload>
+		<FinalReport>
+			<Sample>
+				<FM_Id>AA -23-04285</FM_Id>
+				<SampleId></SampleId>
+				<BlockId>M112-10173_(PT23071)</BlockId>
+				<TRFNumber></TRFNumber>
+				<TestType></TestType>
+				<SpecFormat>Vertebra  T ype</SpecFormat>
+				<ReceivedDate>Jun 30, 2023</ReceivedDate>
+			</Sample>
+			<PMI>
+				<ReportId></ReportId>
+				<MRN>44588387</MRN>
+				<FullName>徐翊宸</FullName>
+				<FirstName></FirstName>
+				<LastName></LastName>
+				<SubmittedDiagnosis>Metastatic sarcoma</SubmittedDiagnosis>
+				<Gender>Male</Gender>
+				<DOB>Dec 08, 2009</DOB>
+				<OrderingMD>顏秀如醫師  T el</OrderingMD>
+				<OrderingMDId></OrderingMDId>
+				<Pathologist></Pathologist>
+				<CopiedPhysician1></CopiedPhysician1>
+				<MedFacilName>臺北榮總</MedFacilName>
+				<MedFacilID></MedFacilID>
+				<SpecSite></SpecSite>
+				<CollDate></CollDate>
+				<ReceivedDate></ReceivedDate>
+				<CountryOfOrigin></CountryOfOrigin>
+			</PMI>
+		</FinalReport>
+		<variant-report>
+			<short_variants>
+				<short_variant>
+					<cds_effect>-</cds_effect>
+					<depth>-</depth>
+					<gene>AXIN1</gene>
+					<percent_reads>NM_003502</percent_reads>
+					<protein_effect>Splice</protein_effect>
+					<transcript>c.1255</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>-</cds_effect>
+					<depth>23.0%</depth>
+					<gene>ATM</gene>
+					<percent_reads>-</percent_reads>
+					<protein_effect>Splice</protein_effect>
+					<transcript>c.6095+8G&gt;T</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>egion</cds_effect>
+					<depth>NM_004441</depth>
+					<gene>EPHB1</gene>
+					<percent_reads>-4C&gt;G</percent_reads>
+					<protein_effect>Splice</protein_effect>
+					<transcript>-</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.333C&gt;G</cds_effect>
+					<depth>1337</depth>
+					<gene>ERBB2</gene>
+					<percent_reads>47.9%</percent_reads>
+					<protein_effect>N111K</protein_effect>
+					<transcript>NM_004448</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.2477C&gt;T</cds_effect>
+					<depth>911</depth>
+					<gene>ERCC4</gene>
+					<percent_reads>81.0%</percent_reads>
+					<protein_effect>A826V</protein_effect>
+					<transcript>NM_005236</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.193G&gt;A</cds_effect>
+					<depth>615</depth>
+					<gene>FGFR3</gene>
+					<percent_reads>75.1%</percent_reads>
+					<protein_effect>G65R</protein_effect>
+					<transcript>NM_000142</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.3245G&gt;A</cds_effect>
+					<depth>868</depth>
+					<gene>NOTCH1</gene>
+					<percent_reads>63.0%</percent_reads>
+					<protein_effect>R1082H</protein_effect>
+					<transcript>NM_017617</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.4312G&gt;A</cds_effect>
+					<depth>3236</depth>
+					<gene>NOTCH2</gene>
+					<percent_reads>54.4%</percent_reads>
+					<protein_effect>V1438I</protein_effect>
+					<transcript>NM_024408</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.36G&gt;T</cds_effect>
+					<depth>1820</depth>
+					<gene>NTRK2</gene>
+					<percent_reads>12.0%</percent_reads>
+					<protein_effect>M12I</protein_effect>
+					<transcript>NM_001018064</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.2198A&gt;G</cds_effect>
+					<depth>791</depth>
+					<gene>PIK3CA</gene>
+					<percent_reads>87.5%</percent_reads>
+					<protein_effect>K733R</protein_effect>
+					<transcript>NM_006218</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.1748T&gt;C</cds_effect>
+					<depth>1081</depth>
+					<gene>RAD54L</gene>
+					<percent_reads>60.5%</percent_reads>
+					<protein_effect>I583T</protein_effect>
+					<transcript>NM_003579</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.6869A&gt;T</cds_effect>
+					<depth>2028</depth>
+					<gene>SETD2</gene>
+					<percent_reads>5.5%</percent_reads>
+					<protein_effect>Q2290L</protein_effect>
+					<transcript>NM_014159</transcript>
+				</short_variant>
+			</short_variants>
+			<copy_number_alterations>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>ARID1A</gene>
+					<position>Chr1</position>
+					<type>Heterozyg ous deletion</type>
+				</copy_number_alteration>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>PTEN</gene>
+					<position>Chr10</position>
+					<type>Heterozygous deletion</type>
+				</copy_number_alteration>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>BRCA2</gene>
+					<position>Chr13</position>
+					<type>Heterozygous deletion</type>
+				</copy_number_alteration>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>AXIN1, PALB2, TSC2</gene>
+					<position>Chr16</position>
+					<type>Heterozygous deletion</type>
+				</copy_number_alteration>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>BRCA1, NF1</gene>
+					<position>Chr17</position>
+					<type>Heterozygous deletion</type>
+				</copy_number_alteration>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>CHEK2, NF2</gene>
+					<position>Chr22</position>
+					<type>Heterozygous deletion</type>
+				</copy_number_alteration>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>RAD50</gene>
+					<position>Chr5</position>
+					<type>Heterozygous deletion</type>
+				</copy_number_alteration>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>CDKN2A, TSC1</gene>
+					<position>Chr9</position>
+					<type>Heterozygous deletion</type>
+				</copy_number_alteration>
+			</copy_number_alterations>
+			<rearrangements>
+			</rearrangements>
+			<biomarkers>
+				<microsatellite_instability>
+					<status>翊宸</status>
+				</microsatellite_instability>
+				<tumor_mutation_burden>
+					<score>3.8</score>
+				</tumor_mutation_burden>
+			</biomarkers>
+		</variant-report>
+	</rr:ResultsPayload>
+</rr:ResultsReport>

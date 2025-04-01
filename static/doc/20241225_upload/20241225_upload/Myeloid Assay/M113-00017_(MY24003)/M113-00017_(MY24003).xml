@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rr:ResultsReport>
+	<rr:ResultsPayload>
+		<FinalReport>
+			<Sample>
+				<FM_Id></FM_Id>
+				<SampleId></SampleId>
+				<BlockId></BlockId>
+				<TRFNumber></TRFNumber>
+				<TestType>Oncomine Myeloid Assay</TestType>
+				<SpecFormat>Bone Marrow</SpecFormat>
+				<ReceivedDate>2024/01/18</ReceivedDate>
+			</Sample>
+			<PMI>
+				<ReportId>MY24003</ReportId>
+				<MRN>44097952</MRN>
+				<FullName>李玠霖</FullName>
+				<FirstName></FirstName>
+				<LastName></LastName>
+				<SubmittedDiagnosis>Acute Myeloid Leukemia</SubmittedDiagnosis>
+				<Gender>Male</Gender>
+				<DOB></DOB>
+				<OrderingMD>蕭樑材</OrderingMD>
+				<OrderingMDId>DOC1751J</OrderingMDId>
+				<Pathologist></Pathologist>
+				<CopiedPhysician1></CopiedPhysician1>
+				<MedFacilName></MedFacilName>
+				<MedFacilID></MedFacilID>
+				<SpecSite></SpecSite>
+				<CollDate></CollDate>
+				<ReceivedDate></ReceivedDate>
+				<CountryOfOrigin></CountryOfOrigin>
+			</PMI>
+		</FinalReport>
+		<variant-report>
+			<short_variants>
+				<short_variant>
+					<cds_effect>c.99T&gt;C</cds_effect>
+					<depth>1817</depth>
+					<functional_effect>synonymous</functional_effect>
+					<gene>CEBPA</gene>
+					<percent_reads>16.18%</percent_reads>
+					<position>chr19:33793222</position>
+					<protein_effect>p.(F33=)</protein_effect>
+					<transcript>NM_004364.4</transcript>
+				</short_variant>
+			</short_variants>
+			<copy_number_alterations>
+			</copy_number_alterations>
+			<rearrangements>
+			</rearrangements>
+			<biomarkers>
+				<microsatellite_instability>
+					<status></status>
+				</microsatellite_instability>
+				<tumor_mutation_burden>
+					<score></score>
+				</tumor_mutation_burden>
+			</biomarkers>
+		</variant-report>
+	</rr:ResultsPayload>
+</rr:ResultsReport>

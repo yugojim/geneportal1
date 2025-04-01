@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rr:ResultsReport xmlns:rr="http://integration.foundationmedicine.com/reporting" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://integration.foundationmedicine.com/reporting http://integration.foundationmedicine.com/reporting/ResultsReport.2.1.xsd">
+  <rr:CustomerInformation>
+    <rr:ReferenceID>01-2024-00036810</rr:ReferenceID>
+    <rr:CSN />
+    <rr:TRF>ORD-1797022-01</rr:TRF>
+    <rr:MRN>21455903</rr:MRN>
+    <rr:PhysicianId>109266</rr:PhysicianId>
+    <rr:NPI />
+  </rr:CustomerInformation>
+  <rr:ResultsPayload>
+    <FinalReport xmlns:xsd="http://www.w3.org/2001/XMLSchema" StagingId="1441751" clinicalId="1443046" xsi:noNamespaceSchemaLocation="http://integration.foundationmedicine.com/reporting/ClinicalReport.1.1.xsd">
+      <Application>
+        <ApplicationSettings>
+          <ApplicationSetting>
+            <Name>Statement</Name>
+            <Value />
+          </ApplicationSetting>
+        </ApplicationSettings>
+      </Application>
+      <DemographicCorrectionDate />
+      <ReportId>ORD-1797022-01</ReportId>
+      <SampleName>US1711725.01</SampleName>
+      <Version>0</Version>
+      <Sample>
+        <FM_Id>ORD-1797022-01</FM_Id>
+        <SampleId>US1711725.01</SampleId>
+        <BlockId>YMTH 03/15/1950</BlockId>
+        <TRFNumber>ORD-1797022-01</TRFNumber>
+        <TestType>FoundationOneLiquidDx</TestType>
+        <SpecFormat>Tube Set</SpecFormat>
+        <ReceivedDate>2024-01-12</ReceivedDate>
+        <processSites>
+          <processSite address="150 Second St., 1st Floor, Cambridge, MA 02141" cliaNumber="22D2027531" locationID="1" locationName="Cambridge" processID="1" processName="Extracted DNA" />
+          <processSite address="150 Second St., 1st Floor, Cambridge, MA 02141" cliaNumber="22D2027531" locationID="1" locationName="Cambridge" processID="1" processName="LC" />
+        </processSites>
+      </Sample>
+      <PMI>
+        <ReportId>ORD-1797022-01</ReportId>
+        <MRN>21455903</MRN>
+        <FullName>Tsai Huang, Yen-Mei</FullName>
+        <FirstName>Yen-Mei</FirstName>
+        <LastName>Tsai Huang</LastName>
+        <SubmittedDiagnosis>Cholangiocarcinoma (NOS)</SubmittedDiagnosis>
+        <Gender>Female</Gender>
+        <DOB>1950-03-15</DOB>
+        <OrderingMD>Yeh, Yi-Chen</OrderingMD>
+        <OrderingMDId>109266</OrderingMDId>
+        <Pathologist>Not Provided</Pathologist>
+        <CopiedPhysician1 />
+        <MedFacilName>Taipei Veterans General Hospital</MedFacilName>
+        <MedFacilID>205872</MedFacilID>
+        <SpecSite>Blood</SpecSite>
+        <CollDate>2024-01-09</CollDate>
+        <ReceivedDate>2024-01-12</ReceivedDate>
+        <CountryOfOrigin>TW</CountryOfOrigin>
+      </PMI>
+      <PertinentNegatives />
+      <Summaries alterationCount="10" clinicalTrialCount="0" resistiveCount="0" sensitizingCount="0" />
+      <VariantProperties>
+        <VariantProperty geneName="ASXL1" isVUS="true" variantName="D1163N" />
+        <VariantProperty geneName="BRCA2" isVUS="true" variantName="A2351G" />
+        <VariantProperty geneName="CDK12" isVUS="true" variantName="D1285N" />
+        <VariantProperty geneName="KDR" isVUS="true" variantName="D1241N" />
+        <VariantProperty geneName="MET" isVUS="true" variantName="C95Y" />
+        <VariantProperty geneName="NTRK3" isVUS="true" variantName="L613I" />
+        <VariantProperty geneName="RAD21" isVUS="true" variantName="E534D" />
+      </VariantProperties>
+      <priorTests />
+      <Genes>
+        <Gene>
+          <Name>Blood Tumor Mutational Burden</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>00</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="00" />
+              </AlterationProperties>
+              <Interpretation>Blood tumor mutational burden (bTMB, also known as mutation load) is a measure of the number of somatic protein-coding base substitution and insertion/deletion mutations from circulating tumor DNA in blood. TMB is affected by a variety of causes, including exposure to mutagens such as ultraviolet light in melanoma (Pfeifer et al., 2005; 15748635, Hill et al., 2013; 23875803) and cigarette smoke in lung cancer (Pfeifer et al., 2002; 12379884, Rizvi et al., 2015; 25765070), treatment with temozolomide-based chemotherapy in glioma (Johnson et al., 2014; 24336570, Choi et al., 2018; 29452419), mutations in the proofreading domains of DNA polymerases encoded by the POLE and POLD1 genes (Cancer Genome Atlas Research Network, 2013; 23636398, Briggs and Tomlinson, 2013; 23447401, Heitzer and Tomlinson, 2014; 24583393, Cancer Genome Atlas Network, 2012; 22810696, Roberts and Gordenin, 2014; 25568919), and microsatellite instability (MSI) (Cancer Genome Atlas Research Network, 2013; 23636398, Cancer Genome Atlas Network, 2012; 22810696, Roberts and Gordenin, 2014; 25568919). High bTMB levels were not detected in this sample. It is unclear whether the bTMB levels in this sample would be predicted to be associated with sensitivity to PD-1- or PD-L1-targeting immune checkpoint inhibitors, alone or in combination with other agents (Socinski et al., 2019; ESMO Abstract LBA83, Gandara et al., 2018; 30082870, Wang et al., 2019; 30816954, Aggarwal et al., 2020; 32102950, Rizvi et al., 2019; ASCO Abstract 9016). Depending on the clinical context, TMB testing of an alternate sample or by another methodology could be considered. Among cholangiocarcinoma and gallbladder cancer cases profiled by F1LCDx, 4.8% and 8.7% of cases had a blood tumor mutational burden (bTMB) of &gt;10 Muts/Mb, respectively (Mishima et al., 2023; DOI: 10.1016/j.jlb.2023.100003). Published data investigating the prognostic implications of bTMB levels in biliary tract cancer are limited (PubMed, Jul 2023). Although cases with hypermutated biliary tract cancer were enriched in a subgroup with poor prognosis in 1 study (Nakamura et al., 2015; 26258846), TMB-high (≥10 mut/Mb) status in biliary adenocarcinoma not treated with immunotherapy was not significantly associated with OS in another study, in which patients with TMB-high tumors experienced numerically longer OS compared with patients with TMB-low tumors (11.5 vs. 8.4 months, adjusted HR=0.65) (Shao et al., 2020; 33119110). On the basis of clinical evidence in solid tumors, increased blood tumor mutational burden (bTMB) may be associated with greater sensitivity to immunotherapeutic agents, including anti-PD-L1 (Socinski et al., 2019 ESMO Abstract LBA83, Gandara et al., 2018; 30082870, Wang et al., 2019; 30816954, Li et al., 2020; ASCO Abstract 6511, Saori et al., 2021; ESMO Abstract 80P, Sturgill et al., 2022; 35274716), anti-PD-1 (Schenker et al., 2022; AACR Abstract CT022, Aggarwal et al., 2020; 32102950, Peters et al., 2019; AACR Abstract CT074, Saori et al., 2021; ESMO Abstract 80P, Sturgill et al., 2022; 35274716), anti-PD-1/CTLA4 therapies (Schenker et al., 2022; AACR Abstract CT022, Saori et al., 2021; ESMO Abstract 80P), anti-PD-L1/CTLA4 therapies (Chen et al., 2020; 32379280, Loree et al., 2021; ASCO GI Abstract 61, Li et al., 2020; ASCO Abstract 6511, Rizvi et al., 2020; 32271377, Si et al., 2021; 33355200, Leighl et al., 2022; 34800700). A Phase 2 multi-solid-tumor trial showed that bTMB ≥16 Muts/Mb (as measured by this assay) was associated with improved survival from treatment with a PD-1 inhibitor alone or in combination with a CTLA-4 inhibitor (Schenker et al., 2022; AACR Abstract CT022). In non-small cell lung cancer (NSCLC), multiple clinical trials have shown patients with higher bTMB derive clinical benefit from immune checkpoint inhibitors following single-agent or combination treatments with either CTLA4 inhibitors or chemotherapy, with reported high bTMB cutpoints ranging from 6 Muts/Mb-16 Muts/Mb (Gandara et al., 2018; 30082870, Socinski et al., 2019 ESMO Abstract LBA83, Aggarwal et al. 2020; 32102950, Rizvi et al., 2020; 32271377, Si et al., 2021; 33355200, Leighl et al., 2022; 34800700). In head and neck squamous cell carcinoma (HNSCC), a Phase 3 trial showed that bTMB ≥16 Muts/Mb (approximate equivalency ≥8 Muts/Mb as measured by this assay) was associated with improved survival from treatment with a PD-L1 inhibitor alone or in combination with a CTLA-4 inhibitor (Li et al., 2020; ASCO Abstract 6511). In colorectal cancer (CRC), a Phase 2 study showed that bTMB TMB ≥28 Muts/Mb (approximate equivalency ≥14 Muts/Mb as measured by this assay) was associated with improved OS from a PD-L1 inhibitor alone or in combination with a CTLA-4 inhibitor (Loree et al., 2021; ASCO GI Abstract 61, Chen et al., 2020; 32379280).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>Microsatellite status</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>MSI-High Not Detected</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="MSI-High Not Detected" />
+              </AlterationProperties>
+              <Interpretation>Microsatellite instability (MSI) is a condition of genetic hypermutability that generates excessive amounts of short insertion/deletion mutations in the genome; it generally occurs at microsatellite DNA sequences and is caused by a deficiency in DNA MMR in the tumor (Kocarnik et al., 2015; 26337942). Defective MMR and consequent MSI occur as a result of genetic or epigenetic inactivation of one of the MMR pathway proteins, primarily MLH1, MSH2, MSH6, or PMS2 (You et al., 2010; 21081928, Bairwa et al., 2014; 24623249, Kocarnik et al., 2015; 26337942). The level of MSI in this sample could not be determined with confidence. Depending on the clinical context, MSI testing of an alternate sample or by another methodology could be considered. MSI-H is infrequent in cholangiocarcinoma, reported in 1% of samples (Javle et al., 2019; ASCO Abstract 4087). A non-zero level of MSI has been reported in 18-49% of cholangiocarcinoma cases (Momoi et al., 2001; 11580146, Limpaiboon et al., 2002; 12175538, Liu et al., 2002; 12402306, Liengswangwong et al., 2003; 14506736), although the studies did not specify what fraction of cases were MSI-H. A higher frequency of MSI (63%) was reported in patients with intrahepatic cholangiocarcinoma associated with exposure to Thorotrast (Liu et al., 2002; 12402306). One study reported that MSI is associated with poor prognosis in liver fluke-related cholangiocarcinoma (Limpaiboon et al., 2002; 12175538). On the basis of prospective clinical evidence in multiple solid tumor types, microsatellite instability (MSI) and associated increased tumor mutational burden (TMB) (Jass, 2007; 17204026, Lal et al., 2015; 25949894) may predict sensitivity to immune checkpoint inhibitors, including the approved PD-1-targeting agents cemiplimab, dostarlimab, nivolumab (alone or in combination with ipilimumab), pembrolizumab, and tislelizumab (Overman et al., 2017; 28734759, Overman et al., 2018; 29355075, Overman et al., 2019; ASCO Abstract 635, Lipson et al., 2013; 23169436, Le et al., 2015; 26028255, Rizvi et al., 2015; 25765070, Oaknin et al., 2020; 33001143, Li et al., 2022; ASCO GI Abstract 1) and PD-L1-targeting agents atezolizumab, avelumab, and durvalumab (Hochster et al., 2017; ASCO Abstract 673, Fleming et al., 2018; ASCO Abstract 5585, Bang et al., 2018; ASCO Abstract 92). As the MSI status of this tumor is unknown, the relevance of these therapeutic approaches is unclear.</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>ctDNA Tumor Fraction</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>Low</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="Low" />
+              </AlterationProperties>
+              <Interpretation>The ctDNA tumor fraction provides an estimate of the percentage of circulating tumor DNA (ctDNA) present in a cell-free DNA (cfDNA) sample. The ctDNA tumor fraction algorithm utilized for FoundationOne Liquid CDx integrates multiple distinct genomic features, including aneuploidy and the observed allele frequencies of somatic short variants and rearrangements. Low ctDNA tumor fraction (&lt;1.0%) was detected in this sample. For patients with a negative liquid biopsy result with low ctDNA tumor fraction, reflex tissue testing should be considered to confirm tumor mutation status, if feasible (Rolfo et al., 2023; ASCO Abstract 9076). In a large genomic study of 25 solid tumor types, 69% of liquid biopsy samples had ctDNA levels &gt;1% as measured by an investigational composite tumor fraction algorithm with a median tumor fraction of 2.2% across tumor types (Husain et al., 2022; 36265119). Median ctDNA levels were reported to be highest in small cell lung cancer, liver, colon, and bladder tumor types and lowest in glioma and appendiceal cancers (Husain et al., 2022; 36265119). Higher ctDNA levels were reported for patients with metastatic (Stage 4) tumors compared with patients with localized disease (Stages 1 to 3) (Bettegowda et al., 2014; 24553385). Higher ctDNA levels have been reported to be associated with worse prognosis in a variety of advanced solid tumors (Cousin et al., 2023, ASCO Abstract 3005), including non-small cell lung cancer (NSCLC) (Reichert et al., 2023; 36208697), colorectal cancer (CRC) (Reichert et al., 2023; 36208697, Fan et al., 2017; 28187169), pancreatic cancer (Lapin et al., 2018; 30400802), Ewing sarcoma and osteosarcoma (Shulman et al., 2018; 30131550), prostate cancer (Reichert et al., 2023; 36208697, Sweeney et al., 2023, ASCO GU Abstract LBA249, Choudhury et al., 2018; 30385733, Conteduca et al., 2019; ASCO abstract 5039), breast cancer (Reichert et al., 2023; 36208697, Stover et al., 2018; 29298117), leiomyosarcoma (Hemming et al., 2019; 30793095), esophageal cancer (Egyud et al., 2019; 31059681), and gastrointestinal cancer (Vu et al., 2020; DOI: 10.1200/PO.19.00204). Specimens with low circulating-tumor DNA (ctDNA) tumor fraction have reduced positive predictive agreement and negative predictive value compared with specimens with high ctDNA tumor fraction (Rolfo et al., 2023; ASCO Abstract 9076). In a study of advanced non-small cell lung cancer (NSCLC), additional follow-up tissue testing identified driver alterations in 51% of patients with a low ctDNA tumor fraction (Rolfo et al., 2023; ASCO Abstract 9076). When high ctDNA tumor fraction is not detected, it does not exclude the presence of disease burden or compromise the confidence of reported alterations. A negative result does not rule out the presence of a mutation below the limits of detection of the assay. Patients for whom no companion diagnostic alterations are detected should be considered for confirmation with an FDA-approved or appropriately validated in other countries tumor tissue test, if available. Single observations or changes over time of circulating-tumor DNA (ctDNA) quantity are not currently part of any clinical decision-making guidelines but may be a useful indicator for future cancer management (Pascual et al., 2022; 35809752, Bronkhorst et al., 2019; 30923679, Raja et al., 2018; 30093454, Hrebien et al., 2019; 30860573, Conteduca et al., 2019; ASCO Abstract 5039, Choudhury et al., 2018; 30385733, Goodall et al., 2017; 28450425, Goldberg et al., 2018; 29330207).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+      </Genes>
+      <Trials />
+      <References>
+        <Reference number="0">
+          <ReferenceId>26337942</ReferenceId>
+          <FullCitation>Kocarnik JM, et al. Gastroenterol Rep (Oxf) (2015) pmid: 26337942</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="1">
+          <ReferenceId>21081928</ReferenceId>
+          <FullCitation>You JF, et al. Br. J. Cancer (2010) pmid: 21081928</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="2">
+          <ReferenceId>24623249</ReferenceId>
+          <FullCitation>Bairwa NK, et al. Methods Mol. Biol. (2014) pmid: 24623249</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="3">
+          <ReferenceId>11580146</ReferenceId>
+          <FullCitation>Momoi H, et al. J. Hepatol. (2001) pmid: 11580146</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="4">
+          <ReferenceId>12175538</ReferenceId>
+          <FullCitation>Limpaiboon T, et al. Cancer Lett. (2002) pmid: 12175538</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="5">
+          <ReferenceId>12402306</ReferenceId>
+          <FullCitation>Liu D, et al. Int. J. Cancer (2002) pmid: 12402306</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="6">
+          <ReferenceId>14506736</ReferenceId>
+          <FullCitation>Liengswangwong U, et al. Int. J. Cancer (2003) pmid: 14506736</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="7">
+          <ReferenceId>17204026</ReferenceId>
+          <FullCitation>Histopathology (2007) pmid: 17204026</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="8">
+          <ReferenceId>25949894</ReferenceId>
+          <FullCitation>Lal N, et al. Oncoimmunology (2015) pmid: 25949894</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="9">
+          <ReferenceId>28734759</ReferenceId>
+          <FullCitation>Overman MJ, et al. Lancet Oncol. (2017) pmid: 28734759</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="10">
+          <ReferenceId>29355075</ReferenceId>
+          <FullCitation>Overman MJ, et al. J. Clin. Oncol. (2018) pmid: 29355075</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="11">
+          <ReferenceId>23169436</ReferenceId>
+          <FullCitation>Lipson EJ, et al. Clin. Cancer Res. (2013) pmid: 23169436</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="12">
+          <ReferenceId>26028255</ReferenceId>
+          <FullCitation>Le DT, et al. N. Engl. J. Med. (2015) pmid: 26028255</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="13">
+          <ReferenceId>25765070</ReferenceId>
+          <FullCitation>Rizvi NA, et al. Science (2015) pmid: 25765070</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="14">
+          <ReferenceId>33001143</ReferenceId>
+          <FullCitation>Oaknin A, et al. JAMA Oncol (2020) pmid: 33001143</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="15">
+          <ReferenceId>36265119</ReferenceId>
+          <FullCitation>Husain H, et al. JCO Precis Oncol (2022) pmid: 36265119</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="16">
+          <ReferenceId>24553385</ReferenceId>
+          <FullCitation>Bettegowda C, et al. Sci Transl Med (2014) pmid: 24553385</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="17">
+          <ReferenceId>36208697</ReferenceId>
+          <FullCitation>Reichert ZR, et al. Ann Oncol (2023) pmid: 36208697</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="18">
+          <ReferenceId>28187169</ReferenceId>
+          <FullCitation>Fan G, et al. PLoS ONE (2017) pmid: 28187169</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="19">
+          <ReferenceId>30400802</ReferenceId>
+          <FullCitation>Lapin M, et al. J Transl Med (2018) pmid: 30400802</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="20">
+          <ReferenceId>30131550</ReferenceId>
+          <FullCitation>Shulman DS, et al. Br. J. Cancer (2018) pmid: 30131550</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="21">
+          <ReferenceId>30385733</ReferenceId>
+          <FullCitation>Choudhury AD, et al. JCI Insight (2018) pmid: 30385733</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="22">
+          <ReferenceId>29298117</ReferenceId>
+          <FullCitation>Stover DG, et al. J. Clin. Oncol. (2018) pmid: 29298117</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="23">
+          <ReferenceId>30793095</ReferenceId>
+          <FullCitation>Hemming ML, et al. JCO Precis Oncol (2019) pmid: 30793095</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="24">
+          <ReferenceId>31059681</ReferenceId>
+          <FullCitation>Egyud M, et al. Ann. Thorac. Surg. (2019) pmid: 31059681</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="25">
+          <ReferenceId>35809752</ReferenceId>
+          <FullCitation>Pascual J, et al. Ann Oncol (2022) pmid: 35809752</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="26">
+          <ReferenceId>30923679</ReferenceId>
+          <FullCitation>Bronkhorst AJ, et al. Biomol Detect Quantif (2019) pmid: 30923679</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="27">
+          <ReferenceId>30093454</ReferenceId>
+          <FullCitation>Raja R, et al. Clin. Cancer Res. (2018) pmid: 30093454</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="28">
+          <ReferenceId>30860573</ReferenceId>
+          <FullCitation>Hrebien S, et al. Ann. Oncol. (2019) pmid: 30860573</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="29">
+          <ReferenceId>28450425</ReferenceId>
+          <FullCitation>Goodall J, et al. Cancer Discov (2017) pmid: 28450425</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="30">
+          <ReferenceId>29330207</ReferenceId>
+          <FullCitation>Goldberg SB, et al. Clin. Cancer Res. (2018) pmid: 29330207</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="31">
+          <ReferenceId>15748635</ReferenceId>
+          <FullCitation>Pfeifer GP, et al. Mutat. Res. (2005) pmid: 15748635</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="32">
+          <ReferenceId>23875803</ReferenceId>
+          <FullCitation>Hill VK, et al. Annu Rev Genomics Hum Genet (2013) pmid: 23875803</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="33">
+          <ReferenceId>12379884</ReferenceId>
+          <FullCitation>Pfeifer GP, et al. Oncogene (2002) pmid: 12379884</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="34">
+          <ReferenceId>24336570</ReferenceId>
+          <FullCitation>Johnson BE, et al. Science (2014) pmid: 24336570</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="35">
+          <ReferenceId>29452419</ReferenceId>
+          <FullCitation>Choi S, et al. Neuro-oncology (2018) pmid: 29452419</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="36">
+          <ReferenceId>23636398</ReferenceId>
+          <FullCitation>Cancer Genome Atlas Research Network, et al. Nature (2013) pmid: 23636398</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="37">
+          <ReferenceId>23447401</ReferenceId>
+          <FullCitation>Briggs S, et al. J. Pathol. (2013) pmid: 23447401</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="38">
+          <ReferenceId>24583393</ReferenceId>
+          <FullCitation>Heitzer E, et al. Curr. Opin. Genet. Dev. (2014) pmid: 24583393</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="39">
+          <ReferenceId>22810696</ReferenceId>
+          <FullCitation>Nature (2012) pmid: 22810696</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="40">
+          <ReferenceId>25568919</ReferenceId>
+          <FullCitation>Roberts SA, et al. Nat. Rev. Cancer (2014) pmid: 25568919</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="41">
+          <ReferenceId>30082870</ReferenceId>
+          <FullCitation>Gandara DR, et al. Nat. Med. (2018) pmid: 30082870</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="42">
+          <ReferenceId>30816954</ReferenceId>
+          <FullCitation>Wang Z, et al. JAMA Oncol (2019) pmid: 30816954</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="43">
+          <ReferenceId>32102950</ReferenceId>
+          <FullCitation>Aggarwal C, et al. Clin. Cancer Res. (2020) pmid: 32102950</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="44">
+          <ReferenceId>26258846</ReferenceId>
+          <FullCitation>Nakamura H, et al. Nat. Genet. (2015) pmid: 26258846</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="45">
+          <ReferenceId>33119110</ReferenceId>
+          <FullCitation>Shao C, et al. JAMA Netw Open (2020) pmid: 33119110</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="46">
+          <ReferenceId>35274716</ReferenceId>
+          <FullCitation>Sturgill EG, et al. Oncologist (2022) pmid: 35274716</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="47">
+          <ReferenceId>32379280</ReferenceId>
+          <FullCitation>Chen EX, et al. JAMA Oncol (2020) pmid: 32379280</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="48">
+          <ReferenceId>32271377</ReferenceId>
+          <FullCitation>Rizvi NA, et al. JAMA Oncol (2020) pmid: 32271377</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="49">
+          <ReferenceId>33355200</ReferenceId>
+          <FullCitation>Si H, et al. Clin Cancer Res (2021) pmid: 33355200</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="50">
+          <ReferenceId>34800700</ReferenceId>
+          <FullCitation>Leighl NB, et al. J Thorac Oncol (2022) pmid: 34800700</FullCitation>
+          <Include>true</Include>
+        </Reference>
+      </References>
+      <Signatures>
+        <Signature>
+          <ServerTime>2024-01-22 16:04:14</ServerTime>
+          <OpName>Chelsea Marcus, M.D. | Lauren L. Ritterhouse Casariego, M.D., Ph.D., Laboratory Director</OpName>
+          <Text>Chelsea Marcus, M.D. | Lauren L. Ritterhouse Casariego, M.D., Ph.D., Laboratory Director</Text>
+        </Signature>
+      </Signatures>
+      <reportProperties>
+        <reportProperty identifier="QualityControlMetrics" key="MedianCoverageValue">
+          <value>N/A</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="TumorMutationBurdenScore">
+          <value>Units Not Reported</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="MicrosatelliteStatusScore">
+          <value>0 fraction-unstable-loci</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="LossOfHeterozygosityScore">
+          <value>Units Not Reported</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="BloodTumorMutationalBurdenScore">
+          <value>0 Muts/Mb</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="TumorFractionScore">
+          <value>Units Not Reported</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="ComprehensiveTumorFractionScore">
+          <value>0.0%</value>
+        </reportProperty>
+      </reportProperties>
+      <comments />
+      <AAC>
+        <Amendmends />
+      </AAC>
+    </FinalReport>
+    <variant-report xmlns="http://foundationmedicine.com/compbio/variant-report-external" disease="LIVER" disease-ontology="Cholangiocarcinoma (NOS)" flowcell-analysis="2000033291" gender="female" pathology-diagnosis="Adeno CA, Cholangiocarcinoma" pipeline-version="v3.29.0" purity-assessment="5.11" specimen="ORD-1797022-01*US1711725.01" study="CLINICAL-F1LCDx" test-request="ORD-1797022-01" test-type="FoundationOneLiquidDx" tissue-of-origin="Blood" xsi:schemaLocation="http://foundationmedicine.com/compbio/variant-report-external http://integration.foundationmedicine.com/reporting/variant-report-external-2.2.xsd">
+      <samples>
+        <sample bait-set="AB1" name="SQ-US1711725.01-1" nucleic-acid-type="DNA" />
+      </samples>
+      <quality-control status="Pass" />
+      <short-variants>
+        <short-variant allele-fraction="0.0013" cds-effect="284G&gt;A" depth="8955" equivocal="false" functional-effect="missense" gene="MET" percent-reads="0.13" position="chr7:116339422" protein-effect="C95Y" status="unknown" strand="+" transcript="NM_000245">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.4992" cds-effect="3721G&gt;A" depth="1250" equivocal="false" functional-effect="missense" gene="KDR" percent-reads="49.92" position="chr4:55948744" protein-effect="D1241N" status="unknown" strand="-" transcript="NM_002253">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.4901" cds-effect="7052C&gt;G" depth="7494" equivocal="false" functional-effect="missense" gene="BRCA2" percent-reads="49.01" position="chr13:32929042" protein-effect="A2351G" status="unknown" strand="+" transcript="NM_000059">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.5068" cds-effect="3487G&gt;A" depth="1829" equivocal="false" functional-effect="missense" gene="ASXL1" percent-reads="50.68" position="chr20:31024002" protein-effect="D1163N" status="unknown" strand="+" transcript="NM_015338">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.4926" cds-effect="1602A&gt;T" depth="611" equivocal="false" functional-effect="missense" gene="RAD21" percent-reads="49.26" position="chr8:117862875" protein-effect="E534D" status="unknown" strand="-" transcript="NM_006265">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.4903" cds-effect="3853G&gt;A" depth="6357" equivocal="false" functional-effect="missense" gene="CDK12" percent-reads="49.03" position="chr17:37686949" protein-effect="D1285N" status="unknown" strand="+" transcript="NM_016507">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.0012" cds-effect="1837C&gt;A" depth="8938" equivocal="false" functional-effect="missense" gene="NTRK3" percent-reads="0.12" position="chr15:88476295" protein-effect="L613I" status="unknown" strand="-" transcript="NM_002530">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </short-variant>
+      </short-variants>
+      <copy-number-alterations />
+      <rearrangements />
+      <biomarkers>
+        <microsatellite-instability status="MSS" />
+        <tumor-mutation-burden score="0.0" status="low" unit="mutations-per-megabase" />
+      </biomarkers>
+      <non-human-content>
+        <non-human organism="HHV-4" reads-per-million="25" status="unknown">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </non-human>
+        <non-human organism="HHV-8" reads-per-million="13" status="unknown">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </non-human>
+        <non-human organism="HPV-16" reads-per-million="15" status="unknown">
+          <dna-evidence sample="SQ-US1711725.01-1" />
+        </non-human>
+      </non-human-content>
+    </variant-report>
+  </rr:ResultsPayload>
+</rr:ResultsReport>

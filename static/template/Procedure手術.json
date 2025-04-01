@@ -1,0 +1,30 @@
+{
+  "resourceType": "Procedure",
+  "id": "",
+  "status": "completed",  
+  "subject": {
+    "reference": "Patient/2028XXXX"
+  },
+  "encounter": {
+    "reference": "Encounter/I2021XXXXXXX"
+  },
+  "performedPeriod": {
+    "start": "2021-09-28T14:33:10+01:00",
+    "end": "2021-09-28T17:17:10+01:00"
+  },
+  "report": [
+    {
+      "reference": "DiagnosticReport/9200220XXXXX"
+    }
+  ],
+  "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "Organization/NCKUHospital",
+                    "code": "Left modified radical mastectomy (Auchincloss)"
+                }
+            ]
+		}
+	]
+}

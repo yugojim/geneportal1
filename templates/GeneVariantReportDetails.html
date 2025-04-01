@@ -1,0 +1,385 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>VariantReport</title>	
+	{% include 'utilities-css.html' %}
+    <script>
+        function openEditWindow(type, data) {
+            let newWindow = window.open("", "_blank", "width=500,height=500");
+            newWindow.document.write(`
+                <html>
+                <head>
+                    <title>Edit ${type}</title>
+                </head>
+                <body>
+                    <h2>Edit ${type}</h2>
+                    <textarea id="editField" style="width: 100%; height: 300px;">${data}</textarea>
+                    <br>
+                    <button onclick="window.opener.updateData('${type}', document.getElementById('editField').value); window.close();">Save</button>
+                </body>
+                </html>
+            `);
+        }
+
+        function updateData(type, newData) {
+            document.getElementById(`${type}_data`).innerText = newData;
+        }
+    </script>	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	<!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="card-header py-3">
+                        <center><h3 class="m-0 font-weight-bold text-primary">VariantReport</h3></center>
+                    </div>
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h4 class="m-0 font-weight-bold text-primary">Report No <span class="badge badge-secondary">{{ data.2}}</span> MP No <span class="badge badge-secondary">{{ data.3}}</span></h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">xmlns</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.xmlns }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">disease</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.disease }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">disease_ontology</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.disease_ontology }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">flowcell_analysis</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.flowcell_analysis }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">gender</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.gender }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">pathology_diagnosis</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.pathology_diagnosis }}
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">percent_tumor_nuclei</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.percent_tumor_nuclei }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">pipeline_version</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.pipeline_version }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">purity_assessment</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.purity_assessment }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">specimen</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.specimen }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">study</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.study }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">test_request</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.test_request }}
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">study</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.study }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">test_request</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.test_request }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">test_type</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.test_type }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">tissue_of_origin</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.tissue_of_origin }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">xsischemaLocation</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.xsischemaLocation }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">quality_control</div>									 
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.quality_control.status }}
+								</div>
+							</div>
+							
+                        </div>
+                    </div>
+					
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h4 class="m-0 font-weight-bold text-primary">samples</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">bait_set</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.samples.sample.bait_set }}
+								</div>
+								<div class="form-group col-md-2">
+								<div class="font-weight-bold text-success">mean_exon_depth</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.samples.sample.mean_exon_depth }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">name</div>
+									
+								</div>
+								<div class="form-group col-md-2">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.samples.sample.name }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">nucleic_acid_type</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.samples.sample.nucleic_acid_type }}
+								</div>
+								<div class="form-group col-md-2">
+								<div class="font-weight-bold text-success">non_human_content</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.non_human_content }}
+								</div>
+							</div>
+							
+                        </div>
+                    </div>
+					
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h4 class="m-0 font-weight-bold text-primary">biomarkers</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+								<div class="form-group col-md-2">
+								<div class="font-weight-bold text-success">microsatellite_instability</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.biomarkers.microsatellite_instability.status }}
+								</div>
+								<div class="form-group col-md-2">
+								<div class="font-weight-bold text-success">tumor_mutation_burden_score</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.biomarkers.tumor_mutation_burden.score }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">status</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.biomarkers.tumor_mutation_burden.status }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">unit</div>
+									
+								</div>
+								<div class="form-group col-md-2">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.biomarkers.tumor_mutation_burden.unit }}
+								</div>
+							</div>
+							
+                        </div>
+                    </div>
+					
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h4 class="m-0 font-weight-bold text-primary">rearrangements</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">description</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.description }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">equivocal</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.equivocal }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">in_frame</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.in_frame }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">other_gene</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.other_gene }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">pos1</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.pos1 }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">pos2</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.pos2 }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">status</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.status }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">supporting_read_pairs</div>
+									
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.supporting_read_pairs }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">targeted_gene</div>	
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.targeted_gene }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">type</div>	
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.type }}
+								</div>
+								<div class="form-group col-md-1">
+								<div class="font-weight-bold text-success">dna_evidence</div>				
+								</div>
+								<div class="form-group col-md-1">
+									{{ data.1.ResultsReport.ResultsPayload.variant_report.rearrangements.rearrangement.dna_evidence.sample }}
+								</div>
+							</div>
+							
+                        </div>
+                    </div>
+					
+
+					
+					
+
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}    
+</body>
+
+</html>

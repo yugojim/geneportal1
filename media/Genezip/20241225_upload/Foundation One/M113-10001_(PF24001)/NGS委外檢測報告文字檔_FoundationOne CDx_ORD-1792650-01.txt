@@ -1,0 +1,62 @@
+ORD-1792650-01
+
+PATHOLOGICAL DIAGNOSIS: Bone osteosarcoma
+Test Name: FoundationOne CDX 
+
+Relevant Biomarkers 
+
+Biomarker Findings
+Microsatellite status - MS-Stable
+Tumor Mutation Burden - 1 Muts/Mb
+
+Genomic Findings alternation [VAF%]
+CCNE1 amplification
+GID4 (C17orf39) amplification
+TP53 N247I [55.69%]
+
+Diagnosis: Bone osteosarcoma
+MP No.:
+Sample Type: Lung, Slide Deck
+Block Number: S112-64474 F (PF24001)
+Tumor Percentage: 40%
+NGS QC parameters: The median exon coverage for this sample is 723x
+
+Analytic Interpretation: substitutions, insertion and deletion alterations (indels), and copy number alterations(CNAs) 
+in 324 genes and select gene rearrangements, as well as genomic signatures including microsatellite instability (MSI), tumor
+mutational burden(TMB) 
+
+Analytical sensitivity : >99% of exons at coverage >100X
+
+Methodology: Illumina HiSeq platform
+
+Procedure: employ a single DNA extraction method from routine FFPE biopsy or surgical resection specimens, 50-1000 ng of which 
+will undergo whole-genome shotgun library construction and hybridization-based capture of all coding exons from 309 cancer-related genes
+, one promoter region, one non-coding (ncRNA), and select intronic regions from 34 commonly rearranged genes
+, 21 of which also include the coding exons. The assay therefore includes detection of alterations in a total of 324 genes.
+Using an Illumina HiSeq platform, hybrid capture¡Vselected libraries will be sequenced to high uniform depth 
+(targeting >500X median coverage with >99% of exons at coverage >100X). Sequence data will be processed using a customized 
+analysis pipeline designed to accurately detect all classes of genomic alterations, including base substitutions, indels
+, focal copy number amplifications, homozygous gene deletions, and selected genomic rearrangements (e.g.,gene fusions). 
+Additionally, genomic signatures including loss of heterozygosity (LOH), microsatellite instability (MSI) 
+and tumor mutational burden (TMB) will be reported.
+
+
+Disclaimer:
+1. The information in this Report must be considered in conjunction with all other relevant information regarding 
+a particular patient, before the patient¡¦s treating physician recommends a course of treatment. Decisions on patient care 
+and treatment must be based on the independent medical judgment of the treating physician, taking into consideration all 
+applicable information concerning the patient¡¦s condition, such as patient and family history, physical examinations, 
+information from other diagnostic tests, and patient preferences, in accordance with the standard of care in a given community. 
+A treating physician's decisions should not be based on a single test, such as this Test, or the information contained in this Report. 
+
+2. Foundation Medicine Inc. only provides PDF report as an official issuance of the test result. Any other 
+transformed format is not an "official / formal solution" and not guarantee the accuracy of this conversion. It is 
+suggested the hospital to verify the outputs and validate the suitability of use. 
+
+About FOUNDATIONONE CDx, FOUNDATIONONE LIQUID CDx & FOUNDATIONONE HEME:
+FOUNDATIONONE CDx, FOUNDATIONONE LIQUID CDx & FOUNDATIONONE HEME were developed and its performance characteristics 
+determined by Foundation Medicine, Inc. (Foundation Medicine). FOUNDATIONONE CDx, FOUNDATIONONE LIQUID CDx & 
+FOUNDATIONONE HEME may be used for clinical purposes and should not be regarded as purely investigational or for research only. 
+Foundation Medicine¡¦s clinical reference laboratories are qualified to perform high complexity clinical testing. 
+
+Reference: Frampton GM et al. Nat Biotechnol 2013

@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Gene Report</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+	{% if user.is_authenticated %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+				
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3><span class="badge badge-secondary">ShortVariants Count</span><span class="badge badge-Success">{{ FuncResult }}</span></h3>
+						{% if FuncResult  > 0 %}
+								<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="downloadBtn" onclick="downloadJSONAsCSV(this)"><i
+								class="fas fa-download fa-sm text-white-50"></i>Export Table</button>
+						{% endif %}	
+					</div>
+					
+					<form method="post" action="{% url 'ShortVariants' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label><h5>gene</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="gene" name="gene" value="{{search.gene}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>Protein change</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="protein_effect" name="protein_effect" value="{{search.protein_effect}}">
+							</div>							
+							<div class="form-group col-md-1">
+								<label><h5>Amino acid change</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="cds_effect" name="cds_effect" value="{{search.cds_effect}}">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label><h5>Allele fraction</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="allele_fraction" name="allele_fraction" value="{{search.allele_fraction}}">								 
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>Functional effect</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" id="functional_effect" name="functional_effect" value="{{search.functional_effect}}">								 
+							</div>
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+							
+						</div>				  
+					</div>
+					</form>
+					{{data.diagnostics}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">GeneReport</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="Table" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>報告號碼</th>
+											<th>分生號碼</th>
+											<th>病歷號</th>
+											<th>gene</th>
+											<th>Protein change</th>
+											<th>Amino acid change</th>
+											<th>Allele fraction</th>
+											<th>Functional effect</th>
+											<th>Report PDF</th>																	
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>報告號碼</th>
+											<th>分生號碼</th>
+											<th>病歷號</th>
+											<th>gene</th>
+											<th>Protein change</th>
+											<th>Amino acid change</th>
+											<th>Allele fraction</th>
+											<th>Functional effect</th>
+											<th>Report PDF</th>	
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for row in rows %}
+										<tr>											
+											<td>{{row.2}}</td>
+											<td>{{row.3}}</td>
+											<td>{{row.1.ResultsReport.ResultsPayload.FinalReport.PMI.MRN}}</td>											
+											<td>{% for short_variant in row.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant %}{% if short_variant.gene == search.gene or short_variant.protein_effect == search.protein_effect or short_variant.cds_effect == search.cds_effect or short_variant.functional_effect == search.functional_effect and short_variant.allele_fraction == search.allele_fractioncds_effect %}<a href="https://www.oncokb.org/gene/{{ short_variant.gene}}" target="_blank">{{ short_variant.gene}}</a>    {% endif %}{% endfor %}</td>
+											<td>{% for short_variant in row.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant %}{% if short_variant.gene == search.gene or short_variant.protein_effect == search.protein_effect or short_variant.cds_effect == search.cds_effect or short_variant.functional_effect == search.functional_effect and short_variant.allele_fraction == search.allele_fractioncds_effect %}{{ short_variant.protein_effect}}    {% endif %}{% endfor %}</td>
+											<td>{% for short_variant in row.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant %}{% if short_variant.gene == search.gene or short_variant.protein_effect == search.protein_effect or short_variant.cds_effect == search.cds_effect or short_variant.functional_effect == search.functional_effect and short_variant.allele_fraction == search.allele_fractioncds_effect %}{{ short_variant.cds_effect}}    {% endif %}{% endfor %}</td>
+											<td>{% for short_variant in row.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant %}{% if short_variant.gene == search.gene or short_variant.protein_effect == search.protein_effect or short_variant.cds_effect == search.cds_effect or short_variant.functional_effect == search.functional_effect and short_variant.allele_fraction == search.allele_fractioncds_effect %}{{ short_variant.allele_fraction}}    {% endif %}{% endfor %}</td>
+											<td>{% for short_variant in row.1.ResultsReport.ResultsPayload.variant_report.short_variants.short_variant %}{% if short_variant.gene == search.gene or short_variant.protein_effect == search.protein_effect or short_variant.cds_effect == search.cds_effect or short_variant.functional_effect == search.functional_effect and short_variant.allele_fraction == search.allele_fractioncds_effect %}{{ short_variant.functional_effect}}    {% endif %}{% endfor %}</td>
+											<td><a href="/static/doc/gene/{{row.2.split|join:"_"}}_({{row.3.split|join:"_"}}).pdf" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">{{row.3}}</a></td>
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+		</div>
+		{% endif %}
+	</div>
+{% include 'utilities-js.html' %}    
+</body>
+	<script>
+		function downloadJSONAsCSV(){
+		// 取得表格
+		var table = document.getElementById('Table');
+		// 獲取header
+		var headers = [];
+		for (var i = 0; i < table.rows[0].cells.length; i++) {
+			headers[i] = table.rows[0].cells[i].textContent.toLowerCase();
+		}
+		// 取得表格data
+		var data = [];
+		for (var i = 1; i < table.rows.length; i++) {
+			var rowData = {};
+			for (var j = 0; j < table.rows[i].cells.length; j++) {
+				rowData[headers[j]] = table.rows[i].cells[j].textContent;
+			}
+			data.push(rowData);
+		}
+		// data轉Json
+		var jsonData = JSON.stringify(data, null, 2);
+		//console.log(jsonData);
+		//console.log(data);	
+		//const json = '[{"name": "John Doe", "age": 30, "email": "johndoe@example.com"}, {"name": "Jane Smith", "age": 25, "email": "janesmith@example.com"}]';
+		const csv = convertToCSV(jsonData);
+		//console.log(csv);
+		//下載
+		var link = window.document.createElement("a");
+		link.setAttribute("href", "data:text/csv;charset=utf-8,%EF%BB%BF" + encodeURI(csv));
+		link.setAttribute("download", "searchShort_variant.csv");
+		link.click();
+		}
+		
+		function convertToCSV(json) {
+		  const items = JSON.parse(json);
+		  // Get column headers from first item in JSON array
+		  const headers = Object.keys(items[0]);
+		  // Build CSV header row
+		  const csvHeader = headers.join(",");
+		  // Build CSV body rows
+		  const csvBody = items.map(item => {
+			return headers.map(header => {
+			  return item[header];
+			}).join(",");
+		  }).join("\n");
+		  // Combine header and body into single CSV string
+		  const csv = `${csvHeader}\n${csvBody}`;
+		  return csv;
+		}
+	</script>
+</html>

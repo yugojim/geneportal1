@@ -1,0 +1,71 @@
+﻿PATHOLOGICAL DIAGNOSIS:Lung adenocarcinoma
+Test Name: Guardant360
+
+Relevant Biomarkers 
+
+1. Biomarker:[MSI-High ]
+   Result: [ NOT DETECTED ]
+
+ 
+
+Diagnosis: Lung adenocarcinoma
+MP No.: A1092812
+Sample Type: Blood
+Date of blood drawing: JUL/10/2024 
+NGS QC parameters: 
+Average depth 15,000x. Cluster Density between 170000 to 280000. Quality Score (Q30) in read 1, read2 and index higher than 70.0,     
+
+Analytic Interpretation: 
+Guardant360 reports single nucleotide variants, splice site mutations, and insertion and deletion variants (indels) in all clinically relevant exons in 74 genes: 
+AKT1, ALK, APC, AR, ARAF, ARID1A, ATM, BRAF, BRCA1,BRCA2, CCND1, CCND2, CCNE1, CDH1, CDK4, CDK6,CDK12, CDKN2A, CTNNB1, DDR2, EGFR, ERBB2, ESR1, EZH2, FBXW7, FGFR1, FGFR2, FGFR3,
+GATA3, GNA11, GNAQ, GNAS, HNF1A, HRAS, IDH1, IDH2, JAK2, JAK3, KIT, KRAS, MAP2K1, MAP2K2, MAPK1, MAPK3, MET, MLH1, MPL, MTOR, MYC, NF1, NFE2L2, NOTCH1, NPM1, NRAS, 
+NTRK1, NTRK3, PDGFRA, PIK3CA, PTEN, PTPN11, RAF1, RB1, RET, RHEB, RHOA, RIT1, ROS1, SMAD4, SMO, STK11, TERT, TP53, TSC1, VHL.
+Guardant360 reports alterations in the promoter region in select genes: TERT. 
+Guardant360 reports fusion events involving in select genes: ALK, FGFR2, FGFR3, NTRK1, RET, ROS1. 
+Guardant360 reports amplifications in select genes: AR, BRAF, CCND1, CCND2, CCNE1, CDK4, CDK6, EGFR, ERBB2, FGFR1, FGFR2, KIT, KRAS, MET, MYC, PDGFRA, PIK3CA, RAF1.
+
+
+
+Analytical sensitivity :
+For SNVs, indels, including CDx variants and for CNAs, the Guardant360 LoD was established by combining cfDNA from clinical plasma samples from multiple 
+cancers to create pools of material comprising multiple known alterations. For fusions, the Guardant360 LoD was established using cfDNA from cell lines 
+with known fusions titrated into wild-type (WT) cfDNA from clinical plasma samples.
+At 30ng input, LOD for SNVs 0.2% MAF, Indels 0.2% MAF, Fusions 0.1-0.2% MAF, CNVs 2.3-2.4 copies. Reportable range for SNVs 0.04% MAF, Indels 0.04% MAF, Fusions 0.04% MAF, CNVs 2.18 copies.
+
+
+
+Methodology: 
+Guardant360 sequences 74 cancer-associated genes to identify somatic alterations. Cell-free DNA (cfDNA) is extracted from plasma, enriched 
+for targeted regions, and sequenced using the Illumina platform and hg19 as the reference genome. All exons are sequenced in some genes; 
+only clinically significant exons are sequenced in other genes. The types of genomic alterations detected by Guardant360 include single 
+nucleotide variants, gene amplifications, fusions, short insertions/deletions (longest detected, 70 base pairs), and splice site disrupting events 
+(see Table 1). Microsatellite Instability (MSI) is assessed for all cancer types by evaluating somatic changes in the length of repetitive 
+sequences on the Guardant360 panel.
+
+
+Procedure:
+Somatic alterations were detected in the circulating cell-free DNA isolated from this patient's blood specimen. These genomic alterations are 
+cancer-associated somatic variants, some of which have been associated with either increased or reduced clinical response to specific 
+treatments. The percentage of altered cell-free DNA circulating (% cfDNA) in blood is related to the unique tumor biology of each patient. 
+Factors that may affect the % cfDNA of detected somatic alterations include tumor growth, turn over, size, heterogeneity, vascularization, 
+disease progression, and treatment.  
+
+Disclaimer:
+The Guardant360 assay was developed and its performance characteristics were determined by Guardant Health, Inc. This test has not been 
+cleared or approved by the U.S. Food and Drug Administration (FDA). The FDA has determined that such clearance or approval is not 
+necessary. This test may be used for clinical purposes and should not be regarded as investigational or for research only. Guardant Health's 
+clinical reference laboratory is certified under the Clinical Laboratory Improvement Amendments of 1988 (CLIA) as qualified to perform high 
+complexity clinical laboratory testing. The laboratory report should be interpreted in the context of other clinical information and laboratory, 
+pathology, and imaging studies by a qualified medical professional prior to initiating or changing a patient's treatment plan. The selection of 
+any, all, or none of the drugs associated with potential clinical benefit (or potential lack of clinical benefit) is entirely at the discretion of the 
+treating medical professional. Drug and trial information are based on the diagnosis written on the submitted test request form; this 
+information is not based on any supplemental information provided by the requesting medical professional, including pathology reports or 
+other molecular studies. Some drugs listed in this report may not be approved or cleared by the FDA for the indicated use. Guardant Health  
+makes no endorsement, express or implied, of any product, physician, or procedure contained in this report. This report makes no promises or 
+guarantees that a particular medication will affect (or not affect) the clinical outcome of any patient.
+
+Reference:
+1. Justin O., John V. , Stefanie M., James V., Bryan U. , Kimberly B., Stephen F., Oliver Z., Marcin S., Reza M., Diana A., Rebecca N., Christine L., Lesli K., Cloud P., Helmy E., Richard L., Darya C., and AmirAli T.. Clinical Cancer Research(2018): 3539-3549
+2. Li D, Ding L, Ran W, Huang Y, Li G, Wang C, Xiao Y, Wang X, Lin D, Xing X "Status of 10 targeted genes of non-small cell lung cancer in eastern China: A study of 884 patients based on NGS in a single institution." Thoracic cancer(2020): [Epub ahead of print]
+3. Rizzo S, Petrella F, Buscarino V, De Maria F, Raimondi S, Barberis M, Fumagalli C, Spitaleri G, Rampinelli C, De Marinis F, Spaggiari L, Bellomi M "CT Radiogenomic Characterization of EGFR, K-RAS, and ALK Mutations in Non-Small Cell Lung Cancer." European radiology(2016): 32-42
+

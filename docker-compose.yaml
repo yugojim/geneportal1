@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+  server:
+    container_name: wiafhirportal
+    build: 
+      context: .
+      # dockerfile: Dockerfile
+      dockerfile: Dockerfile
+    image: wiafhirportal:0.5.0
+    volumes:
+      - .:/server
+    ports:
+      - "8000:8000"
+    #  - "443:443"
+    # env_file:
+      # - ../server/.env
+    #environment:
+    #  - FHIR_URL=http:
+    #  - DICOM_URL=http:
+    working_dir: /server
+    tty: true
+    restart: always
+    #links:
+      #- mysql
+    #depends_on:
+      #- mysql
+  #mysql:
+    #container_name: tprts-mysql
+    #image: "mysql:8.0.18"
+    #command: --default-authentication-plugin=mysql_native_password
+    #environment:
+    #  - MYSQL_ROOT_PASSWORD=#@e%e7g4xx
+    #  - MYSQL_DATABASE=tprts
+    #ports:
+    #  - "3306:3306"
+    #restart: always

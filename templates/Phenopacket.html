@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Phenopacket</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>Phenopacket <span class="badge badge-secondary">Phenopacket {{ FuncResult }}</span></h3>
+						<a href="https://phenopacket-schema.readthedocs.io/en/latest/_images/phenopacket-schema-v2.svg" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>phenopacket-schema</a>
+					</div>
+					
+					<form method="post" action="{% url 'Phenopacket' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <select name="method" class="form-control">
+								<option value="GET" selected>查詢</option>
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+								<label>id</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="id" name="id">
+							</div>
+							<div class="form-group col-md-1">
+								<label>Patient ID</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="subject" name="subject">
+							</div>
+							<div class="form-group col-md-1">
+								<label >biosample ID</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="biosamples" name="biosamples">
+							</div>
+							<div class="form-group col-md-1">
+								<label >phenotypic<br>features</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="phenotypic_features" name="phenotypic_features">
+							</div>
+							<div class="form-group col-md-1">
+								<label >diseases</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="diseases" name="diseases">
+							</div>
+						</div>
+						<div class="form-row">
+						
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>				  
+					</div>
+					</form>
+					{{data.id}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Phenopacket</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>id</th>
+                                            <th>Patient ID</th>
+											<th>phenotypic<br>features<br>count</th>
+											<th>measurements<br>count</th>
+											<th>biosamples<br>count</th>
+											<th>interpretations<br>count</th>
+											<th>diseases</th>
+											<th>medical<br>actions</th>
+											<th>files</th>
+											<th>meta<br>data</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>id</th>
+                                            <th>Patient ID</th>
+											<th>phenotypic<br>features</th>
+											<th>measurements</th>
+											<th>biosamples</th>
+											<th>interpretations</th>
+											<th>diseases</th>
+											<th>medical<br>actions</th>
+											<th>files</th>
+											<th>meta<br>data</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										<tr>
+											<td>{{ data.id }}</td>
+											<td><a href="{% url 'Individual' %}">{{ data.subject.id }}</a></td>
+											<td><a href="javascript:alert('
+											{% for features in data.phenotypic_features %}
+												{{features.severity.id}}\t{{features.severity.label}}\t{{features.type.id}}\t{{features.type.label}}\n\n
+											{% endfor %}
+											');">{{ phenotypic_features_count }}</a></td>
+											<td><a href="javascript:alert('
+											{% for measurement in data.measurements %}
+											{{measurement.assay.label}}\t{{measurement.description}}\t{{measurement.time_observed.timestamp}}\t{{measurement.value.quantity.value}}\n\n
+											{% endfor %}
+											');">{{ measurements_count }}</a></td>
+											<td><a href="{% url 'Biosample' %}">{{ biosamples_count }}</a></td>
+											<td><a href="{% url 'Interpretation' %}">{{ genomic_interpretations_count }}</a></td>
+											<td>{{ data.interpretations.0.diagnosis.disease.label }}<br></td>
+											<td>{{ data.medical_actions }}</td>
+											<td>{{ data.files }}</td>
+											<td>{{ data.meta_data }}</td>
+										</tr>			 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}
+</body>
+
+</html>

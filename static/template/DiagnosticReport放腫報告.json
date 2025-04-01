@@ -1,0 +1,51 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "9200220XXXXX",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "Organization/NCKUHospital",
+      "value": "9200220XXXXX"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "108290001",
+          "display": "Radiation oncology AND/OR radiotherapy"
+        },
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "RAD"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "21880-0",
+        "display": "Radiation treatment therapy Cancer"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/2028XXXX"
+  },
+  "basedOn": [
+          {
+            "reference": "ServiceRequest/AC-Q3W"
+          }
+  ],
+  "issued": "2022-03-08",
+  "performer": [
+    {
+      "reference": "Organization/NCKUHospital"      
+    }
+  ],
+  "conclusion": "National Cheng Kung University Hospital\nDepartment of Radiation Oncology\nRadiation Treatment Summary\n\n本院第1次放射治療\n\n1. Name: 李XX  Age: 63 y/o  Sex: F\n2. Diagnosis:\nBreast Ca, left, locally advanced, cT4N1M0, cStage IIIB (ER+PR+Neu3+), s/p neoadjuvant C/T (AC*4+TH*4)[clinical response: PR], s/p left MRM, ypT1cN0M0, ypStage IA (ER+PR+Neu3+), on Herceptin maintenance & Femara, for post-MRM adjuvant R/T\n3. Intent of Radiotherapy: Adjuvant, Post-op\n4. Treatment Period: 20220117 - 20220303 , Elapsed days: 45\n5. Radiation Fractionation Scheme:\nLeft supra- & infra-clavicular LNs and left internal mammary LNs: 5000 cGy/ 25 fractions/ 37 elapsed days (N, IMRT alone, CTV_H)\nLeft anterior chest wall: 5000 cGy/ 25 fractions/ 37 elapsed days (T, IMRT alone, CTV_L)\nLeft anterior chest wall scar: 6000 cGy/ 30 fractions/ 45 elapsed days (T, 2D + IMRT, CTV_H)\n6. Comments:\nPlanned treatment completed: Yes.\nR/T was completed smoothly, skin reaction: Gr.2, esophagitis: Gr.1, no other significant Gr.3 or Gr.4 adverse events. Total R/T course exceeded 6 weeks due to Chinese New Year vacation. Suggested OPD follow-up.\n\nR / V.S. 賴OO 放腫專醫字第 000XXX 號"
+}

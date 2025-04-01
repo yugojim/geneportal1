@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+    <title>Precision Medicine Genetic Information</title>
+  </head>
+  <body>
+	<div class="container">
+		<br>
+		{% if risks %}
+			<table class="table">
+			  <thead>
+				<tr>
+					<th scope="col">risk</th>
+					<th scope="col"><center>{{ riskrlue }}</center></th>
+				</tr>
+			  </thead>
+			</table>
+			<table class="table">
+			  <thead>
+				<tr>
+					<th scope="col">level</th>
+					<th scope="col">dbSNP</th>
+					<th scope="col">Alleles</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				{% for risk in risks %}
+				<tr>
+					<th scope="row">
+									
+					<h5>
+						<span
+							{% if risk.level == "較高風險" %}class="badge badge-danger">risk
+							{% elif risk.level == "中度風險" %}class="badge badge-warning">riskless
+							{% elif risk.level == "未檢出異常" %}class="badge badge-success">normal
+							{% else %}class="badge badge-secondary">none
+							{% endif %}							
+						</span>
+					</h5>				
+					</th>
+					<th scope="row"><a href="https://www.ncbi.nlm.nih.gov/snp/{{ risk.dbSNP }}" 
+					 target="_blank">{{ risk.dbSNP }}
+					</a>
+					</th>
+					<th scope="row"><a href="/dbSNP?Alleles={{ risk.Alleles }}&dbSNP={{ risk.dbSNP }}" 
+					 target="_blank">{{ risk.Alleles }}
+					</a>
+					
+					</th>
+					</tr>
+					
+
+
+				{% endfor %}
+					</tr>
+					<tr class="table-active"><td colspan="4"><center>{{ riskrlue }}</center></td></tr>
+					<tr>
+						<td colspan="4">
+
+						</td>
+					</tr>
+			  </tbody>
+			</table>
+		{% else %}
+		<div class="row">
+		  <div class="col-sm-12"><center><h1>Condition Search</h1></center></div>
+		</div>
+		<form method="get">
+		  <div class="form-row" style='text-align: center;'>
+			<div class="form-group col-md-8">
+			  <label for="inputState">Condition</label>
+			  <input name="Alleles" placeholder="Obes_check" value="" class="form-control">
+			</div>
+			<div class="form-group col-md-4">
+				<center>
+					<button type="submit" class="btn-lg btn-light">Search</button>
+				</center>
+			</div>
+		  </div>
+		</form>
+		{% endif %}
+	</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/js/jquery-3.3.1.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>

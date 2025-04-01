@@ -1,0 +1,90 @@
+PATHOLOGICAL DIAGNOSIS:
+Test Name: ACTOnco+
+
+Relevant Biomarkers:
+
+Single Nucleotide And Small Indel Variants
+CDKN2A A85fs, Allele Frequency: 30.7%, Reads: 166x
+KRAS Q61H, Allele Frequency: 23.7%, Reads: 1151x
+TP53 R248W, Allele Frequency: 27.4%, Reads: 1075x
+
+Copy Number Variants (CNVs)
+Amplification (Copy number >= 6)
+Chr: chr22, Gene: CRKL, MAPK1, Copy Number: 7
+
+Homozygous deletion (Copy number=0)
+Chr: chr5, Gene: NSD1
+
+Heterozygous deletion (Copy number=1)
+Chr: chr1, Gene: CDKN2C
+Chr: chr9, Gene: CDKN2A
+Chr: chr10, Gene: PTEN
+
+Tumor Mutational Burden(TMB): 0.1 muts/Mb
+Microsatellite Instability(MSI): Microsatellite stable (MSS)
+Fusion Results: Not detected
+
+MP No.: ***99699
+Sample Type: FFPE tissue
+Block Number: S11390067H
+Tissue Origin: Ampulla of vater
+Pathologic Diagnosis: Ampulla of vater adenocarcinoma
+Tumor Percentage: 33%
+NGS QC parameters:
+Mean Depth & Target Base Coverage at 100x: 943x & 96%
+Average unique RNA Start Sites per control GSP2: 160
+
+Analytic Interpretation: Single nucleotide variants (SNVs), small insertions and
+deletions (INDELs) ( =< 15 nucleotides) and large-scale genomic alterations like
+copy number variations (CNVs) of 440 gene, and fusion transcripts of 13 genes.
+Analytical Sensitivity: Variants with coverage >= 20, allele frequency >= 5% and
+actionable variants with allele frequency >= 2% were retained.
+Methodology: Ion 540 Chip / Ion 550 Chip / Ion P1 Chip and Ion GeneStudio S5 Prime
+System / Ion Proton System
+Procedure(ACTOnco): Extracted genomic DNA was amplified using four pools of primer
+pairs targeting coding exons of analyzed genes. Amplicons were ligated with
+barcoded adaptors. Quality and quantity of amplified library were determined using
+the fragment analyzer (AATI) and Qubit (Invitrogen). Sequencing was performed on
+the Ion Proton or Ion S5 sequencer (Thermo Fisher Scientific). Raw reads generated
+by the sequencer were mapped to the hg19 reference genome using the Ion Torrent
+Suite (version 5.10). This test provides uniform coverage of the targeted regions,
+enabling target base coverage at 100x >= 85% with a mean coverage >= 500x. Variants
+with coverage >= 20, allele frequency >= 5% and actionable variants with allele
+frequency >= 2% were retained. ONCOCNV (an established method for calculating copy
+number aberrations in amplicon sequencing data by Boeva et al., 2014) was applied
+for the normalization of total amplicon number, amplicon GC content, amplicon
+length, and technology-related biases, followed by segmenting the sample with a
+gene-aware model. Tumor mutational burden (TMB) was calculated by using the
+sequenced regions of ACTOnco to estimate the number of somatic nonsynonymous
+mutations per megabase of all protein-coding genes. Classification of
+microsatellite instability (MSI) status is determined by a machine learning
+prediction algorithm. The change of a number of repeats of different lengths from
+a pooled microsatellite stable (MSS) baseline in > 400 genomic loci are used as the
+features for the algorithm.
+Procedure(ACTFusion): The extracted RNA was reverse-transcribed and subjected to
+library construction. The quality and quantity of the amplified library was
+determined using the fragment analyzer (AATI) and Qubit (Invitrogen). Sequencing
+was performed on the Ion Proton or Ion S5 sequencer (Thermo Fisher Scientific). All
+assays were performed in accordance with ACT Genomics testing SOPs. In summary,
+samples with detectable fusions had to meet the following criteria: 1) Number of
+unique start sites (SS) for the GSP2 >= 3. 2) Number of supporting reads spanning
+the fusion junction >= 5. 3) Percentage of supporting reads spanning the fusion
+junction >= 10%.
+Disclaimer: This test was developed by ACT Genomics and its performing
+characteristics were determined by ACT Genomics. This test result is to be used for
+clinical consultative purposes only and is not intended as a substitute for a
+clinical guidance of your doctor or another qualified medical practitioner. The
+detection of genomic alterations does not necessarily indicate pharmacologic
+effectiveness (or lack thereof) of any drug or treatment regimen; the detection of
+no genomic alteration does not necessarily indicate lack of pharmacologic
+effectiveness (or effectiveness) of any drug or treatment regimen. Decisions on
+clinical care and treatment should be based on the independent medical judgment of
+the treating physician in accordance with the standard of care in a given community.
+Liability: ACT Genomics is not affiliated with any medical facility or medical
+practitioner. We provide information for informational purposes only, therefore,
+ACT Genomics and their employees cannot be held responsible for any direct,
+indirect, special, incidental or consequential damages that may arise from the use
+of information provided in the report.
+Reference: 1.	Boeva V, Popova T, Lienard M, Toffoli S, Kamal M, Le Tourneau C, et
+al. Multi-factor data normalization enables the detection of copy number
+aberrations in amplicon sequencing data. Bioinformatics. 2014;30(24):3443-50.

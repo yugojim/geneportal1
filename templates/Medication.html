@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Medication</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>藥品資訊 <span class="badge badge-secondary">Medication {{ FuncResult }}</span></h3>
+						<a href="https://www.nhi.gov.tw/QueryN_New/QueryN/Query1" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-capsules fa-sm text-white-50"></i>健保用藥品項查詢</a>
+						<a href="https://www.hl7.org/fhir/medication.html" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i>Medication Release 4B</a>
+					</div>
+					
+					<form method="post" action="{% url 'Medication' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <select name="method" class="form-control">
+								<option value="GET" selected>查詢</option>
+								<option value="POST" >新增</option>
+								<option value="PUT" >修改</option>
+								<option value="DELETE" >刪除</option>
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+								<label>ID</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="id" name="id">
+							</div>
+							<div class="form-group col-md-1">
+								<label>健保code (S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="nhicode" name="nhicode">
+							</div>
+							<div class="form-group col-md-1">
+								<label>ATC code (S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="atccode" name="atccode">
+							</div>
+							<div class="form-group col-md-1">
+								<label >藥品名稱(英文)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="display" name="display">
+							</div>
+							<div class="form-group col-md-1">
+								<label >藥品名稱(中文)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="text" name="text">
+							</div>
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>							
+						</div>  
+					</div>
+					</form>
+					{{data.diagnostics}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Endpoint</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>ID</th>
+                                            <th>健保code</th>
+											<th>ATCcode</th>
+											<th>藥品名稱(英文)</th>
+											<th>藥品名稱(中文)</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>ID</th>
+                                            <th>健保code</th>
+											<th>ATCcode</th>
+											<th>藥品名稱(英文)</th>
+											<th>藥品名稱(中文)</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for entry in data.entry %}
+										<tr>
+											<td>{{ entry.resource.id }}</td>
+											<td><a href="https://info.fda.gov.tw/MLMS/H0001D.aspx?Type=Lic&LicId=0100{{ entry.resource.code.coding.0.display }}" target="_blank">{{ entry.resource.code.coding.0.code }}</a></td>
+											<td><a href="https://www.whocc.no/atc_ddd_index/?code={{ entry.resource.code.coding.1.code }}" target="_blank">{{ entry.resource.code.coding.1.code }}</a></td>
+											<td>{{ entry.resource.code.coding.1.display }}</td>
+											<td>{{ entry.resource.code.text }}</td>
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}
+</body>
+
+</html>

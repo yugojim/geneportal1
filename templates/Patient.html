@@ -1,0 +1,509 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Patient</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>病人基本資料 <span class="badge badge-secondary">Patient {{ FuncResult }}</span></h3>
+						<a href="https://www.hl7.org/fhir/patient.html" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i>Patient Release 4B</a>
+					</div>					
+					<form method="post" action="{% url 'Patient' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-2">
+							  <select name="fhirip" class="form-control">
+								{% for fhir in fhirip %}
+								<option value="{{fhir.ip}}" > {{ fhir.location }} </option>
+								{% endfor %}
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+							  <select name="method" class="form-control">
+								<option value="GET" >查詢</option>
+								<option value="POST" >新增</option>
+								<option value="PUT" >修改</option>
+								<option value="DELETE" >刪除</option>
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+								<label>ID (病歷號)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="id" name="id">
+							</div>
+							<div class="form-group col-md-1">
+								<label>identifier<br>病歷號(S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="patient" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<label>identifier<br>身分證字號(S)</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="patient1" name="patient1">
+							</div>
+							<div class="form-group col-md-1">
+								<label>extension<br>生效日期</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="date" class="form-control" id="start" name="start">
+							</div>
+						</div>
+						<div class="form-row">	
+							<div class="form-group col-md-1">
+								<label >family 姓</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="family" name="family">
+							</div>
+							<div class="form-group col-md-1">
+								<label >given 名</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="given" name="given">
+							</div>
+							<div class="form-group col-md-1">
+								<label >telecom 手機</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="telecom" name="telecom">
+							</div>
+							<div class="form-group col-md-1">
+								<label >telecom 住家</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="home" name="home">
+							</div>
+							<div class="form-group col-md-1">
+								<label >telecom 公司</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="company" name="company">
+							</div>
+							<div class="form-group col-md-1">
+								<label >telecom 其他</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="other" name="other">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label >telecom email</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="email" name="email">
+							</div>
+							<div class="form-group col-md-1">
+							  <label for="inputState">gender</label>
+							</div>
+							<div class="form-group col-md-1">
+							  <select name="gender" class="form-control">
+								<option >male</option>
+								<option >female</option>
+								<option >other</option>
+								<option >unknown</option>
+							  </select>
+							</div>
+						    <div class="form-group col-md-1">
+								<label >birthDate</label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="date" class="form-control" id="birthDate" name="birthDate">
+							</div>
+							<div class="form-group col-md-2">
+								<label >managingOrganization</label>
+							</div>
+							<div class="form-group col-md-1">
+							  <select name="managingOrganization" class="form-control">
+								<option ></option>
+								<option >NCKUHospital</option>
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+								<label >deceasedBoolean</label>
+							</div>
+							<div class="form-group col-md-1">
+							  <select name="deceasedBoolean" class="form-control">
+							    <option ></option>
+								<option >true</option>
+								<option >false</option>
+							  </select>
+							</div>
+							
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <label>address text 戶籍地址</label>
+							</div>
+							<div class="form-group col-md-2">
+							  <input name="addresstext" placeholder="000 台南市OO號"  class="form-control">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address country</label>
+							</div>
+							<div class="form-group col-md-1">
+								<select name="country" class="form-control">
+									<option >臺南市</option>
+									<option >彰化縣</option>
+									<option >嘉義縣</option>
+									<option >新竹縣</option>
+									<option >花蓮縣</option>
+									<option >宜蘭縣</option>
+									<option >金門縣</option>
+									<option >連江縣</option>
+									<option >苗栗縣</option>
+									<option >彰化縣</option>
+									<option >南投縣</option>
+									<option >澎湖縣</option>
+									<option >屏東縣</option>
+									<option >臺東縣</option>
+									<option >雲林縣</option>
+									<option >嘉義市</option>
+									<option >新竹市</option>
+									<option >基隆市</option>
+									<option >高雄市</option>
+									<option >新北市</option>
+									<option >桃園市</option>
+									<option >臺南市</option>
+									<option >臺北市</option>
+									<option >臺中市</option>
+									<option >臺灣省</option>
+									<option >TW</option>
+								</select>
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address postalCode</label>
+							</div>
+							<div class="form-group col-md-1">
+							  <input name="postalCode" placeholder="704" class="form-control" oninput="value=value.replace(/[^\d]/g,'')" maxlength="3">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address line</label>
+							</div>
+							<div class="form-group col-md-2">
+							  <input name="addressline" placeholder="小東路OO號"  class="form-control">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>溝通方式 communication</label>
+							</div>
+							<div class="form-group col-md-1">
+							  <select name="communication" class="form-control">
+								<option ></option>
+								<option >國語</option>
+								<option >台語</option>
+							  </select>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <label>address text 聯絡地址</label>
+							</div>
+							<div class="form-group col-md-2">
+							  <input name="addresstext1" placeholder="000 台南市OO號"  class="form-control">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address country</label>
+							</div>
+							<div class="form-group col-md-1">
+								<select name="country1" class="form-control">
+									<option ></option>
+									<option >臺南市</option>
+									<option >彰化縣</option>
+									<option >嘉義縣</option>
+									<option >新竹縣</option>
+									<option >花蓮縣</option>
+									<option >宜蘭縣</option>
+									<option >金門縣</option>
+									<option >連江縣</option>
+									<option >苗栗縣</option>
+									<option >彰化縣</option>
+									<option >南投縣</option>
+									<option >澎湖縣</option>
+									<option >屏東縣</option>
+									<option >臺東縣</option>
+									<option >雲林縣</option>
+									<option >嘉義市</option>
+									<option >新竹市</option>
+									<option >基隆市</option>
+									<option >高雄市</option>
+									<option >新北市</option>
+									<option >桃園市</option>
+									<option >臺南市</option>
+									<option >臺北市</option>
+									<option >臺中市</option>
+									<option >臺灣省</option>
+									<option >TW</option>
+								</select>
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address postalCode</label>
+							</div>
+							<div class="form-group col-md-1">
+							  <input name="postalCode1" placeholder="704" class="form-control" oninput="value=value.replace(/[^\d]/g,'')" maxlength="3">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address line</label>
+							</div>
+							<div class="form-group col-md-2">
+							  <input name="addressline1" placeholder="小東路OO號"  class="form-control">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>溝通方式1 communication</label>
+							</div>
+							<div class="form-group col-md-1">
+							  <select name="communication1" class="form-control">
+							    <option ></option>
+								<option >國語</option>
+								<option >台語</option>
+							  </select>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <label>address text 聯絡地址1</label>
+							</div>
+							<div class="form-group col-md-2">
+							  <input name="addresstext2" placeholder="000 台南市OO號"  class="form-control">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address country</label>
+							</div>
+							<div class="form-group col-md-1">
+								<select name="country2" class="form-control">
+									<option ></option>
+									<option >臺南市</option>
+									<option >彰化縣</option>
+									<option >嘉義縣</option>
+									<option >新竹縣</option>
+									<option >花蓮縣</option>
+									<option >宜蘭縣</option>
+									<option >金門縣</option>
+									<option >連江縣</option>
+									<option >苗栗縣</option>
+									<option >彰化縣</option>
+									<option >南投縣</option>
+									<option >澎湖縣</option>
+									<option >屏東縣</option>
+									<option >臺東縣</option>
+									<option >雲林縣</option>
+									<option >嘉義市</option>
+									<option >新竹市</option>
+									<option >基隆市</option>
+									<option >高雄市</option>
+									<option >新北市</option>
+									<option >桃園市</option>
+									<option >臺南市</option>
+									<option >臺北市</option>
+									<option >臺中市</option>
+									<option >臺灣省</option>
+									<option >TW</option>
+								</select>
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address postalCode</label>
+							</div>
+							<div class="form-group col-md-1">
+							  <input name="postalCode2" placeholder="704" class="form-control" oninput="value=value.replace(/[^\d]/g,'')" maxlength="3">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address line</label>
+							</div>
+							<div class="form-group col-md-2">
+							  <input name="addressline2" placeholder="小東路OO號"  class="form-control">
+							</div>
+							<div class="form-group col-md-1">
+								<label>extension<br>國籍代碼</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="code" name="code">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label >聯絡人 family 姓</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="cfamily" name="cfamily">
+							</div>
+							<div class="form-group col-md-1">
+								<label >given 名</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="cgiven" name="cgiven">
+							</div>
+							<div class="form-group col-md-1">
+								<label >telecom</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="ctelecom" name="ctelecom">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <label>address text 聯絡地址</label>
+							</div>
+							<div class="form-group col-md-2">
+							  <input name="caddresstext" placeholder="000 台南市OO號"  class="form-control">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address country</label>
+							</div>
+							<div class="form-group col-md-1">
+								<select name="ccountry" class="form-control">
+									<option ></option>
+									<option >臺南市</option>
+									<option >彰化縣</option>
+									<option >嘉義縣</option>
+									<option >新竹縣</option>
+									<option >花蓮縣</option>
+									<option >宜蘭縣</option>
+									<option >金門縣</option>
+									<option >連江縣</option>
+									<option >苗栗縣</option>
+									<option >彰化縣</option>
+									<option >南投縣</option>
+									<option >澎湖縣</option>
+									<option >屏東縣</option>
+									<option >臺東縣</option>
+									<option >雲林縣</option>
+									<option >嘉義市</option>
+									<option >新竹市</option>
+									<option >基隆市</option>
+									<option >高雄市</option>
+									<option >新北市</option>
+									<option >桃園市</option>
+									<option >臺南市</option>
+									<option >臺北市</option>
+									<option >臺中市</option>
+									<option >臺灣省</option>
+									<option >TW</option>
+								</select>
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address postalCode</label>
+							</div>
+							<div class="form-group col-md-1">
+							  <input name="cpostalCode" placeholder="704" class="form-control" oninput="value=value.replace(/[^\d]/g,'')" maxlength="3">
+							</div>
+							<div class="form-group col-md-1">
+							  <label>address line</label>
+							</div>
+							<div class="form-group col-md-2">
+							  <input name="caddressline" placeholder="小東路OO號"  class="form-control">
+							</div>
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>							
+					</div>
+					</form>
+					{{data.diagnostics}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Patient</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>ID</th>
+                                            <th>extension</th>
+											<th>identifier</th>
+											<th>name</th>
+											<th>telecom</th>
+											<th>gender</th>
+											<th>birthDate</th>
+											<th>deceasedBoolean</th>
+											<th>address</th>
+											<th>contact</th>
+											<th>communication</th>
+											<th>managingOrganization</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>ID</th>
+                                            <th>extension</th>
+											<th>identifier</th>
+											<th>name</th>
+											<th>telecom</th>
+											<th>gender</th>
+											<th>birthDate</th>
+											<th>deceasedBoolean</th>
+											<th>address</th>
+											<th>contact</th>
+											<th>communication</th>
+											<th>managingOrganization</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for entry in data.entry %}
+										<tr>
+											<td>{{ entry.resource.id }}</td>
+											<td>{{ entry.resource.extension }}</td>
+											<td>{{ entry.resource.identifier }}</td>
+											<td>{{ entry.resource.name }}</td>
+											<td>{{ entry.resource.telecom }}</td>
+											<td>{{ entry.resource.gender }}</td>
+											<td>{{ entry.resource.birthDate }}</td>
+											<td>{{ entry.resource.deceasedBoolean }}</td>
+											<td>{{ entry.resource.address }}</td>
+											<td>{{ entry.resource.contact }}</td>
+											<td>{{ entry.resource.communication }}</td>
+											<td>{{ entry.resource.managingOrganization }}</td>
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}
+</body>
+
+</html>

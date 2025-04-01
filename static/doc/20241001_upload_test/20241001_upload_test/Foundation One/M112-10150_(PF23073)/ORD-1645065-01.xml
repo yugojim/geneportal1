@@ -1,0 +1,2022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rr:ResultsReport xmlns:rr="http://integration.foundationmedicine.com/reporting" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://integration.foundationmedicine.com/reporting http://integration.foundationmedicine.com/reporting/ResultsReport.2.1.xsd">
+  <rr:CustomerInformation>
+    <rr:ReferenceID>01-2023-00030106</rr:ReferenceID>
+    <rr:CSN />
+    <rr:TRF>ORD-1645065-01</rr:TRF>
+    <rr:MRN>21193099</rr:MRN>
+    <rr:PhysicianId>109266</rr:PhysicianId>
+    <rr:NPI />
+  </rr:CustomerInformation>
+  <rr:ResultsPayload>
+    <FinalReport xmlns:xsd="http://www.w3.org/2001/XMLSchema" StagingId="1331429" clinicalId="1332776" xsi:noNamespaceSchemaLocation="http://integration.foundationmedicine.com/reporting/ClinicalReport.1.1.xsd">
+      <Application>
+        <ApplicationSettings>
+          <ApplicationSetting>
+            <Name>Statement</Name>
+            <Value />
+          </ApplicationSetting>
+        </ApplicationSettings>
+      </Application>
+      <DemographicCorrectionDate />
+      <ReportId>ORD-1645065-01</ReportId>
+      <SampleName>US1568986.01</SampleName>
+      <Version>0</Version>
+      <Sample>
+        <FM_Id>ORD-1645065-01</FM_Id>
+        <SampleId>US1568986.01</SampleId>
+        <BlockId>S112-23173 A (PF23073)</BlockId>
+        <TRFNumber>ORD-1645065-01</TRFNumber>
+        <TestType>FoundationOne CDX</TestType>
+        <SpecFormat>Slide Deck</SpecFormat>
+        <ReceivedDate>2023-06-05</ReceivedDate>
+        <processSites>
+          <processSite address="150 Second St., 1st Floor, Cambridge, MA 02141" cliaNumber="22D2027531" locationID="1" locationName="Cambridge" processID="1" processName="Extracted DNA" />
+          <processSite address="150 Second St., 1st Floor, Cambridge, MA 02141" cliaNumber="22D2027531" locationID="1" locationName="Cambridge" processID="1" processName="LC" />
+        </processSites>
+      </Sample>
+      <PMI>
+        <ReportId>ORD-1645065-01</ReportId>
+        <MRN>21193099</MRN>
+        <FullName>Chu, Li Li</FullName>
+        <FirstName>Li Li</FirstName>
+        <LastName>Chu</LastName>
+        <SubmittedDiagnosis>Skin melanoma</SubmittedDiagnosis>
+        <Gender>Female</Gender>
+        <DOB>1968-05-08</DOB>
+        <OrderingMD>Yeh, Yi-Chen</OrderingMD>
+        <OrderingMDId>109266</OrderingMDId>
+        <Pathologist>Not Provided</Pathologist>
+        <CopiedPhysician1 />
+        <MedFacilName>Taipei Veterans General Hospital</MedFacilName>
+        <MedFacilID>205872</MedFacilID>
+        <SpecSite>Lymph Node</SpecSite>
+        <CollDate>2023-05-19</CollDate>
+        <ReceivedDate>2023-06-05</ReceivedDate>
+        <CountryOfOrigin>TW</CountryOfOrigin>
+      </PMI>
+      <PertinentNegatives>
+        <PertinentNegative>
+          <Gene>KIT</Gene>
+        </PertinentNegative>
+        <PertinentNegative>
+          <Gene>NRAS</Gene>
+        </PertinentNegative>
+      </PertinentNegatives>
+      <Summaries alterationCount="29" clinicalTrialCount="13" resistiveCount="0" sensitizingCount="3" />
+      <VariantProperties>
+        <VariantProperty geneName="EZH2" isVUS="true" variantName="amplification" />
+        <VariantProperty geneName="FANCC" isVUS="true" variantName="Y146del" />
+        <VariantProperty geneName="FGFR4" isVUS="true" variantName="D126N" />
+        <VariantProperty geneName="KMT2D (MLL2)" isVUS="true" variantName="P2349L" />
+        <VariantProperty geneName="MSH3" isVUS="true" variantName="A60_A62del" />
+        <VariantProperty geneName="MSH6" isVUS="true" variantName="E1254D" />
+        <VariantProperty geneName="POLE" isVUS="true" variantName="G817D" />
+        <VariantProperty geneName="PRDM1" isVUS="true" variantName="E80V" />
+        <VariantProperty geneName="RET" isVUS="true" variantName="A349S,V292M" />
+        <VariantProperty geneName="SDHA" isVUS="true" variantName="amplification" />
+        <VariantProperty geneName="SMO" isVUS="true" variantName="amplification" />
+      </VariantProperties>
+      <priorTests />
+      <Genes>
+        <Gene>
+          <Name>BRAF</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>BRAF-DPP6 rearrangement</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="BRAF-DPP6 rearrangement" />
+              </AlterationProperties>
+              <Interpretation>BRAF encodes a member of the RAF family of protein kinases, which includes ARAF, BRAF, and CRAF. These kinases function downstream of RAS as part of the MAPK (RAF-MEK-ERK) signaling cascade that facilitates cell proliferation, survival and transformation (Holderfield et al., 2014; 24957944, Burotto et al., 2014; 24948110). BRAF mutations have been reported in up to 20% of all cancers, with the majority of mutations occurring at the V600 position (Davies et al., 2002; 12068308, Kandoth et al., 2013; 24132290). Expression of the BRAF kinase domain without the N-terminal auto-inhibitory domain, whether with or without a fusion partner, is a BRAF class 2 subtype and has been shown to be constitutively active and to drive hyperactivation of the MAPK pathway, exhibiting transforming activity (Seivert et al., 2013; 23533272, Pouliakos et al., 2011; 22113612, Botton et al., 2013; 23890088, Ciampi et al., 2005; 15630448, Cin et al., 2011; 21424530, Dahiya et al., 2012; 22548077, Lin et al., 2012; 22157620, Tian et al., 2011; 21884820, Forshew et al., 2009; 19373855, Jones et al., 2008; 18974108, Tran et al., 2005; 15710605, Baitei et al., 2009; 19156774, Gronych et al., 2011; 21403401) in a manner sensitive to MEK inhibitors (Chmielecki et al., 2014; 25266736, Hutchinson et al., 2013; 24345920, Rizos et al., 2014; 24463458, Hartsough et al., 2014; 24520098, Carlino et al., 2014; 24476679, Baitei et al., 2009; 19156774), ERK inhibitors (Carlino et al., 2014; 24476679), the pan-RAF inhibitor sorafenib (Botton et al., 2013; 23890088, Gronych et al., 2011; 21403401), and second-generation BRAF inhibitors PLX8394 and PLX7904 (Choi et al., 2014; 24283590, Basile et al., 2014; 24422853). Some patients with BRAF fusions have been reported to benefit from MEK inhibitors (Fangusaro et al., 2019; 31151904, Ross et al., 2015; 26314551, Menzies et al., 2015; 26072686, Grisham et al., 2015; 26324360, Chmielecki et al., 2014; 25266736, Banerjee et al., 2017; 28339824) as well as pan-RAF inhibitor sorafenib (Subbiah et al., 2014; 24422672, Botton et al., 2013; 23890088, Passeron et al., 2011; 22092579, Karajannis et al., 2014; 24803676). Rearrangements, such as SND1-BRAF fusion and CUL1-BRAF fusion observed here, are predicted to be activating and oncogenic. Rearrangements such as observed here, those that are detected as a reciprocal fusion, are not clearly in frame, or may lack a fusion partner, may be indicative of an activating rearrangement event such as a fusion or an expression of the BRAF kinase domain without the N-terminal auto-inhibitory domain; however, it is unclear whether such rearrangements would lead to an oncogenic BRAF variant. Rearrangements, such as observed here, detected as a deletion of the kinase domain or a duplication of a non-kinase portion of the protein may lead to the production of an oncogenic product such as a fusion or expression of the kinase domain lacking the N-terminal autoinhibitory region; however, it is unclear whether such events would lead to a production of an oncogenic variant. BRAF fusions have been observed in 5% of spitzoid neoplasms (Wiesner et al., 2014; 24445538) and in 1-3% of melanomas (Stransky et al., 2014; 25204415, Ross et al., 2016; 26314551). A systematic review of 100 BRAF fusion-positive melanocytic tumor cases in the literature described BRAF fusions to be enriched for patients assigned female at birth, for young patients (median age of 33 years), and in tumors with spitzoid histopathologic features (Botton et al., 2019; 31618628); 42 different gene fusion partners were identified, with 55% of the partner genes having known dimerization domains, and AGK and AKAP9 being the most common recurrent partner genes (Botton et al., 2019; 31618628). BRAF rearrangement, leading to loss of the autoinhibitory region, has also been observed in 2 cases of large congenital melanocytic nevi (Dessars et al., 2007; 17301836). BRAF mutations have been reported in 37-66% of melanoma cases (Davies et al., 2002; 12068308, Hodis et al., 2012; 22817889, Krauthammer et al., 2012; 22842228, Greaves et al., 2013; 23273605), most frequently in cutaneous melanoma (41-51%)(Greaves et al., 2013; 23273605, Lee et al., 2011; 21166657), melanoma of unknown primary (52%)(Egberts et al., 2014; 24276025) and conjunctival melanoma (14-29%)(Griewank et al., 2013; 23633454, Spendlove et al., 2004; 15577314). There are conflicting reports regarding the prognostic significance of BRAF mutation in the context of melanoma (Long et al., 2011; 21343559, El-Osta et al., 2011; 22039425, Ekedahl et al., 2013; 23855428, Egbert et al., 2014; 24276025). In one study of non-acral cutaneous melanoma, BRAF non-V600E mutation associated with some, but not other, clinicopathological features but did not impact OS since Stage 4 diagnosis, including OS after initiation of frontline ipilimumab treatment (Kim et al., 2016; 27911979). Based on limited clinical data in low-grade glioma and sarcoma, patients with tumors harboring RAF fusions may benefit from treatment with type-II RAF inhibitors such as tovorafenib (Landi et al., 2022; ASCO Abstract TPS10062). In a retrospective genomic screen, 3 patients with BRAF fusions in melanomas responded to consecutive CTLA-4 inhibitor ipilimumab and immune checkpoint inhibitor pembrolizumab treatments, with 2 patients reported to be disease free following ipilimumab and pembrolizumab and 1 patient progressing on ipilimumab and then responding on pembrolizumab (Turner et al., 2019; 30254212). The MEK inhibitor trametinib has also been reported to benefit patients with BRAF fusions in melanomas in case reports and basket trials (Ross et al., 2016; 26314551, Menzies et al., 2015; 26072686, Nebhan et al., 2021; 33861486). Individual case reports have also observed benefit for patients with the pan-RAF inhibitor sorafenib (Passeron et al., 2011; 22092579, Botton et al., 2013; 23890088, Boussemart et al., 2019; 30683711). Second-generation BRAF inhibitors are in development; 1 patient with melanoma and a BRAF fusion treated with PLX8394 achieved a CR, which was the best overall response in a basket trial otherwise consisting of BRAF exon 15 missense mutations (Janku et al., 2021; AACR Abstract CT212). Targeting extracellular signal-regulated kinase (ERK) downstream of BRAF with ulixertinib resulted in 1 SD for the 1 patient with a BRAF fusion in another basket trial (Sullivan et al., 2018; 29247021). Single-agent BRAF V600-targeting treatments such as vemurafenib are not predicted to confer benefit in melanomas with BRAF fusions in the absence of BRAF V600 mutation; a report showed no tumor response for a patient with a BRAF fusion (Kim et al., 2017; 28092667), although a combination of dabrafenib and trametinib resulted in a PR for 1 patient with a co-occurring BRAF V600 mutation (Kulkarni et al., 2017; 28539463). Retrospective analysis of patients with melanoma treated with first-line nivolumab plus ipilimumab showed significantly improved survival for those with BRAF-mutated disease (9.9 months median PFS [mPFS] and median OS [mOS] not reached) relative to those with either NRAS-mutated disease (4.8 months mPFS and 14.2 months mOS) or disease lacking BRAF and NRAS mutations (5.3 months mPFS and 16.1 months mOS) (van Not et al., 2022; 36130145).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</ClinicalTrialNote>
+              <Therapies>
+                <Therapy>
+                  <Name />
+                  <GenericName>Selumetinib</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Selumetinib is a MEK inhibitor that is FDA approved to treat pediatric patients with neurofibromatosis type 1 (NF1)-associated plexiform neurofibromas (PNs). Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; Activating BRAF fusions may predict sensitivity to MEK inhibitors such as selumetinib. Clinical responses to selumetinib have been achieved by patients with BRAF-fusion-positive low-grade glioma (Banerjee et al., 2017; 28339824, Fangusaro et al., 2019; 31151904). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; In a Phase 2 study for patients with metastatic melanoma, selumetinib monotherapy achieved an ORR of 5.8%; among patients with BRAF mutations, the ORR was 11% (5/45) (Kirkwood et al., 2012; 22048237). In a Phase 2 trial of first-line treatment of BRAF-mutated metastatic melanoma, the addition of selumetinib to dacarbazine increased PFS compared to dacarbazine plus placebo (5.6 vs 3.0 months, HR=0.63) but did not significantly improve OS (13.9 vs 10.5 months, HR 0.93, p=0.39) (Robert et al., 2013; 23735514). In a Phase 2 trial for patients with BRAF wildtype advanced melanoma, the addition of selumetinib to docetaxel did not improve median PFS compared to docetaxel plus placebo (4.2 vs 3.9 months) and was associated with lower OS (9.5 months vs 11.4 months); NRAS mutation was associated with inferior OS (HR=0.78) (Gupta et al., 2014; 24567366). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Trametinib</GenericName>
+                  <FDAApproved>true</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Trametinib is a MEK inhibitor that is FDA approved as a monotherapy to treat patients with melanoma with BRAF V600E or V600K mutations. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; Activating BRAF fusions may predict sensitivity to MEK inhibitors such as trametinib. Clinical responses to trametinib have been achieved by patients with BRAF-fusion-positive melanoma (Ross et al., 2015; 26314551, Menzies et al., 2015; 26072686, Nebhan et al., 2021; 33861486, Menzer et al., 2019; 31580757), low-grade glioma (Kondyli et al., 2018; 30097824, Miller et al., 2016; 28009226, Wagner et al., 2018; 29369501), histiocytosis (Durham et al., 2019; 31768065, Hendifar et al., 2021; 34476331), and prostate cancer (Beato et al., 2019; ASCO Abstract 3082). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; Individual patients with BRAF-fusion-positive melanoma have experienced either a PR or clinical benefit from single-agent trametinib (Ross et al., 2015; 26314551, Menzies et al., 2015; 26072686, Nebhan et al., 2021; 33861486, Menzer et al., 2019; 31580757). As a monotherapy for patients with BRAF V600E/K-mutated metastatic melanoma, trametinib improved PFS (4.9 vs. 1.5 months, HR=0.54) and median OS (15.6 vs. 11.3 months, HR=0.84) compared with patients treated with chemotherapy (Robert et al., 2019; 30690294). In a Phase 1 study, 10% (4/40) of patients with BRAF-wildtype metastatic melanoma achieved a PR (Falchook et al., 2012; 22805292). Whereas frequent adverse events precluded a recommended Phase 2 dose and schedule for the combination of trametinib and everolimus in a Phase 1b trial for solid tumors (Tolcher et al., 2014; 25344362), a retrospective study for heavily pretreated patients with solid tumors reported tolerable regimens of the combination for 23/31 patients, with 16 patients treated &gt;3 months and evaluable patients achieving a median PFS of 6.5 months (Patterson et al., 2018; AACR Abstract 3891). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Cobimetinib</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Cobimetinib is a MEK inhibitor that is FDA approved to treat patients with histiocytic neoplasms. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical evidence, BRAF activating mutations may predict sensitivity to MEK inhibitors such as cobimetinib (Ribas et al., 2014; 25037139, Larkin et al., 2014; 25265494, Diamond et al., 2019; 30867592, Sullivan et al., 2019; 31171876). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; A Phase 1 study of cobimetinib monotherapy in solid tumors reported 1% (1/97) CR and 6% (6/97) PR, all of which were achieved by patients with melanoma (6 with BRAF V600E) (Rosen et al., 2016; 27424159). Patients with metastatic melanoma treated with cobimetinib combined with the RAF inhibitor belvarafenib experienced PRs for those with BRAF V600 mutations (33% [3/9]) and non-V600 mutations (50% [3/6])(Kim et al., 2021; ESMO Abstract 529P). In the Phase 3 IMspire170 study, the combination of atezolizumab and cobimetinib did not improve median PFS (5.5 vs. 5.7 months), ORR (26% vs. 32%) or 6-month OS (88% vs. 87%) compared with pembrolizumab for patients with previously untreated BRAF V600 wildtype melanoma (Arance et al., 2019; ESMO Abstract LBA69). Similarly, the Phase 2 TRICOTEL trial for patients with BRAF wildtype melanoma with central nervous system metastases reported an intracranial ORR of 27% following combination treatment of atezolizumab and cobimetinib (Dummer et al., 2022; 35940183). A Phase 1b study evaluating the combination of atezolizumab and cobimetinib for the treatment of patients with solid tumors reported an ORR of 41% (9/22) in patients with melanoma, regardless of BRAF status; the 12-month PFS and OS rates were 50% and 85%, respectively (Hellman et al., 2019; 30918950). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+              </Therapies>
+              <ReferenceLinks />
+              <ClinicalTrialLinks>
+                <ClinicalTrialLink nctId="NCT04589845">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04913285">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04803318">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04985604">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03284502">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT05580770">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04551521">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04720976">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04375527">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT02382549">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+              </ClinicalTrialLinks>
+            </Alteration>
+            <Alteration>
+              <Name>PRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="PRSS37-BRAF fusion" />
+                <AlterationProperty isEquivocal="false" name="rearrangement intron 8" />
+                <AlterationProperty isEquivocal="false" name="TRIO-BRAF rearrangement" />
+                <AlterationProperty isEquivocal="false" name="rearrangement intron 8" />
+                <AlterationProperty isEquivocal="false" name="rearrangement intron 8" />
+                <AlterationProperty isEquivocal="false" name="PRSS37-BRAF rearrangement" />
+                <AlterationProperty isEquivocal="false" name="rearrangement intron 8" />
+                <AlterationProperty isEquivocal="false" name="rearrangement intron 8" />
+                <AlterationProperty isEquivocal="false" name="rearrangement intron 8" />
+              </AlterationProperties>
+              <Interpretation>BRAF encodes a member of the RAF family of protein kinases, which includes ARAF, BRAF, and CRAF. These kinases function downstream of RAS as part of the MAPK (RAF-MEK-ERK) signaling cascade that facilitates cell proliferation, survival and transformation (Holderfield et al., 2014; 24957944, Burotto et al., 2014; 24948110). BRAF mutations have been reported in up to 20% of all cancers, with the majority of mutations occurring at the V600 position (Davies et al., 2002; 12068308, Kandoth et al., 2013; 24132290). Expression of the BRAF kinase domain without the N-terminal auto-inhibitory domain, whether with or without a fusion partner, is a BRAF class 2 subtype and has been shown to be constitutively active and to drive hyperactivation of the MAPK pathway, exhibiting transforming activity (Seivert et al., 2013; 23533272, Pouliakos et al., 2011; 22113612, Botton et al., 2013; 23890088, Ciampi et al., 2005; 15630448, Cin et al., 2011; 21424530, Dahiya et al., 2012; 22548077, Lin et al., 2012; 22157620, Tian et al., 2011; 21884820, Forshew et al., 2009; 19373855, Jones et al., 2008; 18974108, Tran et al., 2005; 15710605, Baitei et al., 2009; 19156774, Gronych et al., 2011; 21403401) in a manner sensitive to MEK inhibitors (Chmielecki et al., 2014; 25266736, Hutchinson et al., 2013; 24345920, Rizos et al., 2014; 24463458, Hartsough et al., 2014; 24520098, Carlino et al., 2014; 24476679, Baitei et al., 2009; 19156774), ERK inhibitors (Carlino et al., 2014; 24476679), the pan-RAF inhibitor sorafenib (Botton et al., 2013; 23890088, Gronych et al., 2011; 21403401), and second-generation BRAF inhibitors PLX8394 and PLX7904 (Choi et al., 2014; 24283590, Basile et al., 2014; 24422853). Some patients with BRAF fusions have been reported to benefit from MEK inhibitors (Fangusaro et al., 2019; 31151904, Ross et al., 2015; 26314551, Menzies et al., 2015; 26072686, Grisham et al., 2015; 26324360, Chmielecki et al., 2014; 25266736, Banerjee et al., 2017; 28339824) as well as pan-RAF inhibitor sorafenib (Subbiah et al., 2014; 24422672, Botton et al., 2013; 23890088, Passeron et al., 2011; 22092579, Karajannis et al., 2014; 24803676). Rearrangements, such as SND1-BRAF fusion and CUL1-BRAF fusion observed here, are predicted to be activating and oncogenic. Rearrangements such as observed here, those that are detected as a reciprocal fusion, are not clearly in frame, or may lack a fusion partner, may be indicative of an activating rearrangement event such as a fusion or an expression of the BRAF kinase domain without the N-terminal auto-inhibitory domain; however, it is unclear whether such rearrangements would lead to an oncogenic BRAF variant. Rearrangements, such as observed here, detected as a deletion of the kinase domain or a duplication of a non-kinase portion of the protein may lead to the production of an oncogenic product such as a fusion or expression of the kinase domain lacking the N-terminal autoinhibitory region; however, it is unclear whether such events would lead to a production of an oncogenic variant. BRAF fusions have been observed in 5% of spitzoid neoplasms (Wiesner et al., 2014; 24445538) and in 1-3% of melanomas (Stransky et al., 2014; 25204415, Ross et al., 2016; 26314551). A systematic review of 100 BRAF fusion-positive melanocytic tumor cases in the literature described BRAF fusions to be enriched for patients assigned female at birth, for young patients (median age of 33 years), and in tumors with spitzoid histopathologic features (Botton et al., 2019; 31618628); 42 different gene fusion partners were identified, with 55% of the partner genes having known dimerization domains, and AGK and AKAP9 being the most common recurrent partner genes (Botton et al., 2019; 31618628). BRAF rearrangement, leading to loss of the autoinhibitory region, has also been observed in 2 cases of large congenital melanocytic nevi (Dessars et al., 2007; 17301836). BRAF mutations have been reported in 37-66% of melanoma cases (Davies et al., 2002; 12068308, Hodis et al., 2012; 22817889, Krauthammer et al., 2012; 22842228, Greaves et al., 2013; 23273605), most frequently in cutaneous melanoma (41-51%)(Greaves et al., 2013; 23273605, Lee et al., 2011; 21166657), melanoma of unknown primary (52%)(Egberts et al., 2014; 24276025) and conjunctival melanoma (14-29%)(Griewank et al., 2013; 23633454, Spendlove et al., 2004; 15577314). There are conflicting reports regarding the prognostic significance of BRAF mutation in the context of melanoma (Long et al., 2011; 21343559, El-Osta et al., 2011; 22039425, Ekedahl et al., 2013; 23855428, Egbert et al., 2014; 24276025). In one study of non-acral cutaneous melanoma, BRAF non-V600E mutation associated with some, but not other, clinicopathological features but did not impact OS since Stage 4 diagnosis, including OS after initiation of frontline ipilimumab treatment (Kim et al., 2016; 27911979). Based on limited clinical data in low-grade glioma and sarcoma, patients with tumors harboring RAF fusions may benefit from treatment with type-II RAF inhibitors such as tovorafenib (Landi et al., 2022; ASCO Abstract TPS10062). In a retrospective genomic screen, 3 patients with BRAF fusions in melanomas responded to consecutive CTLA-4 inhibitor ipilimumab and immune checkpoint inhibitor pembrolizumab treatments, with 2 patients reported to be disease free following ipilimumab and pembrolizumab and 1 patient progressing on ipilimumab and then responding on pembrolizumab (Turner et al., 2019; 30254212). The MEK inhibitor trametinib has also been reported to benefit patients with BRAF fusions in melanomas in case reports and basket trials (Ross et al., 2016; 26314551, Menzies et al., 2015; 26072686, Nebhan et al., 2021; 33861486). Individual case reports have also observed benefit for patients with the pan-RAF inhibitor sorafenib (Passeron et al., 2011; 22092579, Botton et al., 2013; 23890088, Boussemart et al., 2019; 30683711). Second-generation BRAF inhibitors are in development; 1 patient with melanoma and a BRAF fusion treated with PLX8394 achieved a CR, which was the best overall response in a basket trial otherwise consisting of BRAF exon 15 missense mutations (Janku et al., 2021; AACR Abstract CT212). Targeting extracellular signal-regulated kinase (ERK) downstream of BRAF with ulixertinib resulted in 1 SD for the 1 patient with a BRAF fusion in another basket trial (Sullivan et al., 2018; 29247021). Single-agent BRAF V600-targeting treatments such as vemurafenib are not predicted to confer benefit in melanomas with BRAF fusions in the absence of BRAF V600 mutation; a report showed no tumor response for a patient with a BRAF fusion (Kim et al., 2017; 28092667), although a combination of dabrafenib and trametinib resulted in a PR for 1 patient with a co-occurring BRAF V600 mutation (Kulkarni et al., 2017; 28539463). Retrospective analysis of patients with melanoma treated with first-line nivolumab plus ipilimumab showed significantly improved survival for those with BRAF-mutated disease (9.9 months median PFS [mPFS] and median OS [mOS] not reached) relative to those with either NRAS-mutated disease (4.8 months mPFS and 14.2 months mOS) or disease lacking BRAF and NRAS mutations (5.3 months mPFS and 16.1 months mOS) (van Not et al., 2022; 36130145).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</ClinicalTrialNote>
+              <Therapies>
+                <Therapy>
+                  <Name />
+                  <GenericName>Selumetinib</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Selumetinib is a MEK inhibitor that is FDA approved to treat pediatric patients with neurofibromatosis type 1 (NF1)-associated plexiform neurofibromas (PNs). Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; Activating BRAF fusions may predict sensitivity to MEK inhibitors such as selumetinib. Clinical responses to selumetinib have been achieved by patients with BRAF-fusion-positive low-grade glioma (Banerjee et al., 2017; 28339824, Fangusaro et al., 2019; 31151904). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; In a Phase 2 study for patients with metastatic melanoma, selumetinib monotherapy achieved an ORR of 5.8%; among patients with BRAF mutations, the ORR was 11% (5/45) (Kirkwood et al., 2012; 22048237). In a Phase 2 trial of first-line treatment of BRAF-mutated metastatic melanoma, the addition of selumetinib to dacarbazine increased PFS compared to dacarbazine plus placebo (5.6 vs 3.0 months, HR=0.63) but did not significantly improve OS (13.9 vs 10.5 months, HR 0.93, p=0.39) (Robert et al., 2013; 23735514). In a Phase 2 trial for patients with BRAF wildtype advanced melanoma, the addition of selumetinib to docetaxel did not improve median PFS compared to docetaxel plus placebo (4.2 vs 3.9 months) and was associated with lower OS (9.5 months vs 11.4 months); NRAS mutation was associated with inferior OS (HR=0.78) (Gupta et al., 2014; 24567366). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Trametinib</GenericName>
+                  <FDAApproved>true</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Trametinib is a MEK inhibitor that is FDA approved as a monotherapy to treat patients with melanoma with BRAF V600E or V600K mutations. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; Activating BRAF fusions may predict sensitivity to MEK inhibitors such as trametinib. Clinical responses to trametinib have been achieved by patients with BRAF-fusion-positive melanoma (Ross et al., 2015; 26314551, Menzies et al., 2015; 26072686, Nebhan et al., 2021; 33861486, Menzer et al., 2019; 31580757), low-grade glioma (Kondyli et al., 2018; 30097824, Miller et al., 2016; 28009226, Wagner et al., 2018; 29369501), histiocytosis (Durham et al., 2019; 31768065, Hendifar et al., 2021; 34476331), and prostate cancer (Beato et al., 2019; ASCO Abstract 3082). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; Individual patients with BRAF-fusion-positive melanoma have experienced either a PR or clinical benefit from single-agent trametinib (Ross et al., 2015; 26314551, Menzies et al., 2015; 26072686, Nebhan et al., 2021; 33861486, Menzer et al., 2019; 31580757). As a monotherapy for patients with BRAF V600E/K-mutated metastatic melanoma, trametinib improved PFS (4.9 vs. 1.5 months, HR=0.54) and median OS (15.6 vs. 11.3 months, HR=0.84) compared with patients treated with chemotherapy (Robert et al., 2019; 30690294). In a Phase 1 study, 10% (4/40) of patients with BRAF-wildtype metastatic melanoma achieved a PR (Falchook et al., 2012; 22805292). Whereas frequent adverse events precluded a recommended Phase 2 dose and schedule for the combination of trametinib and everolimus in a Phase 1b trial for solid tumors (Tolcher et al., 2014; 25344362), a retrospective study for heavily pretreated patients with solid tumors reported tolerable regimens of the combination for 23/31 patients, with 16 patients treated &gt;3 months and evaluable patients achieving a median PFS of 6.5 months (Patterson et al., 2018; AACR Abstract 3891). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Cobimetinib</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Cobimetinib is a MEK inhibitor that is FDA approved to treat patients with histiocytic neoplasms. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical evidence, BRAF activating mutations may predict sensitivity to MEK inhibitors such as cobimetinib (Ribas et al., 2014; 25037139, Larkin et al., 2014; 25265494, Diamond et al., 2019; 30867592, Sullivan et al., 2019; 31171876). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; A Phase 1 study of cobimetinib monotherapy in solid tumors reported 1% (1/97) CR and 6% (6/97) PR, all of which were achieved by patients with melanoma (6 with BRAF V600E) (Rosen et al., 2016; 27424159). Patients with metastatic melanoma treated with cobimetinib combined with the RAF inhibitor belvarafenib experienced PRs for those with BRAF V600 mutations (33% [3/9]) and non-V600 mutations (50% [3/6])(Kim et al., 2021; ESMO Abstract 529P). In the Phase 3 IMspire170 study, the combination of atezolizumab and cobimetinib did not improve median PFS (5.5 vs. 5.7 months), ORR (26% vs. 32%) or 6-month OS (88% vs. 87%) compared with pembrolizumab for patients with previously untreated BRAF V600 wildtype melanoma (Arance et al., 2019; ESMO Abstract LBA69). Similarly, the Phase 2 TRICOTEL trial for patients with BRAF wildtype melanoma with central nervous system metastases reported an intracranial ORR of 27% following combination treatment of atezolizumab and cobimetinib (Dummer et al., 2022; 35940183). A Phase 1b study evaluating the combination of atezolizumab and cobimetinib for the treatment of patients with solid tumors reported an ORR of 41% (9/22) in patients with melanoma, regardless of BRAF status; the 12-month PFS and OS rates were 50% and 85%, respectively (Hellman et al., 2019; 30918950). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+              </Therapies>
+              <ReferenceLinks />
+              <ClinicalTrialLinks>
+                <ClinicalTrialLink nctId="NCT04589845">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04913285">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04803318">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04985604">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03284502">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT05580770">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04551521">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04720976">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04375527">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT02382549">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+              </ClinicalTrialLinks>
+            </Alteration>
+            <Alteration>
+              <Name>SND1-BRAF fusion, CUL1-BRAF fusion</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="SND1-BRAF fusion" />
+                <AlterationProperty isEquivocal="false" name="CUL1-BRAF fusion" />
+              </AlterationProperties>
+              <Interpretation>BRAF encodes a member of the RAF family of protein kinases, which includes ARAF, BRAF, and CRAF. These kinases function downstream of RAS as part of the MAPK (RAF-MEK-ERK) signaling cascade that facilitates cell proliferation, survival and transformation (Holderfield et al., 2014; 24957944, Burotto et al., 2014; 24948110). BRAF mutations have been reported in up to 20% of all cancers, with the majority of mutations occurring at the V600 position (Davies et al., 2002; 12068308, Kandoth et al., 2013; 24132290). Expression of the BRAF kinase domain without the N-terminal auto-inhibitory domain, whether with or without a fusion partner, is a BRAF class 2 subtype and has been shown to be constitutively active and to drive hyperactivation of the MAPK pathway, exhibiting transforming activity (Seivert et al., 2013; 23533272, Pouliakos et al., 2011; 22113612, Botton et al., 2013; 23890088, Ciampi et al., 2005; 15630448, Cin et al., 2011; 21424530, Dahiya et al., 2012; 22548077, Lin et al., 2012; 22157620, Tian et al., 2011; 21884820, Forshew et al., 2009; 19373855, Jones et al., 2008; 18974108, Tran et al., 2005; 15710605, Baitei et al., 2009; 19156774, Gronych et al., 2011; 21403401) in a manner sensitive to MEK inhibitors (Chmielecki et al., 2014; 25266736, Hutchinson et al., 2013; 24345920, Rizos et al., 2014; 24463458, Hartsough et al., 2014; 24520098, Carlino et al., 2014; 24476679, Baitei et al., 2009; 19156774), ERK inhibitors (Carlino et al., 2014; 24476679), the pan-RAF inhibitor sorafenib (Botton et al., 2013; 23890088, Gronych et al., 2011; 21403401), and second-generation BRAF inhibitors PLX8394 and PLX7904 (Choi et al., 2014; 24283590, Basile et al., 2014; 24422853). Some patients with BRAF fusions have been reported to benefit from MEK inhibitors (Fangusaro et al., 2019; 31151904, Ross et al., 2015; 26314551, Menzies et al., 2015; 26072686, Grisham et al., 2015; 26324360, Chmielecki et al., 2014; 25266736, Banerjee et al., 2017; 28339824) as well as pan-RAF inhibitor sorafenib (Subbiah et al., 2014; 24422672, Botton et al., 2013; 23890088, Passeron et al., 2011; 22092579, Karajannis et al., 2014; 24803676). Rearrangements, such as SND1-BRAF fusion and CUL1-BRAF fusion observed here, are predicted to be activating and oncogenic. Rearrangements such as observed here, those that are detected as a reciprocal fusion, are not clearly in frame, or may lack a fusion partner, may be indicative of an activating rearrangement event such as a fusion or an expression of the BRAF kinase domain without the N-terminal auto-inhibitory domain; however, it is unclear whether such rearrangements would lead to an oncogenic BRAF variant. Rearrangements, such as observed here, detected as a deletion of the kinase domain or a duplication of a non-kinase portion of the protein may lead to the production of an oncogenic product such as a fusion or expression of the kinase domain lacking the N-terminal autoinhibitory region; however, it is unclear whether such events would lead to a production of an oncogenic variant. BRAF fusions have been observed in 5% of spitzoid neoplasms (Wiesner et al., 2014; 24445538) and in 1-3% of melanomas (Stransky et al., 2014; 25204415, Ross et al., 2016; 26314551). A systematic review of 100 BRAF fusion-positive melanocytic tumor cases in the literature described BRAF fusions to be enriched for patients assigned female at birth, for young patients (median age of 33 years), and in tumors with spitzoid histopathologic features (Botton et al., 2019; 31618628); 42 different gene fusion partners were identified, with 55% of the partner genes having known dimerization domains, and AGK and AKAP9 being the most common recurrent partner genes (Botton et al., 2019; 31618628). BRAF rearrangement, leading to loss of the autoinhibitory region, has also been observed in 2 cases of large congenital melanocytic nevi (Dessars et al., 2007; 17301836). BRAF mutations have been reported in 37-66% of melanoma cases (Davies et al., 2002; 12068308, Hodis et al., 2012; 22817889, Krauthammer et al., 2012; 22842228, Greaves et al., 2013; 23273605), most frequently in cutaneous melanoma (41-51%)(Greaves et al., 2013; 23273605, Lee et al., 2011; 21166657), melanoma of unknown primary (52%)(Egberts et al., 2014; 24276025) and conjunctival melanoma (14-29%)(Griewank et al., 2013; 23633454, Spendlove et al., 2004; 15577314). There are conflicting reports regarding the prognostic significance of BRAF mutation in the context of melanoma (Long et al., 2011; 21343559, El-Osta et al., 2011; 22039425, Ekedahl et al., 2013; 23855428, Egbert et al., 2014; 24276025). In one study of non-acral cutaneous melanoma, BRAF non-V600E mutation associated with some, but not other, clinicopathological features but did not impact OS since Stage 4 diagnosis, including OS after initiation of frontline ipilimumab treatment (Kim et al., 2016; 27911979). Based on limited clinical data in low-grade glioma and sarcoma, patients with tumors harboring RAF fusions may benefit from treatment with type-II RAF inhibitors such as tovorafenib (Landi et al., 2022; ASCO Abstract TPS10062). In a retrospective genomic screen, 3 patients with BRAF fusions in melanomas responded to consecutive CTLA-4 inhibitor ipilimumab and immune checkpoint inhibitor pembrolizumab treatments, with 2 patients reported to be disease free following ipilimumab and pembrolizumab and 1 patient progressing on ipilimumab and then responding on pembrolizumab (Turner et al., 2019; 30254212). The MEK inhibitor trametinib has also been reported to benefit patients with BRAF fusions in melanomas in case reports and basket trials (Ross et al., 2016; 26314551, Menzies et al., 2015; 26072686, Nebhan et al., 2021; 33861486). Individual case reports have also observed benefit for patients with the pan-RAF inhibitor sorafenib (Passeron et al., 2011; 22092579, Botton et al., 2013; 23890088, Boussemart et al., 2019; 30683711). Second-generation BRAF inhibitors are in development; 1 patient with melanoma and a BRAF fusion treated with PLX8394 achieved a CR, which was the best overall response in a basket trial otherwise consisting of BRAF exon 15 missense mutations (Janku et al., 2021; AACR Abstract CT212). Targeting extracellular signal-regulated kinase (ERK) downstream of BRAF with ulixertinib resulted in 1 SD for the 1 patient with a BRAF fusion in another basket trial (Sullivan et al., 2018; 29247021). Single-agent BRAF V600-targeting treatments such as vemurafenib are not predicted to confer benefit in melanomas with BRAF fusions in the absence of BRAF V600 mutation; a report showed no tumor response for a patient with a BRAF fusion (Kim et al., 2017; 28092667), although a combination of dabrafenib and trametinib resulted in a PR for 1 patient with a co-occurring BRAF V600 mutation (Kulkarni et al., 2017; 28539463). Retrospective analysis of patients with melanoma treated with first-line nivolumab plus ipilimumab showed significantly improved survival for those with BRAF-mutated disease (9.9 months median PFS [mPFS] and median OS [mOS] not reached) relative to those with either NRAS-mutated disease (4.8 months mPFS and 14.2 months mOS) or disease lacking BRAF and NRAS mutations (5.3 months mPFS and 16.1 months mOS) (van Not et al., 2022; 36130145).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</ClinicalTrialNote>
+              <Therapies>
+                <Therapy>
+                  <Name />
+                  <GenericName>Selumetinib</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Selumetinib is a MEK inhibitor that is FDA approved to treat pediatric patients with neurofibromatosis type 1 (NF1)-associated plexiform neurofibromas (PNs). Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; Activating BRAF fusions may predict sensitivity to MEK inhibitors such as selumetinib. Clinical responses to selumetinib have been achieved by patients with BRAF-fusion-positive low-grade glioma (Banerjee et al., 2017; 28339824, Fangusaro et al., 2019; 31151904). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; In a Phase 2 study for patients with metastatic melanoma, selumetinib monotherapy achieved an ORR of 5.8%; among patients with BRAF mutations, the ORR was 11% (5/45) (Kirkwood et al., 2012; 22048237). In a Phase 2 trial of first-line treatment of BRAF-mutated metastatic melanoma, the addition of selumetinib to dacarbazine increased PFS compared to dacarbazine plus placebo (5.6 vs 3.0 months, HR=0.63) but did not significantly improve OS (13.9 vs 10.5 months, HR 0.93, p=0.39) (Robert et al., 2013; 23735514). In a Phase 2 trial for patients with BRAF wildtype advanced melanoma, the addition of selumetinib to docetaxel did not improve median PFS compared to docetaxel plus placebo (4.2 vs 3.9 months) and was associated with lower OS (9.5 months vs 11.4 months); NRAS mutation was associated with inferior OS (HR=0.78) (Gupta et al., 2014; 24567366). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Trametinib</GenericName>
+                  <FDAApproved>true</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Trametinib is a MEK inhibitor that is FDA approved as a monotherapy to treat patients with melanoma with BRAF V600E or V600K mutations. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; Activating BRAF fusions may predict sensitivity to MEK inhibitors such as trametinib. Clinical responses to trametinib have been achieved by patients with BRAF-fusion-positive melanoma (Ross et al., 2015; 26314551, Menzies et al., 2015; 26072686, Nebhan et al., 2021; 33861486, Menzer et al., 2019; 31580757), low-grade glioma (Kondyli et al., 2018; 30097824, Miller et al., 2016; 28009226, Wagner et al., 2018; 29369501), histiocytosis (Durham et al., 2019; 31768065, Hendifar et al., 2021; 34476331), and prostate cancer (Beato et al., 2019; ASCO Abstract 3082). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; Individual patients with BRAF-fusion-positive melanoma have experienced either a PR or clinical benefit from single-agent trametinib (Ross et al., 2015; 26314551, Menzies et al., 2015; 26072686, Nebhan et al., 2021; 33861486, Menzer et al., 2019; 31580757). As a monotherapy for patients with BRAF V600E/K-mutated metastatic melanoma, trametinib improved PFS (4.9 vs. 1.5 months, HR=0.54) and median OS (15.6 vs. 11.3 months, HR=0.84) compared with patients treated with chemotherapy (Robert et al., 2019; 30690294). In a Phase 1 study, 10% (4/40) of patients with BRAF-wildtype metastatic melanoma achieved a PR (Falchook et al., 2012; 22805292). Whereas frequent adverse events precluded a recommended Phase 2 dose and schedule for the combination of trametinib and everolimus in a Phase 1b trial for solid tumors (Tolcher et al., 2014; 25344362), a retrospective study for heavily pretreated patients with solid tumors reported tolerable regimens of the combination for 23/31 patients, with 16 patients treated &gt;3 months and evaluable patients achieving a median PFS of 6.5 months (Patterson et al., 2018; AACR Abstract 3891). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+                <Therapy>
+                  <Name />
+                  <GenericName>Cobimetinib</GenericName>
+                  <FDAApproved>false</FDAApproved>
+                  <Rationale>&lt;p&gt;&lt;b&gt;Approved Indications:&lt;/b&gt; Cobimetinib is a MEK inhibitor that is FDA approved to treat patients with histiocytic neoplasms. Please see the drug label for full prescribing information. &lt;/p&gt; &lt;p&gt;&lt;b&gt;Gene Association:&lt;/b&gt; On the basis of clinical evidence, BRAF activating mutations may predict sensitivity to MEK inhibitors such as cobimetinib (Ribas et al., 2014; 25037139, Larkin et al., 2014; 25265494, Diamond et al., 2019; 30867592, Sullivan et al., 2019; 31171876). &lt;/p&gt; &lt;p&gt;&lt;b&gt;Supporting Data:&lt;/b&gt; A Phase 1 study of cobimetinib monotherapy in solid tumors reported 1% (1/97) CR and 6% (6/97) PR, all of which were achieved by patients with melanoma (6 with BRAF V600E) (Rosen et al., 2016; 27424159). Patients with metastatic melanoma treated with cobimetinib combined with the RAF inhibitor belvarafenib experienced PRs for those with BRAF V600 mutations (33% [3/9]) and non-V600 mutations (50% [3/6])(Kim et al., 2021; ESMO Abstract 529P). In the Phase 3 IMspire170 study, the combination of atezolizumab and cobimetinib did not improve median PFS (5.5 vs. 5.7 months), ORR (26% vs. 32%) or 6-month OS (88% vs. 87%) compared with pembrolizumab for patients with previously untreated BRAF V600 wildtype melanoma (Arance et al., 2019; ESMO Abstract LBA69). Similarly, the Phase 2 TRICOTEL trial for patients with BRAF wildtype melanoma with central nervous system metastases reported an intracranial ORR of 27% following combination treatment of atezolizumab and cobimetinib (Dummer et al., 2022; 35940183). A Phase 1b study evaluating the combination of atezolizumab and cobimetinib for the treatment of patients with solid tumors reported an ORR of 41% (9/22) in patients with melanoma, regardless of BRAF status; the 12-month PFS and OS rates were 50% and 85%, respectively (Hellman et al., 2019; 30918950). &lt;/p&gt;</Rationale>
+                  <ApprovedUses />
+                  <Effect>Sensitizing</Effect>
+                  <Include>true</Include>
+                  <IncludeInSummary>true</IncludeInSummary>
+                  <ReferenceLinks />
+                </Therapy>
+              </Therapies>
+              <ReferenceLinks />
+              <ClinicalTrialLinks>
+                <ClinicalTrialLink nctId="NCT04589845">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04913285">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04803318">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04985604">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03284502">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT05580770">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04551521">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04720976">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT04375527">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT02382549">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+              </ClinicalTrialLinks>
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>CTNNB1</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>Y30_D56del</Name>
+              <AlterationProperties>
+                <AlterationProperty dnaFraction="24.28" isEquivocal="false" name="Y30_D56del" />
+              </AlterationProperties>
+              <Interpretation>CTNNB1 encodes beta-catenin, a key downstream component of the WNT signaling pathway. Beta-catenin interacts with cadherin to regulate cell-cell adhesion; as a component of the WNT pathway, it also plays a role in development, cell proliferation, and cell differentiation (Kikuchi, 2000; 10679188). CTNNB1 exon 3 mutations are activating in that they lead to increased beta-catenin protein stability and activation of the WNT pathway (Anastas and Moon, 2013; 23258168, Fukuchi et al., 1998; 9721853, Kikuchi et al., 2003; 12824913, Takahashi et al., 2006; 16523258, Tanaka et al., 2001; 11731417, Abraham et al., 2002; 11943721, Austinat et al., 2008; 18282277, Wu et al., 2003; 12820959, Provost et al., 2005; 15829978, Polakis, 1999; 10072352, Segditsas and Tomlinson, 2006; 17143297, Barth et al., 1997; 9024698, Harada et al., 1999; 10545105, Hsu et al., 1998; 9671490, Breuhahn et al., 2008; 18491352, Soon et al., 2008; 18515740, Tacon et al., 2011; 21212436, Simon and Hammer, 2012; 22266195, Hirotsu et al., 2016; 26850916). Although CTNNB1 exon 3 alterations such as seen here have not been fully characterized, they have been associated with sensitivity to targeted therapies or have shown cancer association, which may indicate biological relevance (Tate et al., 2019; 30371878, Kim and Jeong, 2019; 30699286). CTNNB1 mutations have been reported in 0-5% of skin melanomas (cBio-Hodis et al., 2012; 22817889, cBio-Krauthammer et al., 2012; 22842228, cBio-Cancer Genome Atlas Research Network, 2015; 26091043). Beta-catenin activity has been found to decrease migration of melanoma cells, yet also paradoxically increase melanoma metastasis to the lungs (Gallagher et al., 2012; 22665063, Damsky et al., 2011; 22172720). Loss of beta-catenin, along with a panel of other markers, was found to be a negative prognostic factor in early-stage melanoma (Meyer et al., 2012; 22685558). Mutation or activation of CTNNB1 signaling has been shown to increase mTOR signaling, promote tumorigenesis, and respond to mTOR inhibition in preclinical studies (Tanwar et al., 2009; 19403928, Tanwar et al., 2011; 21695255, Fujishita et al., 2008; 18768809). Small studies have reported clinical benefit following treatment of everolimus combined with other targeted agents for patients with CTNNB1-mutated hepatocellular carcinoma (Bhoori et al., 2010; 20347502, Janku et al., 2014; 24931142) or endometrial carcinoma (Slomovitz et al., 2015; 25624430). In preclinical studies, CTNNB1 activating mutations have been shown to increase expression of WNT pathway member DKK1, which may promote tumor cell proliferation and immune evasion (Niida et al., 2004; 15378020, Chamorro et al., 2005; 15592430, Kagey and He, 2017; 28574171). A Phase 1 trial of DKK1-targeting antibody DKN-01 in combination with paclitaxel in esophageal cancer reported a 50% (2/4) PR rate and 25% (1/4) SD rate in patients with CTNNB1 activating mutations, compared with 24% (10/41) PR and 37% (15/41) SD in unselected patients (Kagey et al., 2017; AACR Abstract 369). Multiple preclinical studies in cancer models harboring CTNNB1 mutation or beta-catenin pathway activation have reported activation of the NOTCH pathway and sensitivity to pharmacologic inhibition of NOTCH signaling by gamma-secretase inhibitors (Kwon et al., 2011; 21841793, Arcaroli et al., 2013; 23868008, Shang et al., 2015; 26349011, Kode et al., 2014; 24429522). Clinical trials of gamma-secretase inhibitor nirogacestat have shown high response rates in patients with desmoid tumors, which are driven by activating CTNNB1 mutations in the majority of cases (Kasper et al., 2022; ESMO Abstract LBA2, Kummar et al., 2015; ASCO Abstract 10563, Messersmith et al., 2015; 25231399), suggesting CTNNB1-mutated tumors may be sensitive to gamma-secretase inhibitors. Although WNT pathway inhibitors have been explored preclinically in CTNNB1-mutated cells, clinical data supporting this therapeutic approach are lacking (Zhu et al., 2012; 22964660, Tanwar et al., 2011; 21695255, Kogan et al., 2012; 22356261, Lachenmayer et al., 2012; 22811581). It is not known whether these therapeutic approaches would be relevant in the context of alterations that have not been fully characterized, as seen here.</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote>Based on clinical and preclinical evidence, tumors with activating CTNNB1 alterations may be sensitive to mTOR inhibitors. It is not known whether these therapeutic approaches would be relevant in the context of alterations that have not been fully characterized, as seen here.</ClinicalTrialNote>
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks>
+                <ClinicalTrialLink nctId="NCT04803318">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT05036226">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT03203525">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+                <ClinicalTrialLink nctId="NCT01582191">
+                  <Include>true</Include>
+                </ClinicalTrialLink>
+              </ClinicalTrialLinks>
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>BCOR</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>rearrangement intron 9</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="rearrangement intron 9" />
+              </AlterationProperties>
+              <Interpretation>BCOR encodes a transcriptional corepressor that interacts with BCL6 but not with related POZ domain-containing proteins (Huynh et al., 2000; 10898795). BCOR activity is required for normal development; de novo germline mutations in BCOR have been linked to syndromic microphthalmia-2 and oculofaciocardiodental syndrome (Ng et al., 2004; 15004558). BCOR inactivation has been reported in various malignancies, whereas BCOR fusions and internal tandem duplications (ITDs) are characteristic of specific tumor types (Pierron et al., 2012; 22387997, Kao et al., 2016; 27428733, Specht et al., 2016; 26752546, Panagopoulos et al., 2013; 23580382, Antonescu et al., 2014; 24285434, Astolfi et al., 2015; 26516930, Roy et al., 2015; 26573325, Kao et al., 2016; 26945340, Kao et al., 2016; 27428733, Cramer et al., 2017; 28687574, Appay et al., 2017; 28704208). BCOR alteration (mutation or homozygous deletion) has been reported in 5.4% of rhabdomyosarcoma cases, with BCOR alterations occurring more frequently in PAX fusion-negative tumors (7%) than PAX fusion-positive (1.9%) tumors (Shern et al., 2014; 24436047); BCOR mutation has also been reported in 3.2% (3/92) of medulloblastoma cases (Pugh et al., 2012; 22820256). In the context of hematologic disease, BCOR mutation has also been reported in 4% of aplastic anemia cases (Kulasekararaj et al., 2014; 25139356), 4.2% of myelodysplastic syndrome (MDS) cases (Damm et al., 2013; 24047651), 7.2% of chronic myelomonocytic leukemia cases (Damm et al., 2013; 24047651), and 3.8% of normal karyotype acute myeloid leukemia (AML) cases (Grossman et al., 2011; 22012066). Published data investigating the prognostic implications of BCOR mutations or inactivating alterations in solid tumors are generally limited (PubMed, Jun 2023). There are no targeted therapies available to address BCOR alterations.</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>CDKN2A/B</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>p16INK4a loss and p14ARF loss exons 2-3</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="p16INK4a loss and p14ARF loss exons 2-3" />
+              </AlterationProperties>
+              <Interpretation>CDKN2A encodes two different, unrelated tumor suppressor proteins, p16INK4a and p14ARF, whereas CDKN2B encodes the tumor suppressor p15INK4b (Quelle et al., 1995; 8521522, Sharpless, 2005; 15878778). Both p15INK4b and p16INK4a bind to and inhibit CDK4 and CDK6, thereby maintaining the growth-suppressive activity of the Rb tumor suppressor; loss or inactivation of either p15INK4b or p16INK4a contributes to dysregulation of the CDK4/6-cyclin-Rb pathway and loss of cell cycle control (Gazzeri et al., 1998; 9484839, Roussel, 1999; 10498883). The tumor suppressive functions of p14ARF involve stabilization and activation of p53, via a mechanism of MDM2 inhibition (Sherr et al., 2005; 16869746, Ozenne et al., 2010; 20549699). One or more alterations observed here are predicted to result in p16INK4a loss of function (Ruas et al., 1999; 10498896, Jones et al., 2007; 17909018, Haferkamp et al., 2008; 18843795, Huot et al., 2002; 12417717, Rizos et al., 2001; 11518711, Gombart et al., 1997; 9324288, Yang et al., 1995; 7780957, Parry and Peters, 1996; 8668202, Greenblatt et al., 2003; 12606942, Yarbrough et al., 1999; 10491434, Poi et al., 2001; 11255261, Byeon et al., 1998; 9660926, Kannengiesser et al., 2009; 19260062, Lal et al., 2000; 10719365, Koh et al., 1995; 7777061, McKenzie et al., 2010; 20340136, Miller et al., 2011; 21462282, Arap et al., 1997; 905385, Scaini et al., 2014; 24659262, Jenkins et al., 2013; 23190892, Walker et al., 1999; 10389768, Rutter et al., 2003; 12853981). One or more alterations seen here are predicted to result in p14ARF loss of function (Rizos et al., 2001; 11518711, Itahana and Zhang, 2008; 18538737, Zhang and Xiong, 1999; 10360174, Zhang et al., 1998; 9529249, Rutter et al., 2003; 12853981). Homozygous deletion of CDKN2A and/or CDKN2B has been reported in 14-29% of melanoma cases (cBioPortal, Oct 2022)(Cerami et al., 2012; 22588877, Gao et al., 2013; 23550210, Jönsson et al., 2010; 20460471, Busch et al., 2010; 20505745, Flores et al., 1996; 8895759). Concomitant loss of p16INK4a and p14ARF in melanoma is common, although loss of activity of either may also occur as a result of transcript-specific mutations or hypermethylation (Gallagher et al., 2008; 18953432, Freedberg et al., 2008; 18505964, Bachmann et al., 2004; 15547691, van der Velden et al., 2001; 11431374, Fauri et al., 2011; 22942654, Jonsson et al., 2010; 20703244, Hsieh et al., 2009; 20415670). Various correlations between CDKN2A alterations and tumor histology or patient prognosis in melanoma have been reported in the literature, with some studies reporting CDKN2A deletion to be associated with adverse prognosis and other studies reporting no association between CDKN2A deletion and prognosis (Grafström et al., 2005; 15837753, Jönsson et al., 2010; 20460471, Puig et al., 2000; 10890376, Busch et al., 2010; 20505745). Studies suggest that deletion of CDKN2A is an early event in melanoma tumorigenesis, and loss of p16INK4a has been associated with increased DNA damage in human benign melanocytic tumors and has been suggested to contribute to tumorigenesis by promoting the proliferation of cells with genetic damage (Fung et al., 2012; 23279822, Matsumura et al., 1998; 9617435). CDKN2A alterations affecting p16INK4a, p14ARF, or both have been strongly associated (up to a 76% risk) with familial melanoma (Aspinwall et al., 2013; 23382133, Bandarchi et al., 2010; 20936153, Binni et al., 2010; 20132244, Garcia-Casado et al., 2009; 19741424, Gruis et al., 1995; 7640518, Harland et al., 2001; 11726555, Liu et al., 1995; 7624155, Puntervoll et al., 2013; 23384855, Ranade et al., 1995; 7647780, Randerson-Moor et al., 2001; 11136714, Veinalde et al., 2013; 23546221). Preclinical data suggest that tumors with loss of p16INK4a function may be sensitive to CDK4/6 inhibitors, such as abemaciclib, ribociclib, and palbociclib (Konecny et al., 2011; 21278246, Katsumi et al., 2011; 21871868, Cen et al., 2012; 22711607, Logan et al., 2013; 23898052). Clinical data in mesothelioma, breast cancer, and uterine leiomyosarcoma indicate that CDKN2A loss may predict sensitivity to abemaciclib (Fennell et al., 2022; 35157829) and palbociclib treatment (Elvin et al., 2017; 28283584, Gao et al., 2015; 26715889). However, multiple other clinical studies have shown no significant correlation between p16INK4a loss or inactivation and therapeutic benefit of these agents (Gopalan et al., 2014; ASCO Abstract 8077, Peguero et al., 2016; ASCO Abstract 2528, Konecny et al., 2016; ASCO Abstract 5557)(DeMichele et al., 2014; 25501126, Finn et al., 2015; 25524798, Infante et al., 2016; 27542767, Johnson et al., 2014; 24797823); it is not known whether CDK4/6 inhibitors would be beneficial in this case. Although preclinical studies have suggested that loss of p14ARF function may be associated with reduced sensitivity to MDM2 inhibitors (Van Maerken et al., 2011; 21460101, Gamble et al., 2012; 21725357), the clinical relevance of p14ARF as a predictive biomarker is not clear. Germline CDKN2A mutation is associated with melanoma-pancreatic cancer syndrome, a condition marked by increased risk of developing malignant melanoma and/or pancreatic cancer (Whelan et al., 1995; 7666917). Mutation carriers within families may develop either or both types of cancer, and melanoma cases may be referred to as familial or hereditary melanoma (Hansson, 2010; 20687502, Hogg et al., 1998; 9479083). CDKN2A is the most implicated gene in familial melanoma, with germline mutations present in 16% to 20% of familial melanoma cases (De Unamuno et al., 2018; 29543703, Soura et al., 2016; 26892650, Huerta et al., 2018; 29405243). CDKN2A alteration has also been implicated in familial melanoma-astrocytoma syndrome, an extremely rare tumor association characterized by dual predisposition to melanoma and nervous system tumors (Kaufman et al., 1993; 8414022, Bahuau et al., 1998; 9622062, Chan et al., 2017; 28699883). In the appropriate clinical context, germline testing of CDKN2A is recommended.</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>Microsatellite status</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>MS-Stable</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="MS-Stable" />
+              </AlterationProperties>
+              <Interpretation>Microsatellite instability (MSI) is a condition of genetic hypermutability that generates excessive amounts of short insertion/deletion mutations in the genome; it generally occurs at microsatellite DNA sequences and is caused by a deficiency in DNA mismatch repair (MMR) in the tumor (Kocarnik et al., 2015; 26337942). Defective MMR and consequent MSI occur as a result of genetic or epigenetic inactivation of one of the MMR pathway proteins, primarily MLH1, MSH2, MSH6, or PMS2 (You et al., 2010; 21081928, Bairwa et al., 2014; 24623249, Kocarnik et al., 2015; 26337942). This sample is microsatellite-stable (MSS), equivalent to the clinical definition of an MSS tumor: one with mutations in none of the tested microsatellite markers (Boland et al., 1998; 9823339, Pawlik et al., 2004; 15528785, Boland and Goel, 2010; 20420947). MSS status indicates MMR proficiency and typically correlates with intact expression of all MMR family proteins (Kocarnik et al., 2015; 26337942, Bairwa et al., 2014; 24623249, Pawlik et al., 2004; 15528785, Boland and Goel, 2010; 20420947). MSI has been detected in 16-32% of cutaneous melanomas in several small datasets, with the majority exhibiting MSI-low (Kubecek et al., 2016; 27623135). A higher frequency of MSI (low and high) has been reported in metastatic tumors (20-77%) compared to primary tumors (2-30%) (Kubecek et al., 2016; 27372860). No association between MSI status and clinicopathological features of patients with melanoma was reported in one study (Peris et al., 1995; 7561170). On the basis of clinical evidence, MSS tumors are significantly less likely than MSI-H tumors to respond to anti-PD-1 immune checkpoint inhibitors (Gatalica et al., 2014; 25392179, Kroemer et al., 2015; 26140250, Lal et al., 2015; 25949894), including approved therapies nivolumab and pembrolizumab (Overman et al., 2016; ASCO Abstract 3501, Le et al., 2015; 26028255). In a retrospective analysis of 361 patients with solid tumors treated with pembrolizumab, 3% were MSI-H and experienced a significantly higher ORR compared with non-MSI-H cases (70% vs. 12%, p=0.001) (Ayers et al., 2016; ASCO-SITC Abstract P60).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+        <Gene>
+          <Name>Tumor Mutation Burden</Name>
+          <Include>true</Include>
+          <Alterations>
+            <Alteration>
+              <Name>02</Name>
+              <AlterationProperties>
+                <AlterationProperty isEquivocal="false" name="02" />
+              </AlterationProperties>
+              <Interpretation>Tumor mutation burden (TMB, also known as mutation load) is a measure of the number of somatic protein-coding base substitution and insertion/deletion mutations occurring in a tumor specimen. TMB is affected by a variety of causes, including exposure to mutagens such as ultraviolet light in melanoma (Pfeifer et al., 2005; 15748635, Hill et al., 2013; 23875803) and cigarette smoke in lung cancer (Pfeifer et al., 2002; 12379884, Rizvi et al., 2015; 25765070), treatment with temozolomide-based chemotherapy in glioma (Johnson et al., 2014; 24336570, Choi et al., 2018; 29452419), mutations in the proofreading domains of DNA polymerases encoded by the POLE and POLD1 genes (Cancer Genome Atlas Research Network, 2013; 23636398, Briggs and Tomlinson, 2013; 23447401, Heitzer and Tomlinson, 2014; 24583393, Cancer Genome Atlas Network, 2012; 22810696, Roberts and Gordenin, 2014; 25568919), and microsatellite instability (MSI) (Cancer Genome Atlas Research Network, 2013; 23636398, Cancer Genome Atlas Network, 2012; 22810696, Roberts and Gordenin, 2014; 25568919). This sample harbors a TMB below levels that would be predicted to be associated with sensitivity to PD-1- or PD-L1-targeting immune checkpoint inhibitors, alone or in combination with other agents (Johnson et al., 2016; 27671167, Goodman et al., 2017; 28835386, Eroglu et al, 2018; 29320474, Shin et al., 2017; 27903500, Riaz et al., 2017; 29033130, Cristescu et al., 2018; 30309915, Samstein et al., 2019; 30643254, Ribas et al., 2019; AACR abstract 4217, Hodi et al., 2019; AACR abstract CT037, Marabelle et al., 2020; 32919529). A large-scale genomic analysis found that various melanoma subtypes harbored median TMBs between 6.3 and 14.4 Muts/Mb, and 25% to 40% of cases had elevated TMBs of greater than 20 Muts/Mb (FMI-Chalmers et al., 2017; 28420421). Malignant melanoma has been reported to have a high prevalence of somatic mutations compared with other tumor types (Alexandrov et al., 2013; 23945592), with desmoplastic melanoma ranking among the highest of melanoma subtypes (median TMB of 62 Muts/Mb)(Shain et al., 2015; 26343386). Higher mutational load has been reported in NF1-mutant melanoma samples compared with BRAF-mutant, NRAS-mutant, or BRAF/NRAS/NF1 wild-type samples (Johnson et al., 2016; 27671167). In 1 study, elevated TMB correlated with PD-L1 positive status and increased OS in tissue specimens from patients with Stage 3 melanoma (Madore et al., 2016; 26960397). In another study, elevated tissue TMB (&gt;20 Muts/Mb) was associated with longer PFS and OS in patients treated with anti-PD-1 or anti-PD-L1 immunotherapy as compared with patients with lower TMB (Johnson et al., 2016; 27671167). Increased TMB has also been associated with histologic stage and cumulative sun exposure (Shain et al., 2015; 26559571). On the basis of clinical evidence in solid tumors, increased TMB may be associated with greater sensitivity to immunotherapeutic agents, including anti-PD-L1 (Legrand et al., 2018; ASCO Abstract 12000, Samstein et al., 2019; 30643254, Goodman et al., 2017; 28835386, Goodman et al., 2019; 31405947), anti-PD-1 therapies (Cristescu et al., 2018; 30309915, Goodman et al., 2017; 28835386, Samstein et al., 2019; 30643254, Marabelle et al., 2019; ESMO Abstract 11920, Goodman et al., 2019; 31405947), and combination nivolumab and ipilimumab (Ready et al., 2019; 30785829, Hellmann et al., 2018; 29658845, Hellmann et al., 2018; 29657128, Rizvi et al., 2017; WCLC Abstract 1106, Hellmann et al., 2018; 29731394, Rozeman et al., 2021; 33558721, Hodi et al., 2019; AACR abstract CT037, Lee et al., 2019; ASCO Abstract 641, Sharma et al., 2020; 32916128). In multiple studies of immune checkpoint inhibitors in melanoma, higher TMB has corresponded with clinical benefit from treatment with anti-PD-1 or anti-PD-L1 treatments (Hodi et al., 2019; AACR Abstract CT037, Ribas et al., 2019; AACR Abstract 4217, Cristescu et al., 2018; 30309915, Johnson et al., 2016; 27671167, Ning et al., 2022; 35355708). Increased TMB has been associated with longer PFS and OS for patients with melanoma treated with nivolumab, with studies reporting increased benefit for patients with a mutational load above 162 missense mutations per tumor (~equivalency &gt;8 Muts/Mb as measured by this assay) (Hodi et al., 2019; AACR abstract CT037). Increased TMB (~equivalency &gt;10.8 Muts/Mb as measured by this assay) has also been associated with longer PFS and OS for patients with melanoma treated with combination nivolumab and ipilumumab (Hodi et al., 2019; AACR abstract CT037). Improved PFS and OS of patients with melanoma treated with ipilumumab has been observed across all TMB levels (Ribas et al., 2019; AACR abstract 4217, Liu et al., 2019; 31515453).</Interpretation>
+              <Include>true</Include>
+              <ClinicalTrialNote />
+              <Therapies />
+              <ReferenceLinks />
+              <ClinicalTrialLinks />
+            </Alteration>
+          </Alterations>
+          <ReferenceLinks />
+        </Gene>
+      </Genes>
+      <Trials>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>Tumor-Agnostic Precision Immuno-Oncology and Somatic Targeting Rational for You (TAPISTRY) Platform Study</Title>
+          <StudyPhase>PHASE 2</StudyPhase>
+          <Target>TRKB, ALK, TRKC, ROS1, TRKA, RET, PD-L1, AKTs, ERBB2, MDM2, PI3K-alpha, RAFs, NRAS</Target>
+          <Locations>Taipei City (Taiwan), Taoyuan County (Taiwan), Shanghai City (China), Shanghai (China), Shatin (Hong Kong), Hong Kong (Hong Kong), Seoul (Korea, Republic of), Xi'an (China), Tianjin (China), Beijing City (China)</Locations>
+          <NCTID>NCT04589845</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>A Study to Evaluate KIN-2787 in Subjects With BRAF Mutation Positive Solid Tumors</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>BRAF, MEK</Target>
+          <Locations>Taipei (Taiwan), Shanghai (China), Bengbu (China), Wuhan (China), Linyi (China), Gyeonggi-do (Korea, Republic of), Cheongju-si (Korea, Republic of), Incheon (Korea, Republic of), Seoul (Korea, Republic of), Beijing (China)</Locations>
+          <NCTID>NCT04913285</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>Trametinib Combined With Everolimus and Lenvatinib for Recurrent/Refractory Advanced Solid Tumors</Title>
+          <StudyPhase>PHASE 2</StudyPhase>
+          <Target>mTOR, FGFRs, RET, PDGFRA, VEGFRs, KIT, MEK</Target>
+          <Locations>Guangzhou (China)</Locations>
+          <NCTID>NCT04803318</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>DAY101 Monotherapy or in Combination With Other Therapies for Patients With Solid Tumors</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>BRAF, MEK</Target>
+          <Locations>Busan (Korea, Republic of), Seoul (Korea, Republic of), Clayton (Australia), Edegem (Belgium), Oregon, Barcelona (Spain), Madrid (Spain), California, Colorado</Locations>
+          <NCTID>NCT04985604</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>Cobimetinib and HM95573 in Patients With Locally Advanced or Metastatic Solid Tumors</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>MEK, RAFs, NRAS</Target>
+          <Locations>Hwasun (Korea, Republic of), Pusan (Korea, Republic of), Seongnam (Korea, Republic of), Seoul (Korea, Republic of), Goyang-si (Korea, Republic of)</Locations>
+          <NCTID>NCT03284502</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>Mirdametinib + BGB-3245 in Advanced Solid Tumors</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>BRAF, MEK</Target>
+          <Locations>Waratah (Australia), Melbourne (Australia), California, Ohio, Massachusetts, Texas, Connecticut, Florida</Locations>
+          <NCTID>NCT05580770</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>CRAFT: The NCT-PMO-1602 Phase II Trial</Title>
+          <StudyPhase>PHASE 2</StudyPhase>
+          <Target>PD-L1, AKTs, MEK, BRAF, ALK, RET, ERBB2</Target>
+          <Locations>Lübeck (Germany), Würzburg (Germany), Mainz (Germany), Heidelberg (Germany), Tübingen (Germany)</Locations>
+          <NCTID>NCT04551521</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>JAB-3312 Activity in Adult Patients With Advanced Solid Tumors</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>MEK, SHP2, PD-1, EGFR, KRAS</Target>
+          <Locations>Utah, California, Arizona, Minnesota, Illinois, Michigan, Oklahoma, Missouri, Indiana, Connecticut</Locations>
+          <NCTID>NCT04720976</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>Binimetinib and Nivolumab for the Treatment of Locally Advanced Unresectable or Metastatic BRAF V600 Wildtype Melanoma</Title>
+          <StudyPhase>PHASE 2</StudyPhase>
+          <Target>MEK, PD-1</Target>
+          <Locations>California</Locations>
+          <NCTID>NCT04375527</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>BRAF</Gene>
+          <Alteration>BRAF-DPP6 rearrangementPRSS37-BRAF fusion, rearrangement intron 8, TRIO-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, PRSS37-BRAF rearrangement, rearrangement intron 8, rearrangement intron 8, rearrangement intron 8SND1-BRAF fusion, CUL1-BRAF fusion</Alteration>
+          <Title>A Clinical Trial to Evaluate a Melanoma Helper Peptide Vaccine Plus Dabrafenib and Trametinib</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>BRAF, MEK</Target>
+          <Locations>Virginia</Locations>
+          <NCTID>NCT02382549</NCTID>
+          <Note>BRAF activating alterations may predict sensitivity to inhibitors of BRAF, MEK, or ERK.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>CTNNB1</Gene>
+          <Alteration>Y30_D56del</Alteration>
+          <Title>Trametinib Combined With Everolimus and Lenvatinib for Recurrent/Refractory Advanced Solid Tumors</Title>
+          <StudyPhase>PHASE 2</StudyPhase>
+          <Target>mTOR, FGFRs, RET, PDGFRA, VEGFRs, KIT, MEK</Target>
+          <Locations>Guangzhou (China)</Locations>
+          <NCTID>NCT04803318</NCTID>
+          <Note>Based on clinical and preclinical evidence, tumors with activating CTNNB1 alterations may be sensitive to mTOR inhibitors. It is not known whether these therapeutic approaches would be relevant in the context of alterations that have not been fully characterized, as seen here.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>CTNNB1</Gene>
+          <Alteration>Y30_D56del</Alteration>
+          <Title>COAST Therapy in Advanced Solid Tumors and Prostate Cancer</Title>
+          <StudyPhase>PHASE 1/2</StudyPhase>
+          <Target>DDR2, ABL, SRC, KIT, mTOR</Target>
+          <Locations>South Carolina</Locations>
+          <NCTID>NCT05036226</NCTID>
+          <Note>Based on clinical and preclinical evidence, tumors with activating CTNNB1 alterations may be sensitive to mTOR inhibitors. It is not known whether these therapeutic approaches would be relevant in the context of alterations that have not been fully characterized, as seen here.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>CTNNB1</Gene>
+          <Alteration>Y30_D56del</Alteration>
+          <Title>Combination Chemotherapy and Bevacizumab With the NovoTTF-100L(P) System in Treating Participants With Advanced, Recurrent, or Refractory Hepatic Metastatic Cancer</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>VEGFA, mTOR</Target>
+          <Locations>Texas</Locations>
+          <NCTID>NCT03203525</NCTID>
+          <Note>Based on clinical and preclinical evidence, tumors with activating CTNNB1 alterations may be sensitive to mTOR inhibitors. It is not known whether these therapeutic approaches would be relevant in the context of alterations that have not been fully characterized, as seen here.</Note>
+          <Include>true</Include>
+        </Trial>
+        <Trial>
+          <Gene>CTNNB1</Gene>
+          <Alteration>Y30_D56del</Alteration>
+          <Title>A Phase 1 Trial of Vandetanib (a Multi-kinase Inhibitor of EGFR, VEGFR and RET Inhibitor) in Combination With Everolimus (an mTOR Inhibitor) in Advanced Cancer</Title>
+          <StudyPhase>PHASE 1</StudyPhase>
+          <Target>mTOR, EGFR, SRC, RET, VEGFRs</Target>
+          <Locations>Texas</Locations>
+          <NCTID>NCT01582191</NCTID>
+          <Note>Based on clinical and preclinical evidence, tumors with activating CTNNB1 alterations may be sensitive to mTOR inhibitors. It is not known whether these therapeutic approaches would be relevant in the context of alterations that have not been fully characterized, as seen here.</Note>
+          <Include>true</Include>
+        </Trial>
+      </Trials>
+      <References>
+        <Reference number="0">
+          <ReferenceId>24957944</ReferenceId>
+          <FullCitation>Holderfield M, et al. Nat. Rev. Cancer (2014) pmid: 24957944</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="1">
+          <ReferenceId>24948110</ReferenceId>
+          <FullCitation>Burotto M, et al. Cancer (2014) pmid: 24948110</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="2">
+          <ReferenceId>12068308</ReferenceId>
+          <FullCitation>Davies H, et al. Nature (2002) pmid: 12068308</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="3">
+          <ReferenceId>24132290</ReferenceId>
+          <FullCitation>Kandoth C, et al. Nature (2013) pmid: 24132290</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="4">
+          <ReferenceId>23533272</ReferenceId>
+          <FullCitation>Sievert AJ, et al. Proc. Natl. Acad. Sci. U.S.A. (2013) pmid: 23533272</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="5">
+          <ReferenceId>22113612</ReferenceId>
+          <FullCitation>Poulikakos PI, et al. Nature (2011) pmid: 22113612</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="6">
+          <ReferenceId>23890088</ReferenceId>
+          <FullCitation>Botton T, et al. Pigment Cell Melanoma Res (2013) pmid: 23890088</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="7">
+          <ReferenceId>15630448</ReferenceId>
+          <FullCitation>Ciampi R, et al. J. Clin. Invest. (2005) pmid: 15630448</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="8">
+          <ReferenceId>21424530</ReferenceId>
+          <FullCitation>Cin H, et al. Acta Neuropathol. (2011) pmid: 21424530</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="9">
+          <ReferenceId>22548077</ReferenceId>
+          <FullCitation>Dahiya S, et al. Case Rep Med (2012) pmid: 22548077</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="10">
+          <ReferenceId>22157620</ReferenceId>
+          <FullCitation>Lin A, et al. J. Neuropathol. Exp. Neurol. (2012) pmid: 22157620</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="11">
+          <ReferenceId>21884820</ReferenceId>
+          <FullCitation>Tian Y, et al. J Mol Diagn (2011) pmid: 21884820</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="12">
+          <ReferenceId>19373855</ReferenceId>
+          <FullCitation>Forshew T, et al. J. Pathol. (2009) pmid: 19373855</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="13">
+          <ReferenceId>18974108</ReferenceId>
+          <FullCitation>Jones DT, et al. Cancer Res. (2008) pmid: 18974108</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="14">
+          <ReferenceId>15710605</ReferenceId>
+          <FullCitation>Tran NH, et al. J. Biol. Chem. (2005) pmid: 15710605</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="15">
+          <ReferenceId>19156774</ReferenceId>
+          <FullCitation>Baitei EY, et al. J. Pathol. (2009) pmid: 19156774</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="16">
+          <ReferenceId>21403401</ReferenceId>
+          <FullCitation>Gronych J, et al. J. Clin. Invest. (2011) pmid: 21403401</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="17">
+          <ReferenceId>25266736</ReferenceId>
+          <FullCitation>Chmielecki J, et al. Cancer Discov (2014) pmid: 25266736</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="18">
+          <ReferenceId>24345920</ReferenceId>
+          <FullCitation>Hutchinson KE, et al. Clin. Cancer Res. (2013) pmid: 24345920</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="19">
+          <ReferenceId>24463458</ReferenceId>
+          <FullCitation>Rizos H, et al. Clin. Cancer Res. (2014) pmid: 24463458</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="20">
+          <ReferenceId>24520098</ReferenceId>
+          <FullCitation>Hartsough EJ, et al. Mol. Cancer Res. (2014) pmid: 24520098</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="21">
+          <ReferenceId>24476679</ReferenceId>
+          <FullCitation>Carlino MS, et al. Mol Oncol (2014) pmid: 24476679</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="22">
+          <ReferenceId>24283590</ReferenceId>
+          <FullCitation>Choi J, et al. Pigment Cell Melanoma Res (2014) pmid: 24283590</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="23">
+          <ReferenceId>24422853</ReferenceId>
+          <FullCitation>Basile KJ, et al. Pigment Cell Melanoma Res (2014) pmid: 24422853</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="24">
+          <ReferenceId>31151904</ReferenceId>
+          <FullCitation>Fangusaro J, et al. Lancet Oncol. (2019) pmid: 31151904</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="25">
+          <ReferenceId>26314551</ReferenceId>
+          <FullCitation>Ross JS, et al. Int. J. Cancer (2016) pmid: 26314551</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="26">
+          <ReferenceId>26072686</ReferenceId>
+          <FullCitation>Menzies AM, et al. Pigment Cell Melanoma Res (2015) pmid: 26072686</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="27">
+          <ReferenceId>26324360</ReferenceId>
+          <FullCitation>Grisham RN, et al. J. Clin. Oncol. (2015) pmid: 26324360</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="28">
+          <ReferenceId>28339824</ReferenceId>
+          <FullCitation>Banerjee A, et al. Neuro-oncology (2017) pmid: 28339824</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="29">
+          <ReferenceId>24422672</ReferenceId>
+          <FullCitation>Subbiah V, et al. J Hematol Oncol (2014) pmid: 24422672</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="30">
+          <ReferenceId>22092579</ReferenceId>
+          <FullCitation>Passeron T, et al. Exp. Dermatol. (2011) pmid: 22092579</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="31">
+          <ReferenceId>24803676</ReferenceId>
+          <FullCitation>Karajannis MA, et al. Neuro-oncology (2014) pmid: 24803676</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="32">
+          <ReferenceId>24445538</ReferenceId>
+          <FullCitation>Wiesner T, et al. Nat Commun (2014) pmid: 24445538</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="33">
+          <ReferenceId>25204415</ReferenceId>
+          <FullCitation>Stransky N, et al. Nat Commun (2014) pmid: 25204415</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="34">
+          <ReferenceId>31618628</ReferenceId>
+          <FullCitation>Botton T, et al. Cell Rep (2019) pmid: 31618628</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="35">
+          <ReferenceId>17301836</ReferenceId>
+          <FullCitation>Dessars B, et al. J. Invest. Dermatol. (2007) pmid: 17301836</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="36">
+          <ReferenceId>22817889</ReferenceId>
+          <FullCitation>Hodis E, et al. Cell (2012) pmid: 22817889</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="37">
+          <ReferenceId>22842228</ReferenceId>
+          <FullCitation>Krauthammer M, et al. Nat. Genet. (2012) pmid: 22842228</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="38">
+          <ReferenceId>23273605</ReferenceId>
+          <FullCitation>Greaves WO, et al. J Mol Diagn (2013) pmid: 23273605</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="39">
+          <ReferenceId>21166657</ReferenceId>
+          <FullCitation>Lee JH, et al. Br. J. Dermatol. (2011) pmid: 21166657</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="40">
+          <ReferenceId>24276025</ReferenceId>
+          <FullCitation>Egberts F, et al. Ann. Oncol. (2014) pmid: 24276025</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="41">
+          <ReferenceId>23633454</ReferenceId>
+          <FullCitation>Griewank KG, et al. Clin. Cancer Res. (2013) pmid: 23633454</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="42">
+          <ReferenceId>15577314</ReferenceId>
+          <FullCitation>Spendlove HE, et al. Melanoma Res. (2004) pmid: 15577314</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="43">
+          <ReferenceId>21343559</ReferenceId>
+          <FullCitation>Long GV, et al. J. Clin. Oncol. (2011) pmid: 21343559</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="44">
+          <ReferenceId>22039425</ReferenceId>
+          <FullCitation>El-Osta H, et al. PLoS ONE (2011) pmid: 22039425</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="45">
+          <ReferenceId>23855428</ReferenceId>
+          <FullCitation>Ekedahl H, et al. Br. J. Dermatol. (2013) pmid: 23855428</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="46">
+          <ReferenceId>27911979</ReferenceId>
+          <FullCitation>Kim DW, et al. Cancer (2017) pmid: 27911979</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="47">
+          <ReferenceId>30254212</ReferenceId>
+          <FullCitation>Turner JA, et al. Oncogene (2019) pmid: 30254212</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="48">
+          <ReferenceId>33861486</ReferenceId>
+          <FullCitation>Nebhan CA, et al. Oncologist (2021) pmid: 33861486</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="49">
+          <ReferenceId>30683711</ReferenceId>
+          <FullCitation>Boussemart L, et al. Oncologist (2019) pmid: 30683711</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="50">
+          <ReferenceId>29247021</ReferenceId>
+          <FullCitation>Sullivan RJ, et al. Cancer Discov (2018) pmid: 29247021</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="51">
+          <ReferenceId>28092667</ReferenceId>
+          <FullCitation>Kim HS, et al. Oncogene (2017) pmid: 28092667</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="52">
+          <ReferenceId>28539463</ReferenceId>
+          <FullCitation>Kulkarni A, et al. Clin Cancer Res (2017) pmid: 28539463</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="53">
+          <ReferenceId>36130145</ReferenceId>
+          <FullCitation>van Not OJ, et al. JCO Precis Oncol (2022) pmid: 36130145</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="54">
+          <ReferenceId>10679188</ReferenceId>
+          <FullCitation>Biochem. Biophys. Res. Commun. (2000) pmid: 10679188</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="55">
+          <ReferenceId>23258168</ReferenceId>
+          <FullCitation>Anastas JN, et al. Nat. Rev. Cancer (2013) pmid: 23258168</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="56">
+          <ReferenceId>9721853</ReferenceId>
+          <FullCitation>Fukuchi T, et al. Cancer Res. (1998) pmid: 9721853</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="57">
+          <ReferenceId>12824913</ReferenceId>
+          <FullCitation>Cancer Sci. (2003) pmid: 12824913</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="58">
+          <ReferenceId>16523258</ReferenceId>
+          <FullCitation>Takahashi Y, et al. Virchows Arch. (2006) pmid: 16523258</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="59">
+          <ReferenceId>11731417</ReferenceId>
+          <FullCitation>Tanaka Y, et al. Cancer Res. (2001) pmid: 11731417</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="60">
+          <ReferenceId>11943721</ReferenceId>
+          <FullCitation>Abraham SC, et al. Am. J. Pathol. (2002) pmid: 11943721</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="61">
+          <ReferenceId>18282277</ReferenceId>
+          <FullCitation>Austinat M, et al. Mol. Cancer (2008) pmid: 18282277</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="62">
+          <ReferenceId>12820959</ReferenceId>
+          <FullCitation>Wu G, et al. Mol. Cell (2003) pmid: 12820959</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="63">
+          <ReferenceId>15829978</ReferenceId>
+          <FullCitation>Provost E, et al. Oncogene (2005) pmid: 15829978</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="64">
+          <ReferenceId>10072352</ReferenceId>
+          <FullCitation>Curr. Opin. Genet. Dev. (1999) pmid: 10072352</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="65">
+          <ReferenceId>17143297</ReferenceId>
+          <FullCitation>Segditsas S, et al. Oncogene (2006) pmid: 17143297</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="66">
+          <ReferenceId>9024698</ReferenceId>
+          <FullCitation>Barth AI, et al. J. Cell Biol. (1997) pmid: 9024698</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="67">
+          <ReferenceId>10545105</ReferenceId>
+          <FullCitation>Harada N, et al. EMBO J. (1999) pmid: 10545105</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="68">
+          <ReferenceId>9671490</ReferenceId>
+          <FullCitation>Hsu SC, et al. Mol. Cell. Biol. (1998) pmid: 9671490</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="69">
+          <ReferenceId>18491352</ReferenceId>
+          <FullCitation>Breuhahn K, et al. J. Pathol. (2008) pmid: 18491352</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="70">
+          <ReferenceId>18515740</ReferenceId>
+          <FullCitation>Soon PS, et al. Oncologist (2008) pmid: 18515740</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="71">
+          <ReferenceId>21212436</ReferenceId>
+          <FullCitation>Tacon LJ, et al. Oncologist (2011) pmid: 21212436</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="72">
+          <ReferenceId>22266195</ReferenceId>
+          <FullCitation>Simon DP, et al. Mol. Cell. Endocrinol. (2012) pmid: 22266195</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="73">
+          <ReferenceId>26850916</ReferenceId>
+          <FullCitation>Hirotsu Y, et al. Hepatol. Res. (2016) pmid: 26850916</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="74">
+          <ReferenceId>30371878</ReferenceId>
+          <FullCitation>Tate JG, et al. Nucleic Acids Res. (2019) pmid: 30371878</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="75">
+          <ReferenceId>30699286</ReferenceId>
+          <FullCitation>Kim S, et al. Mol. Cells (2019) pmid: 30699286</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="76">
+          <ReferenceId>26091043</ReferenceId>
+          <FullCitation>Cell (2015) pmid: 26091043</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="77">
+          <ReferenceId>22665063</ReferenceId>
+          <FullCitation>Gallagher SJ, et al. Oncogene (2013) pmid: 22665063</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="78">
+          <ReferenceId>22172720</ReferenceId>
+          <FullCitation>Damsky WE, et al. Cancer Cell (2011) pmid: 22172720</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="79">
+          <ReferenceId>22685558</ReferenceId>
+          <FullCitation>Meyer S, et al. PLoS ONE (2012) pmid: 22685558</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="80">
+          <ReferenceId>19403928</ReferenceId>
+          <FullCitation>Tanwar PS, et al. Biol. Reprod. (2009) pmid: 19403928</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="81">
+          <ReferenceId>21695255</ReferenceId>
+          <FullCitation>Tanwar PS, et al. PLoS ONE (2011) pmid: 21695255</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="82">
+          <ReferenceId>18768809</ReferenceId>
+          <FullCitation>Fujishita T, et al. Proc. Natl. Acad. Sci. U.S.A. (2008) pmid: 18768809</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="83">
+          <ReferenceId>20347502</ReferenceId>
+          <FullCitation>Bhoori S, et al. J. Hepatol. (2010) pmid: 20347502</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="84">
+          <ReferenceId>24931142</ReferenceId>
+          <FullCitation>Janku F, et al. Oncotarget (2014) pmid: 24931142</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="85">
+          <ReferenceId>25624430</ReferenceId>
+          <FullCitation>Slomovitz BM, et al. J. Clin. Oncol. (2015) pmid: 25624430</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="86">
+          <ReferenceId>15378020</ReferenceId>
+          <FullCitation>Niida A, et al. Oncogene (2004) pmid: 15378020</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="87">
+          <ReferenceId>15592430</ReferenceId>
+          <FullCitation>Chamorro MN, et al. EMBO J. (2005) pmid: 15592430</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="88">
+          <ReferenceId>28574171</ReferenceId>
+          <FullCitation>Kagey MH, et al. Br. J. Pharmacol. (2017) pmid: 28574171</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="89">
+          <ReferenceId>21841793</ReferenceId>
+          <FullCitation>Kwon C, et al. Nat. Cell Biol. (2011) pmid: 21841793</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="90">
+          <ReferenceId>23868008</ReferenceId>
+          <FullCitation>Arcaroli JJ, et al. Br. J. Cancer (2013) pmid: 23868008</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="91">
+          <ReferenceId>26349011</ReferenceId>
+          <FullCitation>Shang H, et al. Cancer (2015) pmid: 26349011</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="92">
+          <ReferenceId>24429522</ReferenceId>
+          <FullCitation>Kode A, et al. Nature (2014) pmid: 24429522</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="93">
+          <ReferenceId>25231399</ReferenceId>
+          <FullCitation>Messersmith WA, et al. Clin. Cancer Res. (2015) pmid: 25231399</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="94">
+          <ReferenceId>22964660</ReferenceId>
+          <FullCitation>Zhu J, et al. Carcinogenesis (2012) pmid: 22964660</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="95">
+          <ReferenceId>22356261</ReferenceId>
+          <FullCitation>Kogan Y, et al. Biochem. J. (2012) pmid: 22356261</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="96">
+          <ReferenceId>22811581</ReferenceId>
+          <FullCitation>Lachenmayer A, et al. Clin. Cancer Res. (2012) pmid: 22811581</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="97">
+          <ReferenceId>15748635</ReferenceId>
+          <FullCitation>Pfeifer GP, et al. Mutat. Res. (2005) pmid: 15748635</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="98">
+          <ReferenceId>23875803</ReferenceId>
+          <FullCitation>Hill VK, et al. Annu Rev Genomics Hum Genet (2013) pmid: 23875803</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="99">
+          <ReferenceId>12379884</ReferenceId>
+          <FullCitation>Pfeifer GP, et al. Oncogene (2002) pmid: 12379884</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="100">
+          <ReferenceId>25765070</ReferenceId>
+          <FullCitation>Rizvi NA, et al. Science (2015) pmid: 25765070</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="101">
+          <ReferenceId>24336570</ReferenceId>
+          <FullCitation>Johnson BE, et al. Science (2014) pmid: 24336570</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="102">
+          <ReferenceId>29452419</ReferenceId>
+          <FullCitation>Choi S, et al. Neuro-oncology (2018) pmid: 29452419</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="103">
+          <ReferenceId>23636398</ReferenceId>
+          <FullCitation>Cancer Genome Atlas Research Network, et al. Nature (2013) pmid: 23636398</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="104">
+          <ReferenceId>23447401</ReferenceId>
+          <FullCitation>Briggs S, et al. J. Pathol. (2013) pmid: 23447401</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="105">
+          <ReferenceId>24583393</ReferenceId>
+          <FullCitation>Heitzer E, et al. Curr. Opin. Genet. Dev. (2014) pmid: 24583393</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="106">
+          <ReferenceId>22810696</ReferenceId>
+          <FullCitation>Nature (2012) pmid: 22810696</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="107">
+          <ReferenceId>25568919</ReferenceId>
+          <FullCitation>Roberts SA, et al. Nat. Rev. Cancer (2014) pmid: 25568919</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="108">
+          <ReferenceId>27671167</ReferenceId>
+          <FullCitation>Johnson DB, et al. Cancer Immunol Res (2016) pmid: 27671167</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="109">
+          <ReferenceId>28835386</ReferenceId>
+          <FullCitation>Goodman AM, et al. Mol. Cancer Ther. (2017) pmid: 28835386</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="110">
+          <ReferenceId>29320474</ReferenceId>
+          <FullCitation>Eroglu Z, et al. Nature (2018) pmid: 29320474</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="111">
+          <ReferenceId>27903500</ReferenceId>
+          <FullCitation>Shin DS, et al. Cancer Discov (2017) pmid: 27903500</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="112">
+          <ReferenceId>29033130</ReferenceId>
+          <FullCitation>Riaz N, et al. Cell (2017) pmid: 29033130</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="113">
+          <ReferenceId>30309915</ReferenceId>
+          <FullCitation>Cristescu R, et al. Science (2018) pmid: 30309915</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="114">
+          <ReferenceId>30643254</ReferenceId>
+          <FullCitation>Samstein RM, et al. Nat. Genet. (2019) pmid: 30643254</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="115">
+          <ReferenceId>32919529</ReferenceId>
+          <FullCitation>Lancet Oncol. (2020) pmid: 32919529</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="116">
+          <ReferenceId>28420421</ReferenceId>
+          <FullCitation>Chalmers ZR, et al. Genome Med (2017) pmid: 28420421</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="117">
+          <ReferenceId>23945592</ReferenceId>
+          <FullCitation>Alexandrov LB, et al. Nature (2013) pmid: 23945592</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="118">
+          <ReferenceId>26343386</ReferenceId>
+          <FullCitation>Shain AH, et al. Nat. Genet. (2015) pmid: 26343386</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="119">
+          <ReferenceId>26960397</ReferenceId>
+          <FullCitation>Madore J, et al. Clin. Cancer Res. (2016) pmid: 26960397</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="120">
+          <ReferenceId>26559571</ReferenceId>
+          <FullCitation>Shain AH, et al. N. Engl. J. Med. (2015) pmid: 26559571</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="121">
+          <ReferenceId>31405947</ReferenceId>
+          <FullCitation>Goodman AM, et al. Cancer Immunol Res (2019) pmid: 31405947</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="122">
+          <ReferenceId>30785829</ReferenceId>
+          <FullCitation>Ready N, et al. J. Clin. Oncol. (2019) pmid: 30785829</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="123">
+          <ReferenceId>29658845</ReferenceId>
+          <FullCitation>Hellmann MD, et al. N. Engl. J. Med. (2018) pmid: 29658845</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="124">
+          <ReferenceId>29657128</ReferenceId>
+          <FullCitation>Hellmann MD, et al. Cancer Cell (2018) pmid: 29657128</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="125">
+          <ReferenceId>29731394</ReferenceId>
+          <FullCitation>Hellmann MD, et al. Cancer Cell (2018) pmid: 29731394</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="126">
+          <ReferenceId>33558721</ReferenceId>
+          <FullCitation>Rozeman EA, et al. Nat Med (2021) pmid: 33558721</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="127">
+          <ReferenceId>32916128</ReferenceId>
+          <FullCitation>Sharma P, et al. Cancer Cell (2020) pmid: 32916128</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="128">
+          <ReferenceId>35355708</ReferenceId>
+          <FullCitation>Ning B, et al. Front Pharmacol (2022) pmid: 35355708</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="129">
+          <ReferenceId>31515453</ReferenceId>
+          <FullCitation>Liu L, et al. Clin. Cancer Res. (2019) pmid: 31515453</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="130">
+          <ReferenceId>8521522</ReferenceId>
+          <FullCitation>Quelle DE, et al. Cell (1995) pmid: 8521522</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="131">
+          <ReferenceId>15878778</ReferenceId>
+          <FullCitation>Mutat. Res. (2005) pmid: 15878778</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="132">
+          <ReferenceId>9484839</ReferenceId>
+          <FullCitation>Gazzeri S, et al. Oncogene (1998) pmid: 9484839</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="133">
+          <ReferenceId>10498883</ReferenceId>
+          <FullCitation>Oncogene (1999) pmid: 10498883</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="134">
+          <ReferenceId>16869746</ReferenceId>
+          <FullCitation>Sherr CJ, et al. Cold Spring Harb. Symp. Quant. Biol. (2005) pmid: 16869746</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="135">
+          <ReferenceId>20549699</ReferenceId>
+          <FullCitation>Ozenne P, et al. Int. J. Cancer (2010) pmid: 20549699</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="136">
+          <ReferenceId>10498896</ReferenceId>
+          <FullCitation>Ruas M, et al. Oncogene (1999) pmid: 10498896</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="137">
+          <ReferenceId>17909018</ReferenceId>
+          <FullCitation>Jones R, et al. Cancer Res. (2007) pmid: 17909018</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="138">
+          <ReferenceId>18843795</ReferenceId>
+          <FullCitation>Haferkamp S, et al. Aging Cell (2008) pmid: 18843795</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="139">
+          <ReferenceId>12417717</ReferenceId>
+          <FullCitation>Huot TJ, et al. Mol. Cell. Biol. (2002) pmid: 12417717</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="140">
+          <ReferenceId>11518711</ReferenceId>
+          <FullCitation>Rizos H, et al. J. Biol. Chem. (2001) pmid: 11518711</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="141">
+          <ReferenceId>9324288</ReferenceId>
+          <FullCitation>Gombart AF, et al. Leukemia (1997) pmid: 9324288</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="142">
+          <ReferenceId>7780957</ReferenceId>
+          <FullCitation>Yang R, et al. Cancer Res. (1995) pmid: 7780957</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="143">
+          <ReferenceId>8668202</ReferenceId>
+          <FullCitation>Parry D, et al. Mol. Cell. Biol. (1996) pmid: 8668202</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="144">
+          <ReferenceId>12606942</ReferenceId>
+          <FullCitation>Greenblatt MS, et al. Oncogene (2003) pmid: 12606942</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="145">
+          <ReferenceId>10491434</ReferenceId>
+          <FullCitation>Yarbrough WG, et al. J. Natl. Cancer Inst. (1999) pmid: 10491434</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="146">
+          <ReferenceId>11255261</ReferenceId>
+          <FullCitation>Poi MJ, et al. Mol. Carcinog. (2001) pmid: 11255261</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="147">
+          <ReferenceId>9660926</ReferenceId>
+          <FullCitation>Byeon IJ, et al. Mol. Cell (1998) pmid: 9660926</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="148">
+          <ReferenceId>19260062</ReferenceId>
+          <FullCitation>Kannengiesser C, et al. Hum. Mutat. (2009) pmid: 19260062</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="149">
+          <ReferenceId>10719365</ReferenceId>
+          <FullCitation>Lal G, et al. Genes Chromosomes Cancer (2000) pmid: 10719365</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="150">
+          <ReferenceId>7777061</ReferenceId>
+          <FullCitation>Koh J, et al. Nature (1995) pmid: 7777061</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="151">
+          <ReferenceId>20340136</ReferenceId>
+          <FullCitation>McKenzie HA, et al. Hum. Mutat. (2010) pmid: 20340136</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="152">
+          <ReferenceId>21462282</ReferenceId>
+          <FullCitation>Miller PJ, et al. Hum. Mutat. (2011) pmid: 21462282</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="153">
+          <ReferenceId>905385</ReferenceId>
+          <FullCitation>Kutscher CL, et al. Physiol. Behav. (1977) pmid: 905385</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="154">
+          <ReferenceId>24659262</ReferenceId>
+          <FullCitation>Scaini MC, et al. Hum. Mutat. (2014) pmid: 24659262</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="155">
+          <ReferenceId>23190892</ReferenceId>
+          <FullCitation>Jenkins NC, et al. J. Invest. Dermatol. (2013) pmid: 23190892</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="156">
+          <ReferenceId>10389768</ReferenceId>
+          <FullCitation>Walker GJ, et al. Int. J. Cancer (1999) pmid: 10389768</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="157">
+          <ReferenceId>12853981</ReferenceId>
+          <FullCitation>Rutter JL, et al. Oncogene (2003) pmid: 12853981</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="158">
+          <ReferenceId>18538737</ReferenceId>
+          <FullCitation>Itahana K, et al. Cancer Cell (2008) pmid: 18538737</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="159">
+          <ReferenceId>10360174</ReferenceId>
+          <FullCitation>Zhang Y, et al. Mol. Cell (1999) pmid: 10360174</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="160">
+          <ReferenceId>9529249</ReferenceId>
+          <FullCitation>Zhang Y, et al. Cell (1998) pmid: 9529249</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="161">
+          <ReferenceId>22588877</ReferenceId>
+          <FullCitation>Cerami E, et al. Cancer Discov (2012) pmid: 22588877</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="162">
+          <ReferenceId>23550210</ReferenceId>
+          <FullCitation>Gao J, et al. Sci Signal (2013) pmid: 23550210</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="163">
+          <ReferenceId>20460471</ReferenceId>
+          <FullCitation>Jönsson G, et al. Clin. Cancer Res. (2010) pmid: 20460471</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="164">
+          <ReferenceId>20505745</ReferenceId>
+          <FullCitation>Busch C, et al. J. Invest. Dermatol. (2010) pmid: 20505745</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="165">
+          <ReferenceId>8895759</ReferenceId>
+          <FullCitation>Flores JF, et al. Cancer Res. (1996) pmid: 8895759</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="166">
+          <ReferenceId>18953432</ReferenceId>
+          <FullCitation>Gallagher SJ, et al. Neoplasia (2008) pmid: 18953432</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="167">
+          <ReferenceId>18505964</ReferenceId>
+          <FullCitation>Freedberg DE, et al. J. Natl. Cancer Inst. (2008) pmid: 18505964</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="168">
+          <ReferenceId>15547691</ReferenceId>
+          <FullCitation>Bachmann IM, et al. Int. J. Oncol. (2004) pmid: 15547691</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="169">
+          <ReferenceId>11431374</ReferenceId>
+          <FullCitation>van der Velden PA, et al. Cancer Res. (2001) pmid: 11431374</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="170">
+          <ReferenceId>22942654</ReferenceId>
+          <FullCitation>Fauri J, et al. Can J Plast Surg (2011) pmid: 22942654</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="171">
+          <ReferenceId>20703244</ReferenceId>
+          <FullCitation>Jonsson A, et al. J. Invest. Dermatol. (2010) pmid: 20703244</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="172">
+          <ReferenceId>20415670</ReferenceId>
+          <FullCitation>Hsieh R, et al. Int. J. Dermatol. (2009) pmid: 20415670</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="173">
+          <ReferenceId>15837753</ReferenceId>
+          <FullCitation>Grafström E, et al. Clin. Cancer Res. (2005) pmid: 15837753</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="174">
+          <ReferenceId>10890376</ReferenceId>
+          <FullCitation>Puig S, et al. Melanoma Res. (2000) pmid: 10890376</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="175">
+          <ReferenceId>23279822</ReferenceId>
+          <FullCitation>Fung C, et al. Pigment Cell Melanoma Res (2013) pmid: 23279822</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="176">
+          <ReferenceId>9617435</ReferenceId>
+          <FullCitation>Matsumura Y, et al. Arch. Dermatol. Res. (1998) pmid: 9617435</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="177">
+          <ReferenceId>23382133</ReferenceId>
+          <FullCitation>Aspinwall LG, et al. Psychooncology (2013) pmid: 23382133</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="178">
+          <ReferenceId>20936153</ReferenceId>
+          <FullCitation>Bandarchi B, et al. Dermatol Res Pract (2010) pmid: 20936153</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="179">
+          <ReferenceId>20132244</ReferenceId>
+          <FullCitation>Binni F, et al. Clin. Genet. (2010) pmid: 20132244</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="180">
+          <ReferenceId>19741424</ReferenceId>
+          <FullCitation>Garcia-Casado Z, et al. Melanoma Res. (2009) pmid: 19741424</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="181">
+          <ReferenceId>7640518</ReferenceId>
+          <FullCitation>Gruis NA, et al. Melanoma Res. (1995) pmid: 7640518</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="182">
+          <ReferenceId>11726555</ReferenceId>
+          <FullCitation>Harland M, et al. Hum. Mol. Genet. (2001) pmid: 11726555</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="183">
+          <ReferenceId>7624155</ReferenceId>
+          <FullCitation>Liu L, et al. Oncogene (1995) pmid: 7624155</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="184">
+          <ReferenceId>23384855</ReferenceId>
+          <FullCitation>Puntervoll HE, et al. J. Med. Genet. (2013) pmid: 23384855</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="185">
+          <ReferenceId>7647780</ReferenceId>
+          <FullCitation>Ranade K, et al. Nat. Genet. (1995) pmid: 7647780</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="186">
+          <ReferenceId>11136714</ReferenceId>
+          <FullCitation>Randerson-Moor JA, et al. Hum. Mol. Genet. (2001) pmid: 11136714</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="187">
+          <ReferenceId>23546221</ReferenceId>
+          <FullCitation>Veinalde R, et al. Melanoma Res. (2013) pmid: 23546221</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="188">
+          <ReferenceId>21278246</ReferenceId>
+          <FullCitation>Konecny GE, et al. Clin. Cancer Res. (2011) pmid: 21278246</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="189">
+          <ReferenceId>21871868</ReferenceId>
+          <FullCitation>Katsumi Y, et al. Biochem. Biophys. Res. Commun. (2011) pmid: 21871868</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="190">
+          <ReferenceId>22711607</ReferenceId>
+          <FullCitation>Cen L, et al. Neuro-oncology (2012) pmid: 22711607</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="191">
+          <ReferenceId>23898052</ReferenceId>
+          <FullCitation>Logan JE, et al. Anticancer Res. (2013) pmid: 23898052</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="192">
+          <ReferenceId>35157829</ReferenceId>
+          <FullCitation>Fennell DA, et al. Lancet Oncol (2022) pmid: 35157829</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="193">
+          <ReferenceId>28283584</ReferenceId>
+          <FullCitation>Elvin JA, et al. Oncologist (2017) pmid: 28283584</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="194">
+          <ReferenceId>26715889</ReferenceId>
+          <FullCitation>Gao J, et al. Curr Oncol (2015) pmid: 26715889</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="195">
+          <ReferenceId>25501126</ReferenceId>
+          <FullCitation>DeMichele A, et al. Clin. Cancer Res. (2015) pmid: 25501126</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="196">
+          <ReferenceId>25524798</ReferenceId>
+          <FullCitation>Finn RS, et al. Lancet Oncol. (2015) pmid: 25524798</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="197">
+          <ReferenceId>27542767</ReferenceId>
+          <FullCitation>Infante JR, et al. Clin. Cancer Res. (2016) pmid: 27542767</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="198">
+          <ReferenceId>24797823</ReferenceId>
+          <FullCitation>Johnson DB, et al. Oncologist (2014) pmid: 24797823</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="199">
+          <ReferenceId>21460101</ReferenceId>
+          <FullCitation>Van Maerken T, et al. Mol. Cancer Ther. (2011) pmid: 21460101</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="200">
+          <ReferenceId>21725357</ReferenceId>
+          <FullCitation>Gamble LD, et al. Oncogene (2012) pmid: 21725357</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="201">
+          <ReferenceId>7666917</ReferenceId>
+          <FullCitation>Whelan AJ, et al. N Engl J Med (1995) pmid: 7666917</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="202">
+          <ReferenceId>20687502</ReferenceId>
+          <FullCitation>Adv Exp Med Biol (2010) pmid: 20687502</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="203">
+          <ReferenceId>9479083</ReferenceId>
+          <FullCitation>Hogg D, et al. J Cutan Med Surg (1998) pmid: 9479083</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="204">
+          <ReferenceId>29543703</ReferenceId>
+          <FullCitation>De Unamuno B, et al. Melanoma Res (2018) pmid: 29543703</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="205">
+          <ReferenceId>26892650</ReferenceId>
+          <FullCitation>Soura E, et al. J Am Acad Dermatol (2016) pmid: 26892650</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="206">
+          <ReferenceId>29405243</ReferenceId>
+          <FullCitation>Huerta C, et al. Acta Derm Venereol (2018) pmid: 29405243</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="207">
+          <ReferenceId>8414022</ReferenceId>
+          <FullCitation>Kaufman DK, et al. Neurology (1993) pmid: 8414022</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="208">
+          <ReferenceId>9622062</ReferenceId>
+          <FullCitation>Bahuau M, et al. Cancer Res (1998) pmid: 9622062</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="209">
+          <ReferenceId>28699883</ReferenceId>
+          <FullCitation>Chan AK, et al. Clin Neuropathol () pmid: 28699883</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="210">
+          <ReferenceId>10898795</ReferenceId>
+          <FullCitation>Huynh KD, et al. Genes Dev. (2000) pmid: 10898795</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="211">
+          <ReferenceId>15004558</ReferenceId>
+          <FullCitation>Ng D, et al. Nat. Genet. (2004) pmid: 15004558</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="212">
+          <ReferenceId>22387997</ReferenceId>
+          <FullCitation>Pierron G, et al. Nat. Genet. (2012) pmid: 22387997</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="213">
+          <ReferenceId>27428733</ReferenceId>
+          <FullCitation>Kao YC, et al. Am. J. Surg. Pathol. (2016) pmid: 27428733</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="214">
+          <ReferenceId>26752546</ReferenceId>
+          <FullCitation>Specht K, et al. Am. J. Surg. Pathol. (2016) pmid: 26752546</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="215">
+          <ReferenceId>23580382</ReferenceId>
+          <FullCitation>Panagopoulos I, et al. Genes Chromosomes Cancer (2013) pmid: 23580382</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="216">
+          <ReferenceId>24285434</ReferenceId>
+          <FullCitation>Antonescu CR, et al. Genes Chromosomes Cancer (2014) pmid: 24285434</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="217">
+          <ReferenceId>26516930</ReferenceId>
+          <FullCitation>Astolfi A, et al. Oncotarget (2015) pmid: 26516930</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="218">
+          <ReferenceId>26573325</ReferenceId>
+          <FullCitation>Roy A, et al. Nat Commun (2015) pmid: 26573325</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="219">
+          <ReferenceId>26945340</ReferenceId>
+          <FullCitation>Kao YC, et al. Am. J. Surg. Pathol. (2016) pmid: 26945340</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="220">
+          <ReferenceId>28687574</ReferenceId>
+          <FullCitation>Cramer SL, et al. J Natl Compr Canc Netw (2017) pmid: 28687574</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="221">
+          <ReferenceId>28704208</ReferenceId>
+          <FullCitation>Appay R, et al. Am. J. Surg. Pathol. (2017) pmid: 28704208</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="222">
+          <ReferenceId>24436047</ReferenceId>
+          <FullCitation>Shern JF, et al. Cancer Discov (2014) pmid: 24436047</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="223">
+          <ReferenceId>22820256</ReferenceId>
+          <FullCitation>Pugh TJ, et al. Nature (2012) pmid: 22820256</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="224">
+          <ReferenceId>25139356</ReferenceId>
+          <FullCitation>Kulasekararaj AG, et al. Blood (2014) pmid: 25139356</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="225">
+          <ReferenceId>24047651</ReferenceId>
+          <FullCitation>Damm F, et al. Blood (2013) pmid: 24047651</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="226">
+          <ReferenceId>22012066</ReferenceId>
+          <FullCitation>Grossmann V, et al. Blood (2011) pmid: 22012066</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="227">
+          <ReferenceId>26337942</ReferenceId>
+          <FullCitation>Kocarnik JM, et al. Gastroenterol Rep (Oxf) (2015) pmid: 26337942</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="228">
+          <ReferenceId>21081928</ReferenceId>
+          <FullCitation>You JF, et al. Br. J. Cancer (2010) pmid: 21081928</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="229">
+          <ReferenceId>24623249</ReferenceId>
+          <FullCitation>Bairwa NK, et al. Methods Mol. Biol. (2014) pmid: 24623249</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="230">
+          <ReferenceId>9823339</ReferenceId>
+          <FullCitation>Boland CR, et al. Cancer Res. (1998) pmid: 9823339</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="231">
+          <ReferenceId>15528785</ReferenceId>
+          <FullCitation>Pawlik TM, et al. Dis. Markers (2004) pmid: 15528785</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="232">
+          <ReferenceId>20420947</ReferenceId>
+          <FullCitation>Boland CR, et al. Gastroenterology (2010) pmid: 20420947</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="233">
+          <ReferenceId>27623135</ReferenceId>
+          <FullCitation>Kubeček O, et al. Melanoma Res. (2016) pmid: 27623135</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="234">
+          <ReferenceId>27372860</ReferenceId>
+          <FullCitation>Kubecek O, et al. Med. Hypotheses (2016) pmid: 27372860</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="235">
+          <ReferenceId>7561170</ReferenceId>
+          <FullCitation>Peris K, et al. J. Invest. Dermatol. (1995) pmid: 7561170</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="236">
+          <ReferenceId>25392179</ReferenceId>
+          <FullCitation>Gatalica Z, et al. Cancer Epidemiol. Biomarkers Prev. (2014) pmid: 25392179</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="237">
+          <ReferenceId>26140250</ReferenceId>
+          <FullCitation>Kroemer G, et al. Oncoimmunology (2015) pmid: 26140250</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="238">
+          <ReferenceId>25949894</ReferenceId>
+          <FullCitation>Lal N, et al. Oncoimmunology (2015) pmid: 25949894</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="239">
+          <ReferenceId>26028255</ReferenceId>
+          <FullCitation>Le DT, et al. N. Engl. J. Med. (2015) pmid: 26028255</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="240">
+          <ReferenceId>35940183</ReferenceId>
+          <FullCitation>Dummer R, et al. Lancet Oncol (2022) pmid: 35940183</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="241">
+          <ReferenceId>30918950</ReferenceId>
+          <FullCitation>Hellmann MD, et al. Ann. Oncol. (2019) pmid: 30918950</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="242">
+          <ReferenceId>27424159</ReferenceId>
+          <FullCitation>Rosen LS, et al. Invest New Drugs (2016) pmid: 27424159</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="243">
+          <ReferenceId>25037139</ReferenceId>
+          <FullCitation>Ribas A, et al. Lancet Oncol. (2014) pmid: 25037139</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="244">
+          <ReferenceId>25265494</ReferenceId>
+          <FullCitation>Larkin J, et al. N. Engl. J. Med. (2014) pmid: 25265494</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="245">
+          <ReferenceId>30867592</ReferenceId>
+          <FullCitation>Diamond EL, et al. Nature (2019) pmid: 30867592</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="246">
+          <ReferenceId>31171876</ReferenceId>
+          <FullCitation>Sullivan RJ, et al. Nat. Med. (2019) pmid: 31171876</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="247">
+          <ReferenceId>25344362</ReferenceId>
+          <FullCitation>Tolcher AW, et al. Ann. Oncol. (2015) pmid: 25344362</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="248">
+          <ReferenceId>30690294</ReferenceId>
+          <FullCitation>Robert C, et al. Eur J Cancer (2019) pmid: 30690294</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="249">
+          <ReferenceId>22805292</ReferenceId>
+          <FullCitation>Falchook GS, et al. Lancet Oncol. (2012) pmid: 22805292</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="250">
+          <ReferenceId>31580757</ReferenceId>
+          <FullCitation>Menzer C, et al. J. Clin. Oncol. (2019) pmid: 31580757</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="251">
+          <ReferenceId>30097824</ReferenceId>
+          <FullCitation>Kondyli M, et al. J Neurooncol (2018) pmid: 30097824</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="252">
+          <ReferenceId>28009226</ReferenceId>
+          <FullCitation>Miller C, et al. J Neurosurg Pediatr (2017) pmid: 28009226</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="253">
+          <ReferenceId>29369501</ReferenceId>
+          <FullCitation>Wagner LM, et al. Pediatr Blood Cancer (2018) pmid: 29369501</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="254">
+          <ReferenceId>31768065</ReferenceId>
+          <FullCitation>Durham BH, et al. Nat. Med. (2019) pmid: 31768065</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="255">
+          <ReferenceId>34476331</ReferenceId>
+          <FullCitation>Hendifar A, et al. JCO Precis Oncol (2021) pmid: 34476331</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="256">
+          <ReferenceId>22048237</ReferenceId>
+          <FullCitation>Kirkwood JM, et al. Clin. Cancer Res. (2012) pmid: 22048237</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="257">
+          <ReferenceId>23735514</ReferenceId>
+          <FullCitation>Robert C, et al. Lancet Oncol. (2013) pmid: 23735514</FullCitation>
+          <Include>true</Include>
+        </Reference>
+        <Reference number="258">
+          <ReferenceId>24567366</ReferenceId>
+          <FullCitation>Gupta A, et al. Ann. Oncol. (2014) pmid: 24567366</FullCitation>
+          <Include>true</Include>
+        </Reference>
+      </References>
+      <Signatures>
+        <Signature>
+          <ServerTime>2023-06-14 21:21:31</ServerTime>
+          <OpName>Erik Williams, M.D. | Julia Elvin, M.D., Ph.D., Laboratory Director</OpName>
+          <Text>Erik Williams, M.D. | Julia Elvin, M.D., Ph.D., Laboratory Director</Text>
+        </Signature>
+      </Signatures>
+      <reportProperties>
+        <reportProperty identifier="QualityControlMetrics" key="MedianCoverageValue">
+          <value>760x</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="TumorMutationBurdenScore">
+          <value>2 Muts/Mb</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="MicrosatelliteStatusScore">
+          <value>0 fraction-unstable-loci</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="LossOfHeterozygosityScore">
+          <value>Units Not Reported</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="BloodTumorMutationalBurdenScore">
+          <value>Units Not Reported</value>
+        </reportProperty>
+        <reportProperty identifier="AdditionalFindings" key="TumorFractionScore">
+          <value>Units Not Reported</value>
+        </reportProperty>
+      </reportProperties>
+      <comments />
+      <AAC>
+        <Amendmends />
+      </AAC>
+    </FinalReport>
+    <variant-report xmlns="http://foundationmedicine.com/compbio/variant-report-external" disease="SKIN" disease-ontology="Skin melanoma" flowcell-analysis="2000029488" gender="female" pathology-diagnosis="Melanoma, C43" percent-tumor-nuclei="50" pipeline-version="v3.22.0" purity-assessment="80.22" specimen="ORD-1645065-01*US1568986.01" study="CLINICAL-F1CDx v2" test-request="ORD-1645065-01" test-type="FoundationOneDx" tissue-of-origin="Lymph Node" xsi:schemaLocation="http://foundationmedicine.com/compbio/variant-report-external http://integration.foundationmedicine.com/reporting/variant-report-external-2.2.xsd">
+      <samples>
+        <sample bait-set="DX2" mean-exon-depth="779.57" name="SQ-US1568986.01-1" nucleic-acid-type="DNA" />
+      </samples>
+      <quality-control status="Pass" />
+      <short-variants>
+        <short-variant allele-fraction="0.4835" cds-effect="3762A&gt;T" depth="666" equivocal="false" functional-effect="missense" gene="MSH6" percent-reads="48.35" position="chr2:48033458" protein-effect="E1254D" status="unknown" strand="+" transcript="NM_000179">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.0913" cds-effect="2450G&gt;A" depth="767" equivocal="false" functional-effect="missense" gene="POLE" percent-reads="9.13" position="chr12:133241906" protein-effect="G817D" status="unknown" strand="-" transcript="NM_006231">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.4709" cds-effect="874G&gt;A" depth="601" equivocal="false" functional-effect="missense" gene="RET" percent-reads="47.09" position="chr10:43601830" protein-effect="V292M" status="unknown" strand="+" transcript="NM_020975">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.298" cds-effect="162_170delTGCAGCGGC" depth="302" equivocal="false" functional-effect="nonframeshift" gene="MSH3" percent-reads="29.8" position="chr5:79950707" protein-effect="A60_A62del" status="unknown" strand="+" transcript="NM_002439">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.2428" cds-effect="88_168del81" depth="1071" equivocal="false" functional-effect="nonframeshift" gene="CTNNB1" percent-reads="24.28" position="chr3:41266090" protein-effect="Y30_D56del" status="likely" strand="+" transcript="NM_001904">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.4948" cds-effect="7046C&gt;T" depth="671" equivocal="false" functional-effect="missense" gene="MLL2" percent-reads="49.48" position="chr12:49434507" protein-effect="P2349L" status="unknown" strand="-" transcript="NM_003482">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.4958" cds-effect="376G&gt;A" depth="708" equivocal="false" functional-effect="missense" gene="FGFR4" percent-reads="49.58" position="chr5:176517766" protein-effect="D126N" status="unknown" strand="+" transcript="NM_213647">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.4525" cds-effect="436_438delTAT" depth="632" equivocal="false" functional-effect="nonframeshift" gene="FANCC" percent-reads="45.25" position="chr9:97934336" protein-effect="Y146del" status="unknown" strand="-" transcript="NM_000136">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.0669" cds-effect="1045G&gt;T" depth="658" equivocal="false" functional-effect="missense" gene="RET" percent-reads="6.69" position="chr10:43602001" protein-effect="A349S" status="unknown" strand="+" subclonal="true" transcript="NM_020975">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+        <short-variant allele-fraction="0.8353" cds-effect="239A&gt;T" depth="340" equivocal="false" functional-effect="missense" gene="PRDM1" percent-reads="83.53" position="chr6:106536272" protein-effect="E80V" status="unknown" strand="+" transcript="NM_001198">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </short-variant>
+      </short-variants>
+      <copy-number-alterations>
+        <copy-number-alteration copy-number="0" equivocal="false" gene="CDKN2A" number-of-exons="4 of 5" position="chr9:21968169-21974826" ratio="0.18" status="known" type="loss">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </copy-number-alteration>
+        <copy-number-alteration copy-number="44" equivocal="false" gene="SDHA" number-of-exons="15 of 15" position="chr5:218437-256556" ratio="9.15" status="unknown" type="amplification">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </copy-number-alteration>
+        <copy-number-alteration copy-number="26" equivocal="false" gene="SMO" number-of-exons="12 of 12" position="chr7:128828992-128852292" ratio="5.54" status="unknown" type="amplification">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </copy-number-alteration>
+        <copy-number-alteration copy-number="9" equivocal="true" gene="EZH2" number-of-exons="19 of 19" position="chr7:148504703-148544396" ratio="2.23" status="unknown" type="amplification">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </copy-number-alteration>
+      </copy-number-alterations>
+      <rearrangements>
+        <rearrangement allele-fraction="0.0298" description="BRAF(NM_004333) rearrangement intron 8" equivocal="false" in-frame="unknown" other-gene="N/A" percent-reads="2.98" pos1="chr7:140491404-140491454" pos2="chr7:128094330-128094380" status="likely" supporting-read-pairs="240" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.0239" description="BRAF(NM_004333) rearrangement intron 8" equivocal="false" in-frame="unknown" other-gene="N/A" percent-reads="2.39" pos1="chr7:140491405-140491455" pos2="chr7:150127705-150127755" status="likely" supporting-read-pairs="183" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.0319" description="BRAF(NM_004333) rearrangement intron 9" equivocal="false" in-frame="unknown" other-gene="TRIO" percent-reads="3.19" pos1="chr7:140484934" pos2="chr5:14213012" status="likely" supporting-read-pairs="192" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.0732" description="PRSS37(NM_001008270)-BRAF(NM_004333) fusion (P1; B9)" equivocal="false" in-frame="No" other-gene="PRSS37" percent-reads="7.32" pos1="chr7:140491617" pos2="chr7:141540049" status="likely" supporting-read-pairs="729" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.0045" description="BRAF(NM_004333) rearrangement intron 8" equivocal="false" in-frame="unknown" other-gene="N/A" percent-reads="0.45" pos1="chr7:140491468" pos2="chr7:148135306" status="likely" supporting-read-pairs="324" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.1891" description="SND1(NM_014390)-BRAF(NM_004333) fusion (S10; B9)" equivocal="false" in-frame="Yes" other-gene="SND1" percent-reads="18.91" pos1="chr7:140491372" pos2="chr7:127396731" status="known" supporting-read-pairs="1769" targeted-gene="BRAF" type="fusion">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.0535" description="BRAF(NM_004333) rearrangement intron 8" equivocal="false" in-frame="unknown" other-gene="N/A" percent-reads="5.35" pos1="chr7:140491517-140491567" pos2="chr7:148631333-148631383" status="likely" supporting-read-pairs="365" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.0207" description="BRAF(NM_004333) rearrangement intron 8" equivocal="false" in-frame="unknown" other-gene="PRSS37" percent-reads="2.07" pos1="chr7:140491411" pos2="chr7:141539501" status="likely" supporting-read-pairs="474" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.0197" description="BRAF(NM_004333) rearrangement intron 8" equivocal="false" in-frame="unknown" other-gene="N/A" percent-reads="1.97" pos1="chr7:140491673" pos2="chr7:148135680" status="likely" supporting-read-pairs="78" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.0208" description="BRAF(NM_004333) rearrangement intron 8" equivocal="false" in-frame="unknown" other-gene="N/A" percent-reads="2.08" pos1="chr7:140491537" pos2="chr7:148135572" status="likely" supporting-read-pairs="566" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.1074" description="CUL1(NM_003592)-BRAF(NM_004333) fusion (C21; B9)" equivocal="false" in-frame="Yes" other-gene="CUL1" percent-reads="10.74" pos1="chr7:140491816" pos2="chr7:148496732" status="known" supporting-read-pairs="603" targeted-gene="BRAF" type="fusion">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.1527" description="BRAF(NM_004333) rearrangement intron 8" equivocal="false" in-frame="unknown" other-gene="DPP6" percent-reads="15.27" pos1="chr7:140491668" pos2="chr7:154471716" status="likely" supporting-read-pairs="686" targeted-gene="BRAF" type="rearrangement">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+        <rearrangement allele-fraction="0.1376" description="BCOR(NM_017745) rearrangement intron 9" equivocal="false" in-frame="unknown" other-gene="N/A" percent-reads="13.76" pos1="chrX:39921749" pos2="chr7:136268641" status="likely" supporting-read-pairs="165" targeted-gene="BCOR" type="truncation">
+          <dna-evidence sample="SQ-US1568986.01-1" />
+        </rearrangement>
+      </rearrangements>
+      <biomarkers>
+        <microsatellite-instability status="MSS" />
+        <tumor-mutation-burden score="2.41" status="low" unit="mutations-per-megabase" />
+      </biomarkers>
+      <non-human-content />
+    </variant-report>
+  </rr:ResultsPayload>
+</rr:ResultsReport>

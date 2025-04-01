@@ -1,0 +1,19 @@
+{
+    "resourceType": "ServiceRequest",
+    "id": "AC-Q3W",
+    "status": "active",
+    "intent": "original-order",
+    "subject": {
+        "reference": "Patient/2028XXXX"
+    },
+    "requester": {
+        "reference": "Practitioner/11652"
+    },
+    "note": [
+        {
+            "authorString": "AC(Q3W)",
+            "time": "2021-03-26",
+            "text": "住院"
+        }
+    ]
+}

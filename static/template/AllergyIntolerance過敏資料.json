@@ -1,0 +1,29 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "",
+  "clinicalStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+      "code": "active",
+      "display": "Active"
+    } ]
+  },
+  "verificationStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+      "code": "confirmed",
+      "display": "Confirmed"
+    } ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "",
+      "display": ""
+    } ],
+    "text": ""
+  },
+  "patient": {
+    "reference": ""
+  }
+}

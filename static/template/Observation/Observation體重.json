@@ -1,0 +1,34 @@
+{
+    "resourceType": "Observation",
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "https://www.hl7.org/fhir/codesystem-observation-category.html",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "29463-7",
+                "display": "Body weight"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/2028XXXX"
+    },
+    "effectiveDateTime": "2021-03-26T14:54:00",
+    "valueQuantity": {
+        "value": "79.6",
+        "unit": "kg",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg"
+    }
+}

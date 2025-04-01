@@ -1,0 +1,90 @@
+{
+    "resourceType": "Patient",
+	"meta": {
+    "profile": [
+            "http://192.168.50.4:8080/fhir/StructureDefinition/PatientForPHR"
+    ]
+    },
+    "identifier": [
+        {
+			"use": "official",
+            "system": "https://www.dicom.org.tw/cs/identityCardNumber_tw",
+            "value": "A123456777"
+        }
+    ],
+    "active": true,
+    "name": [
+        {
+			"use": "official",
+            "family": "FHIR_2021_cimssc2",
+            "given": [
+                "cimssc2"
+            ],
+            "text": "FHIR_2021_cimssc2 cimssc2"
+        }
+    ],
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "0912345678",
+            "use": "mobile"
+        }
+    ],
+    "gender": "male",
+    "birthDate": "2021-10-23",
+    "address": [
+        {
+            "text": "258 新北市大同區溫泉路6號5樓",
+            "line": [
+                "溫泉路6號5樓"
+            ],
+            "city": "大同區",
+            "district": "新北市",
+            "postalCode": "258"
+        }
+    ],
+    "contact": [
+        {
+            "relationship": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                            "code": "U"
+                        }
+                    ],
+                    "text": "Unknown"
+                }
+            ],
+            "name": {
+				"use": "official",
+                "family": "dd",
+                "given": [
+                    "dd"
+                ],
+                "text": "dd dd"
+            },
+            "telecom": [
+                {
+                    "system": "phone",
+                    "value": "0912345678",
+                    "use": "mobile"
+                }
+            ],
+            "address": {
+                "text": "258 新北市大同區溫泉路6號5樓",
+                "line": [
+                    "溫泉路6號5樓"
+                ],
+                "city": "大同區",
+                "district": "新北市",
+                "postalCode": "258"
+            }
+        }
+    ],
+    "managingOrganization": {
+        "reference": "Organization/MITW.ForPHR",
+		 "type": "Organization",
+		 "display": "醫事機構-身分確認用"
+    }
+}

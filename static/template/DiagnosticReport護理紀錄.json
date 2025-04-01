@@ -1,0 +1,52 @@
+{
+    "resourceType": "DiagnosticReport",
+    "id": "",
+    "basedOn": [
+        {
+            "reference": ""
+        }
+    ],
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "9632001",
+                    "display": "Nursing procedure (procedure)"
+                },
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                    "code": "NRS",
+                    "display": "Nursing Service Measures"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "28623-7",
+                "display": "Nurse Progress note"
+            }
+        ]
+    },
+    "encounter": {
+        "reference": ""
+    },
+    "subject": {
+        "reference": ""
+    },
+    "issued": "2021-03-26T14:54:00",
+    "performer": [
+        {
+            "reference": ""
+        }
+    ],
+    "result": [
+        {
+            "reference": ""
+        }
+    ]
+}

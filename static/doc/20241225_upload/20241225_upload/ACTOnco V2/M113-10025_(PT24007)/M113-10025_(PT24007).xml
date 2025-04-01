@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rr:ResultsReport>
+	<rr:ResultsPayload>
+		<FinalReport>
+			<Sample>
+				<FM_Id>AA -24-00573</FM_Id>
+				<SampleId></SampleId>
+				<BlockId>M113-10025_(PT24007)</BlockId>
+				<TRFNumber></TRFNumber>
+				<TestType></TestType>
+				<SpecFormat>Prostate  Type</SpecFormat>
+				<ReceivedDate>Jan 26, 2024</ReceivedDate>
+			</Sample>
+			<PMI>
+				<ReportId></ReportId>
+				<MRN>***38019</MRN>
+				<FullName>陳*全</FullName>
+				<FirstName></FirstName>
+				<LastName></LastName>
+				<SubmittedDiagnosis>Prostate adenocarcinoma</SubmittedDiagnosis>
+				<Gender>Male</Gender>
+				<DOB>Aug **, 1965</DOB>
+				<OrderingMD>陳志學醫師</OrderingMD>
+				<OrderingMDId></OrderingMDId>
+				<Pathologist></Pathologist>
+				<CopiedPhysician1></CopiedPhysician1>
+				<MedFacilName>臺北榮總</MedFacilName>
+				<MedFacilID></MedFacilID>
+				<SpecSite></SpecSite>
+				<CollDate></CollDate>
+				<ReceivedDate></ReceivedDate>
+				<CountryOfOrigin></CountryOfOrigin>
+			</PMI>
+		</FinalReport>
+		<variant-report>
+			<short_variants>
+				<short_variant>
+					<cds_effect>c.602dup</cds_effect>
+					<depth>46</depth>
+					<gene>TP53</gene>
+					<percent_reads>22.0%</percent_reads>
+					<protein_effect>L201fs</protein_effect>
+					<transcript>NM_000546</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.538C&gt;T</cds_effect>
+					<depth>934</depth>
+					<gene>CHEK2</gene>
+					<percent_reads>42.2%</percent_reads>
+					<protein_effect>R180C</protein_effect>
+					<transcript>NM_007194</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.120A&gt;T</cds_effect>
+					<depth>1644</depth>
+					<gene>CTCF</gene>
+					<percent_reads>50.4%</percent_reads>
+					<protein_effect>L40F</protein_effect>
+					<transcript>NM_006565</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.2017T&gt;A</cds_effect>
+					<depth>3297</depth>
+					<gene>EPHA5</gene>
+					<percent_reads>52.6%</percent_reads>
+					<protein_effect>S673T</protein_effect>
+					<transcript>NM_001281765</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.2483C&gt;A</cds_effect>
+					<depth>473</depth>
+					<gene>IRS2</gene>
+					<percent_reads>48.8%</percent_reads>
+					<protein_effect>S828Y</protein_effect>
+					<transcript>NM_003749</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.971A&gt;G</cds_effect>
+					<depth>668</depth>
+					<gene>JAK3</gene>
+					<percent_reads>49.3%</percent_reads>
+					<protein_effect>D324G</protein_effect>
+					<transcript>NM_000215</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.5053G&gt;T</cds_effect>
+					<depth>528</depth>
+					<gene>KMT2C</gene>
+					<percent_reads>5.3%</percent_reads>
+					<protein_effect>A1685S</protein_effect>
+					<transcript>NM_170606</transcript>
+				</short_variant>
+				<short_variant>
+					<cds_effect>c.1352C&gt;T</cds_effect>
+					<depth>22</depth>
+					<gene>PMS1</gene>
+					<percent_reads>31.8%</percent_reads>
+					<protein_effect>T451M</protein_effect>
+					<transcript>NM_000534</transcript>
+				</short_variant>
+			</short_variants>
+			<copy_number_alterations>
+				<copy_number_alteration>
+					<copy_number>0</copy_number>
+					<gene>PTEN</gene>
+					<position>Chr10</position>
+					<type>Homozygous deletion</type>
+				</copy_number_alteration>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>SMAD4</gene>
+					<position>Chr18</position>
+					<type>Heterozygous deletion</type>
+				</copy_number_alteration>
+				<copy_number_alteration>
+					<copy_number>1</copy_number>
+					<gene>CHEK2, NF2</gene>
+					<position>Chr22</position>
+					<type>Heterozygous deletion</type>
+				</copy_number_alteration>
+			</copy_number_alterations>
+			<rearrangements>
+			</rearrangements>
+			<biomarkers>
+				<microsatellite_instability>
+					<status>Microsatellite stable (MSS)</status>
+				</microsatellite_instability>
+				<tumor_mutation_burden>
+					<score>1.3</score>
+				</tumor_mutation_burden>
+			</biomarkers>
+		</variant-report>
+	</rr:ResultsPayload>
+</rr:ResultsReport>

@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Gene Report</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+			
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+				
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3><span class="badge badge-secondary">Biomarker Count</span><span class="badge badge-Success">{{ FuncResult }}</span></h3>
+						{% if FuncResult  > 0 %}
+								<a href="/static/doc/datalist.csv" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i>download report</a>
+						{% endif %}
+						
+					</div>
+					{% csrf_token %}
+					<form method="post" action="{% url 'convert' %}" enctype="multipart/form-data">
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label><h5>DBtype</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<select name="DBtype" class="form-control">
+									<option value="PostgreSql" selected>PostgreSql</option>
+								</select>
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>IP</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="IP" name="IP" value="{{dbconn.IP}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>Port</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="Port" name="Port" value="{{dbconn.Port}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>ID</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="ID" name="ID" value="{{dbconn.ID}}">
+							</div>							
+							<div class="form-group col-md-1">
+							<label><h5>PassWord</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="password" class="form-control" id="PassWord" name="PassWord" value="{{dbconn.PassWord}}">
+							</div>
+							<div class="form-group col-md-1">
+							<label><h5>db</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="db" name="db" value="{{dbconn.db}}">
+							</div>
+						</div>
+						
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							<label><h5>table</h5></label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" id="table" name="table" value="{{dbconn.table}}">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>Resource</h5></label>
+							</div>
+							<div class="form-group col-md-3">
+								<select name="Resource" class="form-control">
+									{% for Resourcejson in Resourcejsonall %}
+									  <option value="{{Resourcejson.uploadedFile}}" {% if Resourcejson.uploadedFile == Resource %}selected{% endif %}>{{Resourcejson.uploadedFile}}</option>
+									{% endfor %}
+								</select>
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>Upload Resource</h5></label>
+							</div>
+							<div class="form-group col-md-3">
+								<input class="form-control" type="file" name="uploadedFile" accept=".json">
+							</div>
+
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Resource</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="Table" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>Resource items</th>
+											<th>default sameple</th>
+											<th>db table column</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>Resource items</th>
+											<th>default sameple</th>
+											<th>table column</th>
+											<th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for key, value in flattendict.items %}
+										<tr>											
+											<td>{{key}}</td>
+											<td><input type="text" class="form-control" id="status" name="{{ key }}" value="{{ value }}"></td>
+											<td>								
+											<select name="{{key}}_select" class="form-control">
+												<option value="" selected></option>
+												{% for row in rows %}
+												  <option value="{{row.0}}">{{row.0}}</option>
+												{% endfor %}
+											</select>
+											</td>
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				
+
+
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>						
+					</div>
+					</form>
+				
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+		</div>
+	</div>
+    </div>
+{% include 'utilities-js.html' %}    
+</body>
+
+</html>

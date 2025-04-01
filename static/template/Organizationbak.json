@@ -1,0 +1,44 @@
+{
+    "resourceType": "Organization",
+    "id": "",
+	"identifier": [
+        {
+            "use": "usual",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "XX"
+                    }
+                ]
+            },
+            "value": ""
+        }
+    ],
+    "name": "",
+    "telecom": [
+        {
+            "system": "phone",
+            "value": ""
+        },
+        {
+            "system": "fax",
+			"value": ""
+        },
+        {
+            "system": "email",
+            "value": ""
+        }
+    ],
+    "address": [
+        {
+            "line": [
+                ""
+            ],
+            "city": "",
+            "state": "",
+            "postalCode": "",
+            "country": ""
+        }
+    ]
+}

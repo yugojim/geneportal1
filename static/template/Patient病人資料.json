@@ -1,0 +1,194 @@
+{
+    "resourceType": "Patient",
+    "id": "2028XXXX",
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-nationality",
+            "extension": [
+                {
+                    "url": "code",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "urn:iso:std:iso:3166",
+                                "code": "TW"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "period",
+                    "valuePeriod": {
+                        "start": "1958-12-18"
+                    }
+                }
+            ]
+        }
+    ],
+    "identifier": [
+        {
+            "use": "usual",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "MR"
+                    }
+                ]
+            },
+            "value": "2028XXXX",
+            "assigner": {
+                "display": "NCKU Hospital"
+            }
+        },
+        {
+            "use": "usual",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "CZ"
+                    }
+                ]
+            },
+            "value": "R2206XXXXX",
+            "assigner": {
+                "display": "中華民國"
+            }
+        }
+    ],
+    "active": true,
+    "name": [
+        {
+            "use": "official",
+            "family": "",
+            "given": [
+                ""
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "(03) 5555 6473",
+            "use": "home",
+            "rank": 2
+        },
+        {
+            "system": "phone",
+            "use": "work",
+            "rank": 3
+        },
+        {
+            "system": "phone",
+            "value": "092XXXXXXX",
+            "use": "mobile",
+            "rank": 1
+        },
+        {
+            "system": "phone",
+            "rank": 4
+        },
+        {
+            "system": "email",
+            "value": "XXXX@mail.com",
+            "rank": 5
+        }
+    ],
+    "gender": "female",
+    "birthDate": "",
+    "deceasedBoolean": false,
+    "address": [
+        {
+            "text": "",
+            "line": [
+                ""
+            ],
+            "city": "",
+            "postalCode": ""
+        },
+        {
+            "text": "",
+            "line": [
+                ""
+            ],
+            "city": "",
+            "postalCode": ""
+        },
+        {
+            "text": "",
+            "line": [
+                ""
+            ],
+            "city": "",
+            "postalCode": ""
+        }
+    ],
+    "contact": [
+        {
+            "relationship": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                            "code": "U"
+                        }
+                    ],
+                    "text": "Unknown"
+                }
+            ],
+            "name": {
+                "use": "official",
+                "family": "",
+                "given": [
+                    ""
+                ],
+                "text": ""
+            },
+            "telecom": [
+                {
+                    "system": "phone",
+                    "value": "",
+                    "use": "mobile"
+                }
+            ],
+            "address": {
+                "text": "",
+                "line": [
+                    ""
+                ],
+                "city": "",
+                "postalCode": ""
+            }
+        }
+    ],
+    "communication": [
+        {
+            "language": {
+                "coding": [
+                    {
+                        "system": "urn:ietf:bcp:47",
+                        "code": "zh",
+                        "display": "Chinese"
+                    }
+                ],
+                "text": ""
+            }
+        },
+        {
+            "language": {
+                "coding": [
+                    {
+                        "system": "urn:ietf:bcp:47",
+                        "code": "zh",
+                        "display": "Chinese"
+                    }
+                ],
+                "text": ""
+            }
+        }
+    ],
+    "managingOrganization": {
+        "reference": "Organization/NCKUHospital"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "resourceType": "MedicationRequest",
+    "id": "AC-Q3W",
+    "identifier": [
+        {
+            "system": "Organization/NCKUHospital",
+            "value": "AC(Q3W)"
+        }
+    ],
+    "status": "active",
+    "intent": "order"
+}

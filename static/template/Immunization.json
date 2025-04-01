@@ -1,0 +1,38 @@
+{
+  "resourceType": "Immunization",
+  "id": "",
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/cvx",
+        "code": "210"
+      }
+    ]
+  },
+  "patient": {
+    "reference": ""
+  },
+  "occurrenceDateTime": "",
+  "manufacturer": {
+    "reference": ""
+  },
+  "lotNumber": "",
+  "protocolApplied": [
+    {
+      "targetDisease": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "COVID-19"
+            }
+          ]
+        }
+      ],
+      "doseNumberPositiveInt": 0,
+      "seriesDosesPositiveInt": 0
+    }
+  ]
+}

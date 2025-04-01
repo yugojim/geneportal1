@@ -1,0 +1,332 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>FHIR Portal Beta</title>	
+	{% include 'utilities-css.html' %}
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+ 
+
+<!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">FHIR IOT</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+					<!--
+					{% for data in data %}
+						{{data}}<br>
+					{% endfor %}
+					{% for data in data1 %}
+						{{data}}<br>
+					{% endfor %}	
+					
+                    
+                    <!-- Content Row -->
+					<table class="table table-bordered">
+					  <thead>
+						<tr>
+						  <th scope="col" >latest</th>
+						  <th scope="col" colspan="3">Blood_Pressure	(Fora P30)</th>
+						  <th scope="col" colspan="2">Blood_Oxygen	(Fora O2)</th>
+						  <th scope="col" colspan="2">IR_Thermometer	(Fora IR42)</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr>
+						  <th scope="row">time</th>
+						  <td colspan="3">{{lastdata.0}}</td>
+						  <td colspan="2">{{lastdata.1}}</td>
+						  <td colspan="2">{{lastdata.2}}</td>
+						</tr>
+						<tr>
+						  <th scope="row">label</th>
+						  <td>SBP</td>
+						  <td>DBP</td>
+						  <td>pulse</td>
+						  <td>spO2</td>
+						  <td>pulse</td>
+						  <td>objectTemp</td>
+						  <td>ambientTemp</td>
+						</tr>
+						<tr>
+						  <th scope="row">value</th>
+						  <td>{{lastjson.0.latest.0.sys}}</td>
+						  <td>{{lastjson.0.latest.0.dia}}</td>
+						  <td>{{lastjson.0.latest.0.pulse}}</td>
+						  <td>{{lastjson.1.latest.0.spO2}}</td>
+						  <td>{{lastjson.1.latest.0.pulse}}</td>
+						  <td>{{lastjson.2.latest.0.objectTemp}}</td>
+						  <td>{{lastjson.2.latest.0.ambientTemp}}</td>
+						</tr>
+					  </tbody>
+					</table>
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-6 col-lg-8">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Fora O2</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+								
+                                <div class="card-body">
+                                    <div class="chart-area">
+										<canvas id="myChart" style="width:100%;max-width:650px"></canvas>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+						<!-- Area Chart -->
+                        <div class="col-xl-6 col-lg-8">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Fora IR</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->								
+                                <div class="card-body">
+                                    <div class="chart-area">
+										<canvas id="myChart1" style="width:100%;max-width:650px"></canvas>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+					
+					<div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-6 col-lg-8">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Fora P30</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+								
+                                <div class="card-body">
+                                    <div class="chart-area">
+										<canvas id="myChart2" style="width:100%;max-width:650px"></canvas>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+						
+
+                        
+                    </div>
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+	
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var xValues = [
+				{% for datestr in datejson %}
+					'{{datestr}}',
+				{% endfor %}	
+				];
+
+var myChart = new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{ 
+      data: [
+				{% for data in data %}
+						{{data.spO2}},
+				{% endfor %}
+			],
+	  label : "spO2",
+      borderColor: "blue",
+      fill: false
+    }, { 
+      data: [	
+				{% for data in data %}
+					{{data.pulse}},
+				{% endfor %}
+			],
+	  label : "pulse",
+      borderColor: "green",
+      fill: false
+    }]
+  },
+  options: {
+  }
+});
+var xValues1 = [
+				{% for datestr in datejson1 %}
+					'{{datestr}}',
+				{% endfor %}	
+				];
+new Chart("myChart1", {
+  type: "line",
+  data: {
+    labels: xValues1,
+    datasets: [{ 
+      data: [
+				{% for data in data1 %}
+						{{data.ambientTemp}},
+				{% endfor %}
+			],
+	  label : "ambientTemp",
+      borderColor: "green",
+      fill: false
+    }, { 
+      data: [	
+				{% for data in data1 %}
+					{{data.objectTemp}},
+				{% endfor %}
+			],
+	  label : "objectTemp",
+      borderColor: "blue",
+      fill: false
+    }]
+  },
+  options: {
+  }
+});
+var xValues2 = [
+				{% for datestr in datejson2 %}
+					'{{datestr}}',
+				{% endfor %}	
+				];
+new Chart("myChart2", {
+  type: "line",
+  data: {
+    labels: xValues2,
+    datasets: [
+	{ 
+      data: [
+				{% for data in data2 %}
+						{{data.dia}},
+				{% endfor %}
+			],
+	  label : "dia",
+      borderColor: "green",
+      fill: false
+    },
+	{ 
+      data: [	
+				{% for data in data2 %}
+					{{data.sys}},
+				{% endfor %}
+			],
+	  label : "sys",
+      borderColor: "blue",
+      fill: false
+    },
+	{ 
+      data: [	
+				{% for data in data2 %}
+					{{data.pulse}},
+				{% endfor %}
+			],
+	  label : "pulse",
+      borderColor: "yellow",
+      fill: false
+    }
+	]
+  },
+  options: {
+  }
+});
+</script>	
+{% include 'utilities-js.html' %}
+</body>
+
+</html>

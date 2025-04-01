@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+    <title>精準醫療資訊</title>
+  </head>
+  <body>
+
+	<div class="container">
+		<br>
+		<div class="row">
+		  <div class="col-sm-12"><center><h1>dbSNP Alleles Change Search</h1></center></div>
+		</div>
+		<form method="post">
+		{% csrf_token %}
+		  <div class="form-row" style='text-align: center;'>
+			<div class="form-group col-md-4">
+			  <label for="inputState">Alleles</label>
+			  <input name="Alleles" placeholder="T/A" value="" class="form-control">
+			</div>
+			<div class="form-group col-md-4">
+			  <label for="inputState">dbSNP</label>
+			  <input name="dbSNP" placeholder="rs9939609" value="" class="form-control">
+			</div>
+			<div class="form-group col-md-4">
+				<center>
+					<button type="submit" class="btn-lg btn-light">Search</button>
+				</center>
+			</div>
+		  </div>
+		</form>
+			{% if count %}
+				<center>COUNT : {{ count }}</center>
+			{% endif %}
+			{% if link %}
+			<table class="table">
+			  <thead>
+				<tr>
+					{% for links in link %}
+						<th scope="row">
+						<a href="{{ links.url }}" title="" target="_blank">
+							{{ links.relation }}
+						</a>
+						</th>
+					{% endfor %}
+				</tr>
+			  </thead>
+			</table>
+			{% endif %}
+			{% if data %}
+			<table class="table">
+			  <thead>
+				<tr>
+				  <th scope="col">Patient ID</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				{% for member in data %}
+					<tr>
+						<th scope="row">{{ member.resource.subject.reference }}</th>
+					</tr>
+				{% endfor %}
+			  </tbody>
+			</table>
+			{% endif %}
+	</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/js/jquery-3.3.1.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>

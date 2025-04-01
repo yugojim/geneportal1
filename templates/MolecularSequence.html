@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>MolecularSequence</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>MolecularSequence <span class="badge badge-secondary">MolecularSequence {{ FuncResult }}</span></h3>
+						<a href="https://www.hl7.org/fhir/molecularSequence.html" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i>MolecularSequence Release 4B</a>
+					</div>
+					<form method="post" action="{% url 'MolecularSequence' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-1">
+							  <select name="method" class="form-control">
+								<option value="GET" selected>GET</option>
+								<option value="POST" >POST</option>
+								<option value="PUT" >PUT</option>
+								<option value="DELETE" >DELETE</option>
+							  </select>
+							</div>
+							<div class="form-group col-md-1">
+								<label>ID</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" name="id">
+							</div>
+							<div class="form-group col-md-1">
+								<label>Patient ID*</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" name="patient">
+							</div>
+							<div class="form-group col-md-1">
+								<label >specimen ID*</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" name="specimen">
+							</div>
+							<div class="form-group col-md-1">
+								<label >chromosome</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" name="chromosome">
+							</div>
+							<div class="form-group col-md-1">
+								<label >genomeBuild</label>
+							</div>
+							<div class="form-group col-md-2">
+								<select name="genomeBuild" class="form-control">
+									<option value="GRCh38" selected>GRCh38</option>
+									<option value="GRCh37" >GRCh37</option>
+									<option value="hg19" >hg19</option>
+									<option value="b37" >b37</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-row">
+
+							<div class="form-group col-md-1">
+								<label >start</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" name="start">
+							</div>
+							<div class="form-group col-md-1">
+								<label >end</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" name="end">
+							</div>
+							<div class="form-group col-md-1">
+								<label >observedAllele</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" name="observedAllele">
+							</div>
+							<div class="form-group col-md-1">
+								<label >referenceAllele</label>
+							</div>
+							<div class="form-group col-md-1">
+								<input type="text" class="form-control" name="referenceAllele">
+							</div>
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>				  
+					</div>
+					</form>
+					{{data.diagnostics}}
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">CarePlan</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>ID</th>
+                                            <th>patient</th>
+                                            <th>specimen</th>
+											<th>chromosome</th>
+                                            <th>genomeBuild</th>
+											<th>start</th>
+                                            <th>end</th>
+                                            <th>observedAllele</th>
+											<th>referenceAllele</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+											<th>ID</th>
+                                            <th>patient</th>
+                                            <th>specimen</th>
+											<th>chromosome</th>
+                                            <th>genomeBuild</th>
+											<th>start</th>
+                                            <th>end</th>
+                                            <th>observedAllele</th>
+											<th>referenceAllele</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+										{% for entry in data.entry %}
+										<tr>
+											<td>{{ entry.resource.id }}</td>
+											<td>{{ entry.resource.patient.reference }}</td>
+											<td>{{ entry.resource.specimen.reference }}</td>
+											<td>{{ entry.resource.referenceSeq.chromosome.coding.0.display }}</td>
+											<td>{{ entry.resource.referenceSeq.genomeBuild }}</td>
+											<td>{{ entry.resource.variant.0.start }}</td>
+											<td>{{ entry.resource.variant.0.end }}</td>
+											<td>{{ entry.resource.variant.0.observedAllele }}</td>
+											<td>{{ entry.resource.variant.0.referenceAllele }}</td>
+										</tr>
+										{% endfor %}										 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}
+</body>
+
+</html>

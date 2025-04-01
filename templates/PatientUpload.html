@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="data:,">
+    <title>Data batch</title>	
+	{% include 'utilities-css.html' %}	
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	{% include 'utilities-Sidebar.html' %}
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+			{% include 'utilities-Topbar.html' %}
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h3>基因報告PDF或XML上傳 <span class="badge badge-secondary">Gene Metadata Upload</span>{{ FuncResult }}</h3>						
+					</div>					
+					<form method="post" action="{% url 'PatientUpload' %}" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="form-group">
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="ACTOncoV1">
+								  <label class="form-check-label" for="inlineRadio1">ACTOnco V1</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="ACTOncoV2">
+								  <label class="form-check-label" for="inlineRadio2">ACTOnco V2</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="ArcherLung" disabled>
+								  <label class="form-check-label" for="inlineRadio3">Archer Lung</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="ArcherSarcoma" disabled>
+								  <label class="form-check-label" for="inlineRadio4">Archer Sarcoma</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="BRCAAssay">
+								  <label class="form-check-label" for="inlineRadio5">BRCA Assay</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="FocusAssay">
+								  <label class="form-check-label" for="inlineRadio6">Focus Assay</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="FoundationOne">
+								  <label class="form-check-label" for="inlineRadio7">Foundation One(xml)</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Guardant360" disabled>
+								  <label class="form-check-label" for="inlineRadio8">Guardant 360</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="MyeloidAssay">
+								  <label class="form-check-label" for="inlineRadio9">Myeloid Assay</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio10" value="TumorMutationLoadAssay">
+								  <label class="form-check-label" for="inlineRadio10">Tumor Mutation Load Assay</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-1">
+								<label><h5>檔案說明</h5></label>
+							</div>
+							<div class="form-group col-md-2">
+								<input type="text" class="form-control" name="fileTitle" placeholder="Enter a title">
+							</div>
+							<div class="form-group col-md-1">
+								<label><h5>檔案選擇</h5></label>
+							</div>
+							<div class="form-group col-md-3">								
+								<input class="form-control" type="file" name="uploadedFile">
+							</div>
+							<div class="form-group col-md-1">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>	
+
+						</div>
+						<div class="card shadow mb-4">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">基因報告</h6>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-bordered" id="" width="100%" cellspacing="0">
+										<thead>
+											<tr>
+												<td>id</td>
+												<td>inlineRadioOptions</td>				
+												<th>fileTitle</th>
+												<th>uploadedFile</th>
+												<th>dateTimeOfUpload</th>
+												<th>Update</th>														
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<td>id</td>
+												<td>inlineRadioOptions</td>				
+												<th>fileTitle</th>
+												<th>uploadedFile</th>
+												<th>dateTimeOfUpload</th>
+												<th>Update</th>		
+											</tr>
+										</tfoot>
+										<tbody>
+											{% for Genedata in Genedata %}
+											<tr>
+												<td>{{ Genedata.id}}</td>
+												<td>{{ Genedata.inlineRadioOptions}}</td>								
+												<td>{{ Genedata.fileTitle}}</td>
+												<td>{{ Genedata.uploadedFile}}</td>
+												<td>{{ Genedata.dateTimeOfUpload}}</td>
+												<td><a href="/Geneone?id={{ Genedata.id }}" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">update </a></td>	
+											</tr>
+											{% endfor %}										 
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>	
+
+					</div>
+					</form>
+					{{data.diagnostics}}
+				</div>
+			</div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2022 WiAdvance Technology Co. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+			<!-- /.container-fluid -->
+		</div>
+		<!-- End of Main Content -->
+		
+	</div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+{% include 'utilities-js.html' %}
+</body>
+
+</html>
