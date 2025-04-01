@@ -1704,63 +1704,7 @@ def MutationLoadAssay2xml(PdfPath):
     return 'MutationLoadAssay2xml done'
 
 
-import pdfplumber
-def FocusAssay2xml(PdfPath):
-    os.chdir(os.getcwd() + '/' + PdfPath)
-    dirlist = glob.glob('*_*')
-    
-    for dirpath in dirlist:
-        basedict = {  # XML 结构
-            "rr:ResultsReport": {
-                "rr:ResultsPayload": {
-                    "FinalReport": {"Sample": {}, "PMI": {}},
-                    "variant-report": {
-                        "short_variants": {"short_variant": []},
-                        "copy_number_alterations": {"copy_number_alteration": []},
-                        "rearrangements": {"rearrangement": []},
-                        "biomarkers": {"microsatellite_instability": {"status": ""}, "tumor_mutation_burden": {"score": ""}}
-                    }
-                }
-            }
-        }
 
-        try:
-            ReportNo, MPNo = dirpath.replace('(', '').replace(')', '').split('_')
-            filepathlist = glob.glob(os.path.join(dirpath, "*.pdf"))
-            
-            for filename in filepathlist:
-                text = []
-                with pdfplumber.open(filename) as pdf:
-                    for page in pdf.pages:
-                        text.append(page.extract_text())
-                
-                full_text = '\n'.join(text)
-                full_text = full_text.replace('-\n', '')  # 處理連字符換行
-                full_text = full_text.replace('\n', ' ')  # 連接一般換行
-                
-                # 解析變異資訊
-                short_variants = []
-                for line in full_text.split('\n'):
-                    if 'p.(' in line or 'c.' in line:  # 處理蛋白與核苷酸變異
-                        parts = line.split()
-                        if len(parts) >= 4:
-                            short_variants.append({
-                                "gene": parts[0],
-                                "protein_effect": parts[1],
-                                "cds_effect": parts[2],
-                                "extra_info": ' '.join(parts[3:])
-                            })
-                basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['short_variants']['short_variant'] = short_variants
-                
-                with open(os.path.join(dirpath, ReportNo + '_(' + MPNo + ').xml'), 'w', encoding="utf-8") as output:
-                    output.write(xmltodict.unparse(basedict, pretty=True))
-        except Exception as e:
-            print(f"Error processing {dirpath}: {e}")
-    
-    os.chdir('..')
-    return 'FocusAssay2xml done'
-
-'''
 ### creating a pdf reader object Focus Assay ###
 def FocusAssay2xml(PdfPath):
     #print('FocusAssay2xml')
@@ -1971,6 +1915,177 @@ def FocusAssay2xml(PdfPath):
     os.chdir('..')
     return 'FocusAssay2xml done'
 '''
+def FocusAssay2xml(PdfPath):
+    os.chdir(os.path.join(os.getcwd(), PdfPath))
+    dirlist = glob.glob('*_*')
+
+    for dirpath in dirlist:
+        basedict = {
+            "rr:ResultsReport": {
+                "rr:ResultsPayload": {
+                    "FinalReport": {
+                        "Sample": {
+                            "FM_Id": "",
+                            "SampleId": "",
+                            "BlockId": "",
+                            "TRFNumber": "",
+                            "TestType": "",
+                            "SpecFormat": "",
+                            "ReceivedDate": "",
+                        },
+                        "PMI": {
+                            "ReportId": "",
+                            "MRN": "",
+                            "FullName": "",
+                            "FirstName": "",
+                            "LastName": "",
+                            "SubmittedDiagnosis": "",
+                            "Gender": "",
+                            "DOB": "",
+                            "OrderingMD": "",
+                            "OrderingMDId": "",
+                            "Pathologist": "",
+                            "CopiedPhysician1": "",
+                            "MedFacilName": "",
+                            "MedFacilID": "",
+                            "SpecSite": "",
+                            "CollDate": "",
+                            "ReceivedDate": "",
+                            "CountryOfOrigin": ""
+                        }
+                    },
+                    "variant-report": {
+                        "short_variants": {"short_variant": []},
+                        "copy_number_alterations": {"copy_number_alteration": []},
+                        "rearrangements": {"rearrangement": []},
+                        "biomarkers": {
+                            "microsatellite_instability": {"status": ""},
+                            "tumor_mutation_burden": {"score": ""}
+                        }
+                    }
+                }
+            }
+        }
+
+        try:
+            ReportNo, MPNo = dirpath.replace('(', '').replace(')', '').split('_')
+            filepathlist = glob.glob(os.path.join(dirpath, "*.pdf"))
+
+            for filename in filepathlist:
+                reader = PyPDF2.PdfReader(filename)
+                text = [reader.pages[i].extract_text() for i in range(len(reader.pages))]
+
+                short_variants = []
+                rearrangement = []
+                copy_number_alterations = []
+
+                for i in range(len(text)):
+                    # Handle Rearrangements
+                    if 'Gene Fusions (RNA)' in text[i]:
+                        start = text[i].find('ID Locus Read Count')
+                        end = text[i].find('Gene Fusions')
+                        rearrangement.extend(text[i][start+19:end].strip().split('\n'))
+                        rearrangementlist = [
+                            {
+                                "description": r.replace(' - ', '-').split(' ')[1].split('.')[0] + '.' + r.replace(' - ', '-').split(' ')[1].split('.')[1],
+                                "other_gene": r.replace(' - ', '-').split(' ')[0].split('-')[0],
+                                "pos1": r.replace(' - ', '-').split(' ')[2].split('-')[0],
+                                "pos2": r.replace(' - ', '-').split(' ')[2].split('-')[1],
+                                "targeted_gene": r.replace(' - ', '-').split(' ')[0].split('-')[1]
+                            } for r in rearrangement if r.strip()
+                        ]
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['rearrangements']['rearrangement'] = rearrangementlist
+
+                    # Handle Copy Number Alterations
+                    if 'Copy Number' in text[i]:
+                        start = text[i].find('Locus Copy Number')
+                        end = text[i].find('Copy Number Variation')
+                        copy_number_alterations.extend(text[i][start+17:end].strip().split('\n'))
+                        copy_number_alterationlist = [
+                            {
+                                "copy_number": c.split(' ')[2],
+                                "gene": c.split(' ')[0],
+                                "position": c.split(' ')[1]
+                            } for c in copy_number_alterations if c.strip()
+                        ]
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['copy_number_alterations']['copy_number_alteration'] = copy_number_alterationlist
+
+                    # Handle PMI and Sample Information
+                    if 'Sample Information' in text[i]:
+                        start = text[i].find('Sample Information')
+                        end = text[i].find('Note:')
+                        PATIENT = text[i][start+18:end].strip()
+                        patient_lines = PATIENT.split('\n')
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['FullName'] = patient_lines[0].split(':')[1].strip()
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['Gender'] = patient_lines[1].split(':')[1].strip()
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['MRN'] = patient_lines[3].split(':')[1].strip()
+                        try:
+                            ordering_md_line = patient_lines[6].split(':')[1].strip().split(' ')
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['OrderingMD'] = ordering_md_line[1]
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['OrderingMDId'] = ordering_md_line[0]
+                        except:
+                            basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['OrderingMDId'] = patient_lines[6].split(':')[1].strip()
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['ReportId'] = patient_lines[8].split(':')[1].strip()
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['BlockId'] = dirpath
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['TestType'] = patient_lines[12].split(':')[1].strip()
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['Sample']['SpecFormat'] = patient_lines[13].split(':')[1].strip()
+
+                        start = text[i].find('Cancer Type:')
+                        end = text[i].find('Table of Contents')
+                        CancerType = text[i][start+12:end].strip()
+                        basedict['rr:ResultsReport']['rr:ResultsPayload']['FinalReport']['PMI']['SubmittedDiagnosis'] = CancerType
+
+                    # Handle Short Variants with Multi-line Support
+                    if 'DNA Sequence' in text[i]:
+                        start = text[i].find('Effect Coverage')
+                        end = text[i].find('DNA Sequence')
+                        variant_text = text[i][start+15:end].strip()
+                        # Split into lines and combine multi-line entries
+                        lines = variant_text.split('\n')
+                        combined_variants = []
+                        current_variant = ""
+                        for line in lines:
+                            line = line.strip()
+                            if not line:
+                                continue
+                            if current_variant and (len(line.split()) < 9):  # Partial line, append to current
+                                current_variant += " " + line
+                            else:
+                                if current_variant:
+                                    combined_variants.append(current_variant)
+                                current_variant = line
+                        if current_variant:
+                            combined_variants.append(current_variant)
+                        short_variants.extend(combined_variants)
+
+                if short_variants:
+                    short_variant_list = []
+                    for variant in short_variants:
+                        fields = variant.split()
+                        if len(fields) >= 9:  # Ensure we have enough fields
+                            short_variant_list.append({
+                                "cds_effect": fields[2],
+                                "depth": fields[8],
+                                "functional_effect": fields[7],
+                                "gene": fields[0],
+                                "percent_reads": fields[5],
+                                "position": fields[4],
+                                "protein_effect": fields[1],
+                                "transcript": fields[6],
+                            })
+                    basedict['rr:ResultsReport']['rr:ResultsPayload']['variant-report']['short_variants']['short_variant'] = short_variant_list
+
+                with open(os.path.join(dirpath, f'{ReportNo}_({MPNo}).xml'), 'w', encoding="utf-8") as output:
+                    output.write(xmltodict.unparse(basedict, pretty=True))
+
+        except Exception as e:
+            print(f"Error processing {dirpath}: {e}")
+
+    os.chdir('..')
+    return 'FocusAssay2xml done'
+
+'''
+
 ### 轉出PDF 至 目錄 ###
 def pdf2dir(PdfPath, root):
     os.chdir(PdfPath)

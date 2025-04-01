@@ -240,7 +240,7 @@ def GeneReport(request):
                 }        
         cur.execute(consentsql)
         rows = cur.fetchall()
-        #print(type(rows))
+        print(type(rows))
         df = pd.DataFrame(rows)
         #print(consentsql)
         df.to_csv('static/doc/datalist.csv', sep='\t', encoding='utf-8')
@@ -261,6 +261,7 @@ def GeneReport(request):
         return render(request, 'GeneReport.html', context)
     except:
         conn.close()
+        cur.close()
         context = {
                 'Generight' : Generight,
                 'right' : right,
@@ -1136,82 +1137,133 @@ def Userright(request):
                 }
         return render(request, 'UsrUpload.html' , context)
 
-from django.conf import settings
-
 def UpGeneZip(request):
     try:
-        user = request.user    
+        user = request.user
         Generight = models.Genepermission.objects.filter(user__username__startswith=user.username)
         right = models.Permission.objects.filter(user__username__startswith=user.username)
         Genezipall = models.Genezip.objects.all().order_by('-id')
+        root = os.getcwd()
+        if request.POST["fileTitle"] != '' and request.FILES["uploadedFile"] != '':
+            fileTitle = request.POST["fileTitle"]
+            uploadedFile = request.FILES["uploadedFile"]
 
-        root = settings.MEDIA_ROOT  # 確保使用 Django 設定的 MEDIA_ROOT
-        
-        # **1. 確保 POST 參數存在**
-        if "fileTitle" not in request.POST or "uploadedFile" not in request.FILES:
-            print("錯誤：缺少參數 fileTitle 或 uploadedFile")
-            return render(request, 'Geneload.html', {'FuncResult': 'No file upload'})
 
-        fileTitle = request.POST["fileTitle"]
-        uploadedFile = request.FILES.get("uploadedFile", None)
+            # 保存上传文件信息到数据库
+            Genezip = models.Genezip(
+                fileTitle=fileTitle,
+                uploadedFile=uploadedFile,
+            )
+            Genezip.save()
+            #print(Genezippk.pk)
+            # 数据库连接信息
+            conn = psycopg2.connect(database="vghtpegene", user="postgres", password="1qaz@WSX3edc", host=genepostgresip, port=genepostgresport)
+            cur = conn.cursor()
 
-        if not uploadedFile:
-            print("錯誤：沒有上傳檔案")
-            return render(request, 'Geneload.html', {'FuncResult': 'No file upload'})
+            # 獲取當前根目錄
+            root = os.getcwd()
 
-        # **2. 儲存上傳的檔案**
-        upload_dir = os.path.join(root, 'Genezip')
-        os.makedirs(upload_dir, exist_ok=True)  # 確保目錄存在
-        
-        file_path = os.path.join(upload_dir, uploadedFile.name)
-        with open(file_path, 'wb+') as destination:
-            for chunk in uploadedFile.chunks():
-                destination.write(chunk)
+            # 確保 media/Genezip 目錄存在
+            media_genezip_dir = os.path.join(root, 'media', 'Genezip')
+            os.makedirs(media_genezip_dir, exist_ok=True)
 
-        # **3. 儲存到資料庫**
-        Genezip = models.Genezip(
-            fileTitle=fileTitle,
-            uploadedFile=file_path  # 確保儲存正確路徑
-        )
-        Genezip.save()
+            # 清理文件名，確保不含特殊字符
+            uploaded_filename = uploadedFile.name.replace('(', '').replace(')', '')
 
-        # **4. 設定目標路徑**
-        safe_filename = uploadedFile.name.replace('/', '_').replace('\\', '_')
-        destination_dir = os.path.join(settings.BASE_DIR, 'static', 'doc', safe_filename.replace('.zip', ''))
-        os.makedirs(destination_dir, exist_ok=True)  # 確保目錄存在
+            # 定義原始文件存放路徑
+            source_path = os.path.join(media_genezip_dir, uploaded_filename)
 
-        # **5. 解壓 ZIP**
-        try:
-            with zipfile.ZipFile(file_path, "r") as zip_ref:
-                zip_ref.extractall(destination_dir)
-        except zipfile.BadZipFile as e:
-            print("錯誤: ZIP 文件無效 -", e)
-        except FileNotFoundError as e:
-            print("錯誤: 找不到 ZIP 檔案 -", e)
-        except Exception as e:
-            print("錯誤:", e)
+            # 先將上傳的檔案寫入磁碟
+            with open(source_path, 'wb+') as destination_file:
+                for chunk in uploadedFile.chunks():
+                    destination_file.write(chunk)
 
-        # **6. 處理基因文件**
-        genepath = os.path.join(settings.BASE_DIR, 'static', 'doc')
-        process_gene_files(destination_dir, None, None, genepath)
+            # 確保 static/doc 目錄存在
+            static_doc_dir = os.path.join(root, 'static', 'doc')
+            os.makedirs(static_doc_dir, exist_ok=True)
 
-        return render(request, 'Geneload.html', {
+            # 定義最終的目的路徑
+            destination_path = os.path.join(static_doc_dir, uploaded_filename)
+
+            # 刪除舊檔案（如果存在）
+            if os.path.exists(destination_path):
+                os.remove(destination_path)
+
+
+            # 複製文件到最終目的地
+            dest = shutil.copyfile(source_path, destination_path)
+            #shutil.copyfile(source_path, destination_path)
+            '''
+            filename = os.path.join(root, 'media', 'Genezip', str(uploadedFile).replace('(', '').replace(')', ''))
+            source = filename
+            destination = os.path.join(root, 'static', 'doc', str(uploadedFile))
+
+            # 删除已有的目标文件
+            try:
+                os.remove(destination)
+                #print("文件删除成功")
+            except FileNotFoundError:
+                print("文件不存在")
+            except PermissionError:
+                print("没有权限删除文件")
+            except Exception as e:
+                print("发生错误:", e)
+
+            # 复制文件到目标位置
+            dest = shutil.copyfile(source, destination)
+            '''
+
+            # 解压缩文件
+            try:
+                destination_dir = os.path.join(root, 'static', 'doc', str(uploadedFile).replace('.zip', ''))
+                with zipfile.ZipFile(dest, "r") as zip_ref:
+                    zip_ref.extractall(destination_dir)
+            except zipfile.BadZipFile as e:
+                print("错误: ZIP 文件无效 -", e)
+            except FileNotFoundError as e:
+                print("错误: 文件未找到 -", e)
+            except Exception as e:
+                print("错误:", e)
+
+            #print(os.listdir(destination_dir))
+            #print(os.getcwd())
+
+            # 处理解压后的文件目录
+            dirpath = 'ACTOnco V1'
+            if os.path.isdir(dirpath):
+                print("目录存在。")
+            else:
+                #print("目录不存在。")
+                os.chdir(os.path.join(destination_dir, str(uploadedFile).replace('.zip', '')))
+                #print(os.getcwd())
+
+            genepath = os.path.join(root, 'static', 'doc')
+            process_gene_files(dirpath, conn, cur, genepath)
+
+            context = {
+                'Generight': Generight,
+                'right': right,
+                'Genezip': Genezipall,
+                'FuncResult': 'Upload finish'
+            }
+            return render(request, 'Geneload.html', context)
+        else:
+            context = {
+                'Generight': Generight,
+                'right': right,
+                'Genezip': Genezipall,
+                'FuncResult': 'No file upload'
+            }
+            return render(request, 'Geneload.html', context)
+    except Exception as e:
+        print("发生错误:", e)
+        context = {
             'Generight': Generight,
             'right': right,
             'Genezip': Genezipall,
-            'FuncResult': 'Upload finish'
-        })
-
-    except Exception as e:
-        print("發生錯誤:", e)
-        return render(request, 'Geneload.html', {
-            'Generight': Generight,
-            'right': right,
-            'Genezip': Genezipall if 'Genezipall' in locals() else [],
             'FuncResult': 'No file upload'
-        })
-
-
+        }
+        return render(request, 'Geneload.html', context)
 
 
 def process_gene_files(dirpath, conn, cur, genepath):
